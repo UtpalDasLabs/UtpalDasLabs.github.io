@@ -1,8 +1,14 @@
 import { Layout } from "@/components/Layout";
 import { Mail, Linkedin, Github } from "lucide-react";
 import contactCover from "@/assets/covers/ai-b.svg";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const Contact = () => {
+  usePageMeta(
+    "Contact — Utpal Das",
+    "Get in touch with Utpal Das — AI strategy, local LLMs, agentic systems. Based in Berlin, Germany.",
+    "/contact",
+  );
   return (
     <Layout showEchelonFooter>
       <section className="container-wide py-16 md:py-24 min-h-[calc(100vh-200px)]">

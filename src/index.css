@@ -224,4 +224,39 @@
       transform: translateX(-50%);
     }
   }
+
+  /* Accent underline that sweeps in after page load (About tagline) */
+  .underline-sweep {
+    position: relative;
+  }
+
+  .underline-sweep::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 3px;
+    width: 100%;
+    background: hsl(var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: underline-sweep 0.5s ease-out 0.9s forwards;
+  }
+
+  @keyframes underline-sweep {
+    to {
+      transform: scaleX(1);
+    }
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

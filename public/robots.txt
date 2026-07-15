@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://utpaldaslabs.github.io/dasutpal/sitemap.xml

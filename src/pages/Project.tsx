@@ -2,10 +2,17 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { projects } from "@/data/projects";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const Project = () => {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
+
+  usePageMeta(
+    project ? `${project.title} — Utpal Das` : "Projects — Utpal Das",
+    project ? project.description.slice(0, 155) : "Projects by Utpal Das.",
+    project ? `/work/${project.id}` : "/work",
+  );
 
   if (!project) {
     return <Navigate to="/work" replace />;
@@ -59,7 +66,28 @@ const Project = () => {
           <div className="space-y-8">
             <div>
               <p className="text-label mb-2">Client</p>
-              <p>{project.client}</p>
+              <div className="flex flex-col gap-1">
+                {project.companies.map((c) =>
+                  c.url ? (
+                    <a
+                      key={c.name}
+                      href={c.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover-highlight inline-flex items-center gap-2"
+                    >
+                      {c.logo && (
+                        <span className="flex h-5 w-5 items-center justify-center rounded-sm bg-white/90 p-[2px]">
+                          <img src={c.logo} alt="" className="max-h-full max-w-full object-contain" />
+                        </span>
+                      )}
+                      {c.name}
+                    </a>
+                  ) : (
+                    <span key={c.name}>{c.name}</span>
+                  ),
+                )}
+              </div>
             </div>
             <div>
               <p className="text-label mb-2">Year</p>

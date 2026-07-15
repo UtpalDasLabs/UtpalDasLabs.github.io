@@ -1,10 +1,16 @@
 import { useState, useRef } from "react";
 import { Layout } from "@/components/Layout";
 import { projects } from "@/data/projects";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const Index = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+  usePageMeta(
+    "Utpal Das — Father, Builder, Problem Solver",
+    "Utpal Das — Head of Digital Solutions @ CUBONIC, Berlin. AI strategy, local LLMs, and agentic solutions. 18+ years turning emerging tech into real products.",
+    "/",
+  );
 
   // Get 8 unique cover images from projects for the grid (4x2)
   const gridImages = projects.slice(0, 8).map(p => p.coverImage);

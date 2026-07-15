@@ -4,6 +4,7 @@ export interface Recommendation {
   author: string;
   role: string;
   context: string;
+  company: string; // where we worked together (for filtering)
   quote: string;
   featured: boolean;
 }
@@ -13,6 +14,7 @@ export const recommendations: Recommendation[] = [
     author: "Louis Badcock",
     role: "Chief Product and Technology Officer, World of Books Group",
     context: "Led the Asset Finance team at Cazoo",
+    company: "Cazoo",
     quote:
       "Utpal is a great product manager who led our Asset Finance team at Cazoo. He's a strong collaborator and quick to build effective working relationships. Utpal has a passion for product management, always focusing on results and constructively challenging the why of his product to ensure it is focused on delivering genuine business value. Always striving to learn and better himself, Utpal has a calm, affable attitude and shows resilience in the face of adversity. He's a pleasure to work with.",
     featured: true,
@@ -21,6 +23,7 @@ export const recommendations: Recommendation[] = [
     author: "Dr. Veronika von Heise-Rotenburg",
     role: "CFO & Geschäftsführerin, Everphone",
     context: "Worked together at Cluno and Cazoo",
+    company: "Cluno",
     quote:
       "Utpal was responsible for the digitization of several processes, such as car handover to customers and the creation of a partner portal, which enabled suppliers to collaborate digitally instead of manually with our operations team. Bringing in his experience in innovation, product knowledge and efficiency, he was able to support Cluno's growth and raise efficiency by building lean operations.",
     featured: true,
@@ -29,6 +32,7 @@ export const recommendations: Recommendation[] = [
     author: "Tino Kapolka",
     role: "Head of Product, AutoScout24",
     context: "Collaborated on Search across App and Web",
+    company: "AutoScout24",
     quote:
       "Working with Utpal was always very constructive and outcome driven. He was bringing new perspectives into discussions and shared valuable learnings from past experiences. I especially enjoyed his very supportive and pragmatic working mode, which has helped to successfully drive cross-team initiatives. Utpal is a great match for all customer centric product organizations, who are looking for an experienced leader with a strong passion to drive outcome.",
     featured: true,
@@ -37,6 +41,7 @@ export const recommendations: Recommendation[] = [
     author: "Derek Charter",
     role: "Technology Strategy and Operations Director, IVC Evidensia",
     context: "Worked together at Cazoo",
+    company: "Cazoo",
     quote:
       "I've worked with dozens of Product Managers over the years. All the very best combine advanced product discovery skills and formal product management techniques with a natural empathy and affinity for people, users and customers. Utpal embodies all these qualities at the highest level. He has a profound theoretical knowledge and knows how to put it in practice to achieve real product value.",
     featured: true,
@@ -45,6 +50,7 @@ export const recommendations: Recommendation[] = [
     author: "Nikita Belokopytov",
     role: "Staff Applied AI Engineer, Bluefish",
     context: "Built native apps strategy at AutoScout24",
+    company: "AutoScout24",
     quote:
       "Utpal has proven to be a passionate, driven, trustworthy partner. He has always been looking out for his team and giving them enough space to develop. As a product leader his approach was to inform his decisions by data and enhance them with the insights he'd obtained from close collaboration with our international offices and business stakeholders. Utpal is a very strong product leader, who no doubt will leave a mark on the industry.",
     featured: true,
@@ -53,6 +59,7 @@ export const recommendations: Recommendation[] = [
     author: "Lee Smith",
     role: "Product Designer, Cazoo",
     context: "Worked together at Cazoo",
+    company: "Cazoo",
     quote:
       "Working with Utpal has been one of the highlights of my time working at Cazoo. He brings advanced formal product knowledge, the ability to rally a team around a vision and a relentless focus on delivering genuine value to stakeholders and users. He affords the right amount of autonomy but is always there to step in with support where needed.",
     featured: false,
@@ -61,6 +68,7 @@ export const recommendations: Recommendation[] = [
     author: "Harriet May",
     role: "Lead Product Manager, Valtech",
     context: "Neighbouring finance tech teams at Cazoo",
+    company: "Cazoo",
     quote:
       "Utpal is curious, friendly, and tenacious, which means he asks all the right questions, does so warmly, but will not stop until he has his answer! I was inspired by Utpal's clear vision for his team, impressive discovery work, and drive to understand and influence the most impactful metrics. Everyone who works with Utpal will learn a lot from him.",
     featured: false,
@@ -69,6 +77,7 @@ export const recommendations: Recommendation[] = [
     author: "Sharath Ganesh Pai",
     role: "Test Automation, Freetrade",
     context: "Two years together at Cluno",
+    company: "Cluno",
     quote:
       "He was spearheading the product department for the integration of our operations work in our Salesforce platform, and the associated mobile apps. The highlight was building the logistics platform from scratch that helped save tons of time for a lot of people — both B2C & B2B customers as well as our internal logistics colleagues.",
     featured: false,
@@ -77,6 +86,7 @@ export const recommendations: Recommendation[] = [
     author: "Amr Mazen",
     role: "Co-Founder, Sylndr",
     context: "Led Ops product at Cluno",
+    company: "Cluno",
     quote:
       "Utpal has shown great passion and dedication leading our Ops product at Cluno. His eye to detail and growth mindset has tremendously helped us deliver a great customer experience and lean operations.",
     featured: false,
@@ -85,6 +95,7 @@ export const recommendations: Recommendation[] = [
     author: "Uygar Boynudelik",
     role: "Product Manager, HD PLUS GmbH",
     context: "Worked together in mobility",
+    company: "Cluno",
     quote:
       "Utpal is essentially an outstanding Product Manager with a strong technical background. He has a very genuine interest, experience and holistic view in the mobility space. He is open minded, eager to learn and a great team player.",
     featured: false,
@@ -93,6 +104,7 @@ export const recommendations: Recommendation[] = [
     author: "Annika Kaps",
     role: "Senior Product Owner, Interhyp Gruppe",
     context: "Fellow product managers at Cluno",
+    company: "Cluno",
     quote:
       "Utpal's structured and focused way of working is impressive. He takes ownership and never lets his product vision out of sight. With his vast experience and passion, he has left a true mark at Cluno and is a much appreciated colleague.",
     featured: false,
@@ -101,6 +113,7 @@ export const recommendations: Recommendation[] = [
     author: "Mohsin Jamadar",
     role: "Solutions Architect, PanGulfTech",
     context: "Worked together at TCS",
+    company: "TCS",
     quote:
       "Utpal has a good knowledge of C++, C# and OOP concepts. His approach towards work is proactive and well planned. Ready to take responsibilities and can mentor well. Along with this he has great communication skills and can handle things well without pressure.",
     featured: false,

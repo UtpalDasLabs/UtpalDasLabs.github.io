@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import {
   positions,
@@ -9,11 +10,17 @@ import {
   certifications,
   volunteering,
 } from "@/data/profile";
-import { recommendations, featuredRecommendations } from "@/data/recommendations";
+import { recommendations } from "@/data/recommendations";
+import { usePageMeta } from "@/hooks/use-page-meta";
+
+const taglineWords = ["Father", "Builder", "Problem Solver"];
 
 const About = () => {
-  const [showAllRecs, setShowAllRecs] = useState(false);
-  const visibleRecs = showAllRecs ? recommendations : featuredRecommendations;
+  usePageMeta(
+    "About — Utpal Das",
+    "Utpal Das — Head of Digital Solutions at CUBONIC, Berlin. 18+ years across product leadership, AI strategy, mobility, industrial vision, and avionics.",
+    "/about",
+  );
 
   return (
     <Layout showEchelonFooter>
@@ -21,7 +28,28 @@ const About = () => {
         <div className="max-w-3xl space-y-16">
           {/* Intro */}
           <div>
-            <h1 className="text-display mb-8 animate-fade-in-up">About</h1>
+            <h1 className="text-display mb-4 animate-fade-in-up">About</h1>
+
+            {/* Tagline */}
+            <p className="mb-10 font-display text-xl md:text-2xl font-semibold tracking-wide" aria-label="Father, Builder, Problem Solver">
+              {taglineWords.map((word, i) => (
+                <span key={word}>
+                  <span
+                    className={`inline-block animate-fade-in-up ${
+                      i === taglineWords.length - 1 ? "underline-sweep text-foreground" : "text-foreground/90"
+                    }`}
+                    style={{ animationDelay: `${0.15 + i * 0.15}s` }}
+                  >
+                    {word}
+                  </span>
+                  {i < taglineWords.length - 1 && (
+                    <span aria-hidden="true" className="mx-3 text-accent">
+                      ·
+                    </span>
+                  )}
+                </span>
+              ))}
+            </p>
 
             <div
               className="space-y-6 text-lg md:text-xl leading-relaxed text-muted-foreground animate-fade-in-up"
@@ -172,37 +200,26 @@ const About = () => {
             </div>
           </div>
 
-          {/* Recommendations */}
+          {/* Kind Words teaser */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
-            <h2 className="text-label mb-6">
-              Recommendations{" "}
-              <span className="text-muted-foreground normal-case tracking-normal">
-                — from LinkedIn
-              </span>
-            </h2>
-            <div className="space-y-8">
-              {visibleRecs.map((rec) => (
-                <figure key={rec.author} className="border-l-2 border-accent pl-6">
-                  <blockquote className="text-lg md:text-xl leading-relaxed text-muted-foreground italic">
-                    "{rec.quote}"
-                  </blockquote>
-                  <figcaption className="mt-4 text-sm">
-                    <span className="text-foreground">{rec.author}</span>
-                    <span className="text-muted-foreground"> — {rec.role}</span>
-                    <span className="block text-muted-foreground mt-1">{rec.context}</span>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-            <button
-              type="button"
-              onClick={() => setShowAllRecs((v) => !v)}
-              className="mt-10 text-sm uppercase tracking-widest border border-border px-6 py-3 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
+            <Link
+              to="/kind-words"
+              className="group block border border-separator p-8 transition-colors duration-300 hover:border-accent"
             >
-              {showAllRecs
-                ? "Show featured only"
-                : `Show all ${recommendations.length} recommendations`}
-            </button>
+              <h2 className="text-label mb-4">Kind Words</h2>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                {recommendations.length} recommendations from CPTOs, CFOs, and product
+                leaders I've worked with — Cazoo, Cluno, AutoScout24, TCS.
+              </p>
+              <span className="mt-4 inline-flex items-center gap-2 text-sm uppercase tracking-widest text-accent">
+                Read them
+                <ArrowUpRight
+                  size={16}
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
