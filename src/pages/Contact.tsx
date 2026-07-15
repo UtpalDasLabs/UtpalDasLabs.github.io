@@ -20,11 +20,11 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               <a
-                href="mailto:hello@utpaldas.com"
+                href="mailto:utpal.inbox@hotmail.com"
                 className="flex items-center gap-4 text-lg hover-highlight group"
               >
                 <Mail size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
-                <span>hello@utpaldas.com</span>
+                <span>utpal.inbox@hotmail.com</span>
               </a>
 
               <a
@@ -38,13 +38,13 @@ const Contact = () => {
               </a>
 
               <a
-                href="https://github.com/"
+                href="https://github.com/UtpalDasLabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-lg hover-highlight group"
               >
                 <Github size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
-                <span>github.com/your-handle</span>
+                <span>github.com/UtpalDasLabs</span>
               </a>
             </div>
 
