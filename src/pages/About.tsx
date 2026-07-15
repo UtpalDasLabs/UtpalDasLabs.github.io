@@ -1,21 +1,40 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { ExperienceJourney } from "@/components/ExperienceJourney";
-import {
-  education,
-  skillGroups,
-  topEndorsed,
-  languages,
-  certifications,
-  volunteering,
-} from "@/data/profile";
+import { skillGroups, topEndorsed } from "@/data/profile";
 import { recommendations } from "@/data/recommendations";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 const taglineWords = ["Father", "Builder", "Problem Solver"];
 
+// The 10 skills a hiring manager should see first; counts fold in LinkedIn endorsements.
+const coreSkills = [
+  "AI Strategy",
+  "Local LLMs",
+  "Agentic Systems",
+  "Product Strategy",
+  "Product Management",
+  "Go-to-Market Strategy",
+  "Online Marketplaces",
+  "Leadership",
+  "C++",
+  "Python",
+];
+
+const endorsementCount = (skill: string) =>
+  topEndorsed.find((e) => e.name === skill)?.count;
+
+const remainingSkills = [
+  ...new Set([
+    ...skillGroups.flatMap((g) => g.skills),
+    ...topEndorsed.map((e) => e.name),
+  ]),
+].filter((s) => !coreSkills.includes(s));
+
 const About = () => {
+  const [showAllSkills, setShowAllSkills] = useState(false);
   usePageMeta(
     "About — Utpal Das",
     "Utpal Das — Head of Digital Solutions at CUBONIC, Berlin. 18+ years across product leadership, AI strategy, mobility, industrial vision, and avionics.",
@@ -79,111 +98,8 @@ const About = () => {
             <ExperienceJourney />
           </div>
 
-          {/* Skills */}
+          {/* Kind Words teaser — social proof right after the arc */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-            <h2 className="text-label mb-6">Skills</h2>
-            <div className="space-y-8">
-              {skillGroups.map((group) => (
-                <div key={group.label}>
-                  <p className="text-sm text-muted-foreground mb-3 uppercase tracking-widest">
-                    {group.label}
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    {group.skills.map((skill) => (
-                      <span key={skill} className="text-sm border border-border px-4 py-2">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8">
-              <p className="text-sm text-muted-foreground mb-3 uppercase tracking-widest">
-                Most endorsed on LinkedIn
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {topEndorsed.map((s) => (
-                  <span
-                    key={s.name}
-                    className="text-sm border border-accent/40 px-4 py-2"
-                  >
-                    {s.name} <span className="text-accent">×{s.count}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Education */}
-          <div className="animate-fade-in-up" style={{ animationDelay: "0.35s" }}>
-            <h2 className="text-label mb-6">Education</h2>
-            <div className="space-y-8">
-              {education.map((item) => (
-                <div key={item.school} className="border-t border-separator pt-6">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1 md:gap-6 mb-2">
-                    <h3 className="text-lg md:text-xl text-foreground">{item.school}</h3>
-                    <p className="text-sm text-muted-foreground whitespace-nowrap">{item.period}</p>
-                  </div>
-                  <p className="text-base text-muted-foreground">{item.degree}</p>
-                  {item.activities && (
-                    <p className="text-sm text-muted-foreground mt-2">{item.activities}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Languages & Certifications */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 animate-fade-in-up"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <div>
-              <h2 className="text-label mb-6">Languages</h2>
-              <ul className="space-y-3">
-                {languages.map((lang) => (
-                  <li key={lang.name} className="flex justify-between gap-4 border-t border-separator pt-3">
-                    <span>{lang.name}</span>
-                    <span className="text-sm text-muted-foreground text-right">{lang.level}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="text-label mb-6">Certifications & Honors</h2>
-              <ul className="space-y-3">
-                {certifications.map((cert) => (
-                  <li key={cert.name} className="border-t border-separator pt-3">
-                    <p>{cert.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {cert.authority} · {cert.year}
-                    </p>
-                  </li>
-                ))}
-                <li className="border-t border-separator pt-3">
-                  <p>Service &amp; Commitment Award</p>
-                  <p className="text-sm text-muted-foreground">Tata Consultancy Services · 2011</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Volunteering */}
-          <div className="animate-fade-in-up" style={{ animationDelay: "0.45s" }}>
-            <h2 className="text-label mb-6">Volunteering</h2>
-            <div className="flex flex-wrap gap-3">
-              {volunteering.map((v) => (
-                <span key={v.org} className="text-sm border border-border px-4 py-2">
-                  {v.org} · {v.cause}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Kind Words teaser */}
-          <div className="animate-fade-in-up" style={{ animationDelay: "0.5s" }}>
             <Link
               to="/kind-words"
               className="group block border border-separator p-8 transition-colors duration-300 hover:border-accent"
@@ -202,6 +118,79 @@ const About = () => {
                 />
               </span>
             </Link>
+          </div>
+
+          {/* What I work with — one compact strip */}
+          <div className="animate-fade-in-up" style={{ animationDelay: "0.35s" }}>
+            <h2 className="text-label mb-6">What I work with</h2>
+            <div className="flex flex-wrap gap-3">
+              {coreSkills.map((skill) => {
+                const count = endorsementCount(skill);
+                return (
+                  <span key={skill} className="text-sm border border-border px-4 py-2">
+                    {skill}
+                    {count && <span className="text-accent"> ×{count}</span>}
+                  </span>
+                );
+              })}
+              {showAllSkills &&
+                remainingSkills.map((skill) => {
+                  const count = endorsementCount(skill);
+                  return (
+                    <span
+                      key={skill}
+                      className="text-sm border border-border/60 px-4 py-2 text-muted-foreground"
+                    >
+                      {skill}
+                      {count && <span className="text-accent"> ×{count}</span>}
+                    </span>
+                  );
+                })}
+              <button
+                type="button"
+                onClick={() => setShowAllSkills((v) => !v)}
+                aria-expanded={showAllSkills}
+                className="cursor-pointer text-sm border border-separator px-4 py-2 text-muted-foreground uppercase tracking-widest transition-colors hover:border-accent hover:text-accent"
+              >
+                {showAllSkills ? "Less" : `+ ${remainingSkills.length} more`}
+              </button>
+            </div>
+          </div>
+
+          {/* Background — one compact grid, one line each */}
+          <div className="animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <h2 className="text-label mb-6">Background</h2>
+            <dl className="grid grid-cols-1 gap-x-12 gap-y-5 text-sm md:grid-cols-2">
+              <div className="border-t border-separator pt-4">
+                <dt className="mb-1 uppercase tracking-widest text-muted-foreground text-xs">Languages</dt>
+                <dd>
+                  English &amp; Hindi <span className="text-muted-foreground">· native-level</span> — German{" "}
+                  <span className="text-muted-foreground">· professional</span> — Japanese{" "}
+                  <span className="text-muted-foreground">· basic</span>
+                </dd>
+              </div>
+              <div className="border-t border-separator pt-4">
+                <dt className="mb-1 uppercase tracking-widest text-muted-foreground text-xs">Education</dt>
+                <dd>
+                  B.Tech, Electrical &amp; Electronics — Amrita Vishwa Vidyapeetham{" "}
+                  <span className="text-muted-foreground">(2008)</span>
+                </dd>
+              </div>
+              <div className="border-t border-separator pt-4">
+                <dt className="mb-1 uppercase tracking-widest text-muted-foreground text-xs">Certifications &amp; Honors</dt>
+                <dd>
+                  FANUC Robotics &amp; Dual Check Safety <span className="text-muted-foreground">· .NET/WPF</span> —
+                  TCS Service &amp; Commitment Award <span className="text-muted-foreground">(2011)</span>
+                </dd>
+              </div>
+              <div className="border-t border-separator pt-4">
+                <dt className="mb-1 uppercase tracking-widest text-muted-foreground text-xs">Beyond work</dt>
+                <dd>
+                  Greenpeace <span className="text-muted-foreground">· environment</span> — WWF{" "}
+                  <span className="text-muted-foreground">· wildlife</span>
+                </dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>
