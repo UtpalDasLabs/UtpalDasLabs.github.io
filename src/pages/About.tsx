@@ -1,11 +1,11 @@
 import { Layout } from "@/components/Layout";
 
-const clients = [
-  "Gallery Moderne",
-  "Tech Futures Lab",
-  "Bloom Publishing",
-  "Vogue Italia",
-  "Heritage Museum",
+const focusAreas = [
+  "CUBONIC — Head of Digital Solutions",
+  "Local & Private LLMs",
+  "Agentic AI Systems",
+  "AI Strategy & Governance",
+  "Digital Transformation",
 ];
 
 const About = () => {
@@ -16,41 +16,43 @@ const About = () => {
           {/* Content */}
           <div>
             <h1 className="text-display mb-8 animate-fade-in-up">About</h1>
-            
+
             <div className="space-y-6 text-lg md:text-xl leading-relaxed text-muted-foreground animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
               <p>
-                <span className="text-foreground">Jordan Studio</span> is an independent creative 
-                studio specializing in brand identity, illustration, and visual design.
+                <span className="text-foreground">Utpal Das</span> is Head of Digital Solutions
+                at <span className="text-foreground">CUBONIC</span> in Berlin, leading AI strategy,
+                local LLM deployments, and agentic solutions for the mobility and
+                industrial space.
               </p>
               <p>
-                Our approach combines minimalist aesthetics, authentic storytelling, 
-                and thoughtful design. Each project is an opportunity to explore 
-                stories through a unique visual language.
+                With 18+ years across engineering, product, and general management, I focus on
+                turning frontier AI into pragmatic systems — private by design, useful in
+                production, and aligned with real business outcomes.
               </p>
               <p>
-                We work on commercial, editorial, and personal projects, always 
-                seeking to create authentic narratives with visual depth.
+                Interests span future mobility, robotics, machine vision, and the
+                intersection of math, physics, and applied ML.
               </p>
             </div>
           </div>
 
-          {/* Selected Clients */}
+          {/* Focus */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <h2 className="text-label mb-6">Selected Clients</h2>
+            <h2 className="text-label mb-6">Currently</h2>
             <ul className="space-y-3">
-              {clients.map((client) => (
-                <li key={client} className="text-lg">
-                  {client}
+              {focusAreas.map((item) => (
+                <li key={item} className="text-lg">
+                  {item}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Experience */}
+          {/* Expertise */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
             <h2 className="text-label mb-6">Expertise</h2>
             <div className="flex flex-wrap gap-3">
-              {["Brand Identity", "Illustration", "Editorial", "Visual Design", "Art Direction", "Motion"].map((area) => (
+              {["AI Strategy", "Local LLMs", "Agentic AI", "Product Leadership", "Digital Transformation", "Machine Vision", "Robotics"].map((area) => (
                 <span
                   key={area}
                   className="text-sm border border-border px-4 py-2"

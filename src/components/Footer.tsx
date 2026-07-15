@@ -17,14 +17,14 @@ export function Footer({ variant = "default" }: FooterProps) {
             <div className="space-y-3">
               <p className="text-label">Location</p>
               <div className="text-sm text-foreground space-y-1">
-                <p>São Paulo, SP</p>
-                <p>Brazil</p>
+                <p>Berlin</p>
+                <p>Germany</p>
               </div>
             </div>
 
-            {/* Gallery */}
+            {/* Navigate */}
             <div className="space-y-3">
-              <p className="text-label">Gallery</p>
+              <p className="text-label">Navigate</p>
               <div className="text-sm space-y-1">
                 <Link to="/work" className="block text-foreground hover:text-accent transition-colors">Projects</Link>
                 <Link to="/about" className="block text-foreground hover:text-accent transition-colors">About</Link>
@@ -36,10 +36,12 @@ export function Footer({ variant = "default" }: FooterProps) {
             <div className="space-y-3">
               <p className="text-label">Contact</p>
               <div className="text-sm text-foreground space-y-1">
-                <a href="mailto:hello@jordanstudio.com" className="block hover:text-accent transition-colors">
-                  hello@jordanstudio.com
+                <a href="mailto:hello@utpaldas.com" className="block hover:text-accent transition-colors">
+                  hello@utpaldas.com
                 </a>
-                <p>+55 11 9999-9999</p>
+                <a href="https://www.linkedin.com/in/iamdasutpal/" target="_blank" rel="noopener noreferrer" className="block hover:text-accent transition-colors">
+                  LinkedIn
+                </a>
               </div>
             </div>
 
@@ -47,7 +49,7 @@ export function Footer({ variant = "default" }: FooterProps) {
             <div className="space-y-3">
               <p className="text-label">Legal</p>
               <div className="text-sm text-muted-foreground space-y-1">
-                <p>© {currentYear} All Rights Reserved</p>
+                <p>© {currentYear} Utpal Das</p>
               </div>
             </div>
           </div>
@@ -61,7 +63,7 @@ export function Footer({ variant = "default" }: FooterProps) {
                 key={i}
                 className="font-display text-6xl md:text-8xl lg:text-[10rem] font-bold text-foreground mx-12"
               >
-                @JORDANSTUDIO
+                @IAMDASUTPAL
               </span>
             ))}
           </div>
@@ -77,9 +79,9 @@ export function Footer({ variant = "default" }: FooterProps) {
         <div className="flex flex-col md:flex-row justify-between gap-8">
           {/* Left */}
           <div className="space-y-4">
-            <p className="font-display text-xl font-semibold">Jordan Studio</p>
+            <p className="font-display text-xl font-semibold">Utpal Das</p>
             <p className="text-muted-foreground text-sm">
-              Design & Illustration
+              AI Strategy & Digital Solutions
             </p>
           </div>
 
@@ -92,8 +94,8 @@ export function Footer({ variant = "default" }: FooterProps) {
 
           {/* Right */}
           <div className="text-sm text-muted-foreground">
-            <p>© {currentYear} Jordan Studio</p>
-            <p className="mt-1">São Paulo, Brazil</p>
+            <p>© {currentYear} Utpal Das</p>
+            <p className="mt-1">Berlin, Germany</p>
           </div>
         </div>
       </div>
