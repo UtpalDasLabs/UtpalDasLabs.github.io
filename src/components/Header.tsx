@@ -57,7 +57,7 @@ export function Header({ revealMode = false }: HeaderProps) {
             to="/" 
             className="font-display text-lg font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
           >
-            Jordan Studio
+            Utpal Das
           </Link>
 
           {/* Desktop Navigation - Centered */}
