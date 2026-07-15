@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#0a0a0a"/>
+  <g stroke="#222" stroke-width="1">
+    <path d="M0 80H600M0 160H600M0 240H600M0 320H600M0 400H600M0 480H600M0 560H600M0 640H600M0 720H600"/>
+    <path d="M75 0V800M150 0V800M225 0V800M300 0V800M375 0V800M450 0V800M525 0V800"/>
+  </g>
+  <g stroke="#444" stroke-width="10" fill="none">
+    <path d="M150 800V560H375V320H600"/>
+  </g>
+  <g stroke="#d4ff00" stroke-width="3" fill="none">
+    <path d="M150 800V560H375V320H600"/>
+  </g>
+  <g fill="#888">
+    <rect x="90" y="90" width="60" height="60"/>
+    <rect x="420" y="600" width="90" height="45"/>
+    <rect x="240" y="180" width="45" height="90"/>
+  </g>
+  <circle cx="375" cy="320" r="14" fill="#d4ff00"/>
+  <circle cx="150" cy="560" r="10" fill="#0a0a0a" stroke="#d4ff00" stroke-width="3"/>
+  <text x="40" y="760" fill="#666" font-family="monospace" font-size="14">fleet.route(a→b)</text>
+</svg>

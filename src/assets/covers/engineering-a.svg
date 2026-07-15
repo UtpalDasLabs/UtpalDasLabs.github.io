@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#0a0a0a"/>
+  <g fill="none" stroke="#555" stroke-width="1.5">
+    <path d="M300 200L470 300V520L300 620L130 520V300Z"/>
+    <path d="M300 200V420M130 300L300 420L470 300M300 620V420"/>
+  </g>
+  <g fill="none" stroke="#333" stroke-width="1">
+    <path d="M130 340L300 460L470 340M130 380L300 500L470 380M130 420L300 540L470 420M130 460L300 580L470 460"/>
+    <path d="M170 277L170 497M210 300L210 520M250 323L250 543M350 323L350 543M390 300L390 520M430 277L430 497"/>
+  </g>
+  <g stroke="#d4ff00" stroke-width="2" fill="none">
+    <path d="M300 200L470 300"/>
+    <circle cx="300" cy="420" r="8"/>
+  </g>
+  <g stroke="#666" stroke-width="1">
+    <path d="M100 200V620M92 200H108M92 620H108"/>
+    <path d="M130 660H470M130 652V668M470 652V668"/>
+  </g>
+  <g fill="#666" font-family="monospace" font-size="14">
+    <text x="60" y="420" transform="rotate(-90 60 420)">420.00 mm</text>
+    <text x="262" y="692">±0.01</text>
+    <text x="40" y="60">scan → mesh → cad</text>
+  </g>
+</svg>

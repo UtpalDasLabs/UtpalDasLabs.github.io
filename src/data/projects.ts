@@ -1,25 +1,32 @@
-import neonPortrait from "@/assets/neon-portrait.jpg";
-import lightSilhouette from "@/assets/light-silhouette.jpg";
-import tarotCards from "@/assets/tarot-cards.jpg";
-import prismaticPortrait from "@/assets/prismatic-portrait.jpg";
-import digitalWaves from "@/assets/digital-waves.jpg";
-import abstractPaint from "@/assets/abstract-paint.jpg";
-import abstractLayers from "@/assets/abstract-layers.jpg";
-import fluidArt from "@/assets/fluid-art.jpg";
+import aiA from "@/assets/covers/ai-a.svg";
+import aiB from "@/assets/covers/ai-b.svg";
+import mobilityA from "@/assets/covers/mobility-a.svg";
+import mobilityB from "@/assets/covers/mobility-b.svg";
+import engineeringA from "@/assets/covers/engineering-a.svg";
+import avionicsA from "@/assets/covers/avionics-a.svg";
+import leadershipA from "@/assets/covers/leadership-a.svg";
+
+export type Domain =
+  | "AI Systems"
+  | "Mobility & Marketplaces"
+  | "Industrial & Vision"
+  | "Avionics & Embedded"
+  | "Leadership";
 
 export interface Project {
   id: string;
   title: string;
-  category: string;
+  category: Domain;
   tags: string[];
   year: string;
   client: string;
   description: string;
+  link?: string;
   coverImage: string;
   images: string[];
 }
 
-// Focus areas & initiatives — reshape freely with real case-study details.
+// Recent CUBONIC/AI work + real project history from LinkedIn (2005–present).
 export const projects: Project[] = [
   {
     id: "agentic-platform",
@@ -30,91 +37,168 @@ export const projects: Project[] = [
     client: "CUBONIC",
     description:
       "An internal platform for building multi-agent workflows on top of local and hosted LLMs — tool use, memory, guardrails, and human-in-the-loop review for mobility and operations teams.",
-    coverImage: digitalWaves,
-    images: [digitalWaves],
+    coverImage: aiA,
+    images: [aiA],
+  },
+  {
+    id: "autoscout24-apps",
+    title: "AutoScout24 Mobile Apps",
+    category: "Mobility & Marketplaces",
+    tags: ["IOS & ANDROID", "MARKETPLACE"],
+    year: "2022–2024",
+    client: "AutoScout24",
+    description:
+      "Head of Product for the native apps of Europe's largest car marketplace — search, favorites, price-drop alerts, dealer contact, and selling flows across 2M+ vehicle listings. Led app product strategy with international offices and drove the roadmap for millions of monthly users.",
+    link: "https://www.autoscout24.de/",
+    coverImage: mobilityA,
+    images: [mobilityA],
   },
   {
     id: "local-llm-stack",
     title: "Local LLM Stack",
-    category: "AI Infrastructure",
+    category: "AI Systems",
     tags: ["LOCAL LLMS", "PRIVACY"],
     year: "2025",
     client: "CUBONIC",
     description:
       "Private, on-prem LLM deployment stack for regulated data — model routing, quantization, evaluation harness, and observability, so sensitive workloads never leave the perimeter.",
-    coverImage: prismaticPortrait,
-    images: [prismaticPortrait],
+    coverImage: aiB,
+    images: [aiB],
+  },
+  {
+    id: "cluno-partner-platform",
+    title: "Partner Platform Digital Ecosystem",
+    category: "Mobility & Marketplaces",
+    tags: ["B2B PLATFORM", "OPERATIONS"],
+    year: "2019–2022",
+    client: "Cluno",
+    description:
+      "Built the partner portal that moved supplier collaboration from manual to digital for Germany's car-subscription pioneer — purchasing, operations, and remarketing flows that let a lean operations team scale a growing fleet.",
+    coverImage: mobilityB,
+    images: [mobilityB],
+  },
+  {
+    id: "apollo-ar-projection",
+    title: "Apollo AR Video Projection",
+    category: "Industrial & Vision",
+    tags: ["AUGMENTED REALITY", "INDUSTRY 4.0"],
+    year: "2017–2018",
+    client: "Extend3D",
+    description:
+      "Architect and scrum master for a Qt-based augmented-reality video projection and machine-vision system for Industry 4.0, targeting the automotive industry — a CGM-based CAD system for interacting with CAD data directly on the shop floor.",
+    link: "https://www.extend3d.com/de/produkt/werklicht-video/",
+    coverImage: engineeringA,
+    images: [engineeringA],
+  },
+  {
+    id: "asset-financing",
+    title: "Asset Financing System",
+    category: "Mobility & Marketplaces",
+    tags: ["FINTECH", "AUTOMOTIVE"],
+    year: "2021–2022",
+    client: "Cazoo",
+    description:
+      "After Cazoo's acquisition of Cluno, led product for asset financing and car production — the systems that financed and tracked the fleet behind the subscription business.",
+    coverImage: mobilityB,
+    images: [mobilityB],
+  },
+  {
+    id: "eicas-avionics",
+    title: "Avionics & Safety-Critical Systems",
+    category: "Avionics & Embedded",
+    tags: ["AVIONICS", "SAFETY-CRITICAL"],
+    year: "2008–2011",
+    client: "NAL · Meggitt · NEGELE",
+    description:
+      "Engine Indication and Crew Alert System (EICAS) software for the pilot's primary multi-function display at National Aerospace Laboratories; assembly-level verification & validation of Meggitt's secondary flight display; and sensor firmware for food & pharma industry systems.",
+    coverImage: avionicsA,
+    images: [avionicsA],
   },
   {
     id: "ai-strategy",
     title: "AI Strategy & Governance",
-    category: "Advisory",
+    category: "AI Systems",
     tags: ["AI STRATEGY", "LEADERSHIP"],
     year: "2024",
     client: "CUBONIC",
     description:
       "A pragmatic AI operating model: opportunity mapping, capability roadmap, risk & governance framework, and vendor vs. build decisions — turning executive intent into shipped systems.",
-    coverImage: neonPortrait,
-    images: [neonPortrait],
+    coverImage: aiA,
+    images: [aiA],
   },
   {
-    id: "mobility-digital",
-    title: "Mobility Digital Solutions",
-    category: "Product",
-    tags: ["MOBILITY", "DIGITAL TRANSFORMATION"],
-    year: "2024",
-    client: "CUBONIC",
+    id: "digital-handover",
+    title: "Digital Handover & Damage Reporting",
+    category: "Mobility & Marketplaces",
+    tags: ["MOBILE APPS", "OPERATIONS"],
+    year: "2019–2022",
+    client: "Cluno",
     description:
-      "Digital backbone for future mobility products — telemetry pipelines, fleet-facing tools, and AI-assisted workflows connecting hardware, operations, and customers.",
-    coverImage: lightSilhouette,
-    images: [lightSilhouette],
+      "The app-based car handover experience and iOS/Android damage-reporting flows for the Cluno subscription fleet — digitizing what used to be paper checklists at physical handover points.",
+    link: "https://apps.apple.com/de/app/cluno-auto-abo/id1434401969",
+    coverImage: mobilityA,
+    images: [mobilityA],
   },
   {
-    id: "rag-knowledge",
-    title: "Enterprise RAG Knowledge",
-    category: "AI Systems",
-    tags: ["RAG", "KNOWLEDGE"],
-    year: "2024",
-    client: "Internal",
+    id: "operations-automation",
+    title: "Operations & Logistics Automation",
+    category: "Mobility & Marketplaces",
+    tags: ["SUPPLY CHAIN", "AUTOMATION"],
+    year: "2019–2021",
+    client: "Cluno · Cazoo",
     description:
-      "Retrieval-augmented knowledge assistant over engineering docs, standards, and past decisions — accurate citations, access control, and evaluation on real user questions.",
-    coverImage: abstractLayers,
-    images: [abstractLayers],
+      "A family of internal systems that made lean operations possible: S&OP process automation, supply-chain & logistics automation, mid-mile planning, OCR-based fine handling, and the Glide Intake app for VIN-scan car check-in.",
+    coverImage: mobilityB,
+    images: [mobilityB],
   },
   {
-    id: "machine-vision",
-    title: "Machine Vision Prototypes",
-    category: "R&D",
-    tags: ["COMPUTER VISION", "ROBOTICS"],
-    year: "2023",
-    client: "R&D",
+    id: "zeiss-measurement-cell",
+    title: "Optical Measurement Cell",
+    category: "Industrial & Vision",
+    tags: ["METROLOGY", "ROBOTICS"],
+    year: "2016–2017",
+    client: "ZEISS",
     description:
-      "Prototype vision pipelines for inspection and autonomy — from data capture and labeling to model training, edge deployment, and closed-loop evaluation.",
-    coverImage: tarotCards,
-    images: [tarotCards],
+      "Software release manager and application engineer for an automated optical measurement and inspection cell — robot-driven metrology for production lines.",
+    link: "https://pages.zeiss.com/RIM_AIBox_Info.html",
+    coverImage: engineeringA,
+    images: [engineeringA],
+  },
+  {
+    id: "cad-reverse-engineering",
+    title: "CAD Reverse Engineering Suite",
+    category: "Industrial & Vision",
+    tags: ["CAD", "COMPUTER VISION"],
+    year: "2011–2017",
+    client: "ZEISS · MERZ",
+    description:
+      "Five years building CAD reverse-engineering application software for Carl Zeiss — C++/C#/.NET and WPF, point-cloud processing on the ACIS kernel — followed by Merz CAD Workmate, a cross-platform CAD application with AR/VR device support.",
+    coverImage: engineeringA,
+    images: [engineeringA],
   },
   {
     id: "product-leadership",
     title: "Product & Engineering Leadership",
     category: "Leadership",
     tags: ["LEADERSHIP", "TEAMS"],
-    year: "2018–2024",
+    year: "2013–present",
     client: "Multiple",
     description:
-      "Building and leading cross-functional teams across engineering, product, and design — hiring, delivery cadence, and a bias toward shipping useful software over slideware.",
-    coverImage: abstractPaint,
-    images: [abstractPaint],
+      "Building and leading cross-functional teams across engineering, product, and design — from three departments at MERZ to app teams at AutoScout24 — hiring, delivery cadence, and a bias toward shipping useful software over slideware.",
+    coverImage: leadershipA,
+    images: [leadershipA],
   },
   {
     id: "personal-labs",
     title: "UtpalDasLabs",
-    category: "Open Source & Experiments",
+    category: "AI Systems",
     tags: ["LABS", "EXPERIMENTS"],
     year: "Ongoing",
     client: "Personal",
     description:
       "A workshop for agentic systems, small models, and mobility-adjacent tinkering. Most repos are private while incubating — expect select open-source releases over time.",
-    coverImage: fluidArt,
-    images: [fluidArt],
+    link: "https://github.com/UtpalDasLabs",
+    coverImage: aiB,
+    images: [aiB],
   },
 ];

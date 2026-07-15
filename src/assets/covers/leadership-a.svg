@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <rect width="600" height="800" fill="#0a0a0a"/>
+  <g fill="#1c1c1c">
+    <rect x="80" y="560" width="70" height="160"/>
+    <rect x="180" y="480" width="70" height="240"/>
+    <rect x="280" y="380" width="70" height="340"/>
+    <rect x="380" y="300" width="70" height="420"/>
+  </g>
+  <rect x="480" y="180" width="70" height="540" fill="#d4ff00"/>
+  <g fill="none" stroke="#555" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round">
+    <path d="M115 540 C160 440 240 420 315 360 C390 300 440 240 515 160"/>
+  </g>
+  <circle cx="115" cy="540" r="7" fill="#888"/>
+  <circle cx="315" cy="360" r="7" fill="#888"/>
+  <circle cx="515" cy="160" r="10" fill="#fff"/>
+  <g stroke="#222" stroke-width="1">
+    <path d="M0 720H600"/>
+  </g>
+  <g fill="#666" font-family="monospace" font-size="14">
+    <text x="40" y="60">ship &gt; slideware</text>
+    <text x="80" y="762">2008</text>
+    <text x="480" y="762">now</text>
+  </g>
+</svg>

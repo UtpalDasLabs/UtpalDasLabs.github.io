@@ -1,73 +1,42 @@
-# Welcome to your Lovable project
+# dasutpal — Portfolio of Utpal Das
 
-## Project info
+Personal portfolio site for **Utpal Das** — Head of Digital Solutions at CUBONIC, Berlin.
+18+ years across digital platforms, marketplaces, connected products, and product strategy.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Live:** https://utpaldaslabs.github.io/dasutpal/
 
-## How can I edit this code?
+## Content
 
-There are several ways of editing your application.
+All career data (positions, projects, skills, recommendations, education) is sourced
+from the public LinkedIn profile and lives as typed data in:
 
-**Use Lovable**
+- `src/data/profile.ts` — positions, education, skills, languages, certifications
+- `src/data/recommendations.ts` — LinkedIn recommendations (featured + full set)
+- `src/data/projects.ts` — project case studies, 2005–present
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Project covers are hand-built abstract SVGs themed per domain (AI systems,
+mobility & marketplaces, industrial & vision, avionics & embedded, leadership)
+in `src/assets/covers/`.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Stack
 
-**Use your preferred IDE**
+- Vite + React 18 + TypeScript
+- Tailwind CSS + shadcn/ui
+- React Router (SPA with GitHub Pages 404 fallback)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm install
+npm run dev        # http://localhost:8080
+npm run build      # production build to dist/
 ```
 
-**Edit a file directly in GitHub**
+## Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Pushes to `main` deploy automatically to GitHub Pages via
+`.github/workflows/deploy.yml`. The production build uses base path `/dasutpal/`.
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Originally scaffolded with Lovable; finished with Claude Code.

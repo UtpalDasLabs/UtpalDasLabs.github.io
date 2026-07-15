@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Mail, Linkedin, Github } from "lucide-react";
+import contactCover from "@/assets/covers/ai-b.svg";
 
 const Contact = () => {
   return (
@@ -59,8 +60,8 @@ const Contact = () => {
           <div className="hidden lg:block">
             <div className="aspect-[4/5] bg-secondary overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=800&h=1000&fit=crop"
-                alt="Contact"
+                src={contactCover}
+                alt=""
                 className="w-full h-full object-cover"
               />
             </div>
