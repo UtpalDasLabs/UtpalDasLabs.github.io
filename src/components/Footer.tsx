@@ -36,11 +36,14 @@ export function Footer({ variant = "default" }: FooterProps) {
             <div className="space-y-3">
               <p className="text-label">Contact</p>
               <div className="text-sm text-foreground space-y-1">
-                <a href="mailto:hello@utpaldas.com" className="block hover:text-accent transition-colors">
-                  hello@utpaldas.com
+                <a href="mailto:utpal.inbox@hotmail.com" className="block hover:text-accent transition-colors">
+                  utpal.inbox@hotmail.com
                 </a>
                 <a href="https://www.linkedin.com/in/iamdasutpal/" target="_blank" rel="noopener noreferrer" className="block hover:text-accent transition-colors">
                   LinkedIn
+                </a>
+                <a href="https://github.com/UtpalDasLabs" target="_blank" rel="noopener noreferrer" className="block hover:text-accent transition-colors">
+                  GitHub
                 </a>
               </div>
             </div>
