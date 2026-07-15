@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
+import { ExperienceJourney } from "@/components/ExperienceJourney";
 import {
-  positions,
   education,
   skillGroups,
   topEndorsed,
@@ -74,27 +74,9 @@ const About = () => {
             </div>
           </div>
 
-          {/* Experience */}
+          {/* Experience — the journey */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            <h2 className="text-label mb-6">Experience</h2>
-            <div className="space-y-8">
-              {positions.map((item) => (
-                <div key={`${item.company}-${item.title}`} className="border-t border-separator pt-6">
-                  <div className="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1 md:gap-6 mb-2">
-                    <h3 className="text-lg md:text-xl text-foreground">
-                      {item.title} · <span className="text-muted-foreground">{item.company}</span>
-                    </h3>
-                    <p className="text-sm text-muted-foreground whitespace-nowrap">
-                      {item.start} — {item.end ?? "Present"}
-                    </p>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-3">{item.location}</p>
-                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                    {item.summary}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <ExperienceJourney />
           </div>
 
           {/* Skills */}

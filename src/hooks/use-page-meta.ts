@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SITE_URL = "https://utpaldaslabs.github.io/dasutpal";
+const SITE_URL = "https://utpaldaslabs.github.io";
 
 function setMeta(selector: string, attr: string, value: string) {
   const el = document.head.querySelector<HTMLMetaElement>(selector);

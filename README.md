@@ -3,7 +3,7 @@
 Personal portfolio site for **Utpal Das** — Head of Digital Solutions at CUBONIC, Berlin.
 18+ years across digital platforms, marketplaces, connected products, and product strategy.
 
-**Live:** https://utpaldaslabs.github.io/dasutpal/
+**Live:** https://utpaldaslabs.github.io/
 
 ## Content
 
@@ -35,7 +35,7 @@ npm run build      # production build to dist/
 ## Deployment
 
 Pushes to `main` deploy automatically to GitHub Pages via
-`.github/workflows/deploy.yml`. The production build uses base path `/dasutpal/`.
+`.github/workflows/deploy.yml`, served at the root user site.
 
 ---
 
