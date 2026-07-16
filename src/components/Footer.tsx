@@ -10,6 +10,30 @@ export function Footer({ variant = "default" }: FooterProps) {
   if (variant === "echelon") {
     return (
       <footer className="border-t border-separator mt-auto">
+        {/* Big CTA */}
+        <div className="container-wide py-16 md:py-24 border-b border-separator">
+          <p className="mb-6 font-mono text-xs uppercase tracking-[0.3em] text-accent">
+            Next chapter
+          </p>
+          <Link
+            to="/contact"
+            className="group inline-flex flex-wrap items-baseline gap-x-4 gap-y-2 font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground transition-colors hover:text-accent"
+          >
+            <span>Let's build</span>
+            <span className="text-accent">something.</span>
+            <span
+              aria-hidden="true"
+              className="inline-block transition-transform group-hover:translate-x-2"
+            >
+              →
+            </span>
+          </Link>
+          <p className="mt-6 max-w-xl text-base text-muted-foreground">
+            AI strategy, local LLMs, agentic systems, or something else at the
+            seam of humans + models — get in touch.
+          </p>
+        </div>
+
         {/* Main Footer Content */}
         <div className="container-wide py-12 md:py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
