@@ -47,6 +47,9 @@ const About = () => {
         <div className="max-w-3xl space-y-16">
           {/* Intro */}
           <div>
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-accent">
+              About · Berlin · 2026
+            </p>
             <h1 className="text-display mb-4 animate-fade-in-up">About</h1>
 
             {/* Tagline */}
