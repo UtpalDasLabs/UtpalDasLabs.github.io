@@ -54,10 +54,31 @@ export function Header({ revealMode = false }: HeaderProps) {
       <div className="container-wide relative">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
-          <Link 
-            to="/" 
-            className="font-display text-lg font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
+          <Link
+            to="/"
+            className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
           >
+            <svg
+              viewBox="0 0 64 64"
+              className="h-7 w-7"
+              role="img"
+              aria-label="UD monogram"
+            >
+              <path
+                d="M14 14 V34 A11 11 0 0 0 36 34 V14"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="7"
+                strokeLinecap="round"
+              />
+              <path
+                d="M36 14 V50 M36 14 C53 15 53 49 36 50"
+                fill="none"
+                stroke="hsl(var(--accent))"
+                strokeWidth="7"
+                strokeLinecap="round"
+              />
+            </svg>
             Utpal Das
           </Link>
 
