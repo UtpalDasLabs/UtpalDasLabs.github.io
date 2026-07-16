@@ -55,10 +55,10 @@ export function CinematicBackground({
     let raf = 0;
     let t = 0;
 
-    // Read accent color from CSS var (cyan)
+    // Read accent color from CSS var (site accent)
     const accent = getComputedStyle(document.documentElement)
       .getPropertyValue("--accent")
-      .trim() || "190 100% 50%";
+      .trim() || "66 100% 50%";
     const stroke = `hsl(${accent} / ${0.55 * intensity})`;
     const dot = `hsl(${accent} / ${0.9 * intensity})`;
 
@@ -73,7 +73,7 @@ export function CinematicBackground({
 
     const drawMesh = () => {
       ctx.clearRect(0, 0, width, height);
-      // Slow radial cyan wash
+      // Slow radial accent wash
       const g = ctx.createRadialGradient(
         width * 0.5,
         height * 0.55,

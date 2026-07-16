@@ -50,14 +50,14 @@ const Index = () => {
               ))}
             </h1>
 
-            {/* "Since — 2007" mid-strip */}
+            {/* Tagline mid-strip */}
             <div
               className="kinetic-letter flex items-center gap-3 py-1"
               style={{ animationDelay: "0.7s" }}
             >
               <span className="h-px w-8 bg-accent md:w-14" />
               <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-foreground/70 md:text-xs">
-                Since — 2007
+                Father · Builder · Problem Solver
               </span>
               <span className="h-px w-8 bg-accent md:w-14" />
             </div>

@@ -16,6 +16,7 @@ interface Chapter {
   label: string;
   title: string;
   note: string;
+  skills: string[];
   match: (p: Position) => boolean;
 }
 
@@ -24,7 +25,8 @@ const chapters: Chapter[] = [
   {
     label: "Chapter 01",
     title: "The Engineer",
-    note: "India → Germany · C++, CAD kernels, machine vision",
+    note: "India → Germany",
+    skills: ["C++", "CAD Kernels", "DO-178B Avionics", "Machine Vision", "Robotics"],
     match: (p) =>
       p.company === "Tata Consultancy Services" ||
       (p.company === "MERZ Group" && p.title === "Engineering Lead"),
@@ -33,6 +35,7 @@ const chapters: Chapter[] = [
     label: "Chapter 02",
     title: "The Product Leader",
     note: "Metrology floors → car subscriptions → Europe's largest car marketplace",
+    skills: ["B2B Platforms", "Marketplaces", "Unit Economics", "Neural Nets in Production"],
     match: (p) =>
       (p.company === "MERZ Group" && p.title !== "Engineering Lead") ||
       ["Cluno", "Cazoo", "AutoScout24"].includes(p.company),
@@ -40,7 +43,8 @@ const chapters: Chapter[] = [
   {
     label: "Chapter 03",
     title: "The AI Builder",
-    note: "Advisory boards, local LLMs, agentic systems",
+    note: "Advisory boards → head of digital",
+    skills: ["Local LLMs", "Agentic Systems", "AI Strategy", "GTM"],
     match: (p) => ["HirePlusPlus", "CUBONIC"].includes(p.company),
   },
 ];
@@ -111,7 +115,7 @@ export function ExperienceJourney() {
           if (stops.length === 0) return null;
           return (
             <section key={chapter.title} aria-label={`${chapter.label}: ${chapter.title}`}>
-              <div className="mb-6 flex flex-wrap items-baseline gap-x-4 gap-y-1">
+              <div className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
                 <span className="font-mono text-xs tracking-widest text-muted-foreground">
                   {chapter.label}
                 </span>
@@ -119,6 +123,17 @@ export function ExperienceJourney() {
                   {chapter.title}
                 </h3>
                 <span className="text-sm text-muted-foreground">{chapter.note}</span>
+              </div>
+              {/* Skills earned in this era */}
+              <div className="mb-6 flex flex-wrap gap-2">
+                {chapter.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="border border-separator px-2.5 py-0.5 text-[10px] uppercase tracking-widest text-muted-foreground"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
 
               {/* Route line */}
