@@ -5,6 +5,7 @@ import { Layout } from "@/components/Layout";
 import { ExperienceJourney } from "@/components/ExperienceJourney";
 import { skillGroups, topEndorsed } from "@/data/profile";
 import { recommendations } from "@/data/recommendations";
+import { siteCopy } from "@/data/site";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 const taglineWords = ["Father", "Builder", "Problem Solver"];

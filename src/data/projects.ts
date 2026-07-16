@@ -32,6 +32,7 @@ export interface Project {
   year: string;
   companies: Company[];
   description: string;
+  story?: string[];
   link?: string;
   coverImage: string;
   coverVideo?: string;
@@ -46,5 +47,6 @@ export const projects: Project[] = projectsRaw.projects.map((p) => ({
     .filter(Boolean),
   link: p.link ?? undefined,
   coverVideo: p.coverVideo ?? undefined,
+  story: (p as { story?: string[] }).story ?? undefined,
   images: [p.coverImage],
 }));

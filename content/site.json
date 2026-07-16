@@ -9,6 +9,30 @@
   "manifestoEnd": "That's the bar",
   "manifestoAccent": "AI has to clear.",
   "manifestoFootnote": "— the thesis behind everything below.",
+  "dreamLabel": "The next dream",
+  "dreamLine": "One day, governments will build correctional facilities for bad agents.",
+  "dreamAccent": "I'd like to build them.",
+  "pillars": [
+    {
+      "title": "Transparency",
+      "note": "Say what's true, even when it's inconvenient. It's how trust starts."
+    },
+    {
+      "title": "Trust",
+      "note": "I don't trust words. I trust work. Judge people — and yourself — by what ships."
+    },
+    {
+      "title": "Positivity",
+      "note": "Momentum beats perfection. Failures are the team's; wins are the team's."
+    }
+  ],
+  "signatureQuotes": [
+    "Problem-obsessed, not solution-obsessed.",
+    "Save cost. Save time. That's what an engineer does.",
+    "MLP, not MVP — Most Lovable Product.",
+    "We failed as a team. We succeeded as a team.",
+    "Flying a rocket ship while it's being built."
+  ],
   "contactEmail": "utpal.inbox@hotmail.com",
   "linkedin": "https://www.linkedin.com/in/iamdasutpal/",
   "github": "https://github.com/UtpalDasLabs",
