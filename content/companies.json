@@ -1,0 +1,88 @@
+{
+  "companies": [
+    {
+      "key": "cubonic",
+      "name": "CUBONIC",
+      "url": "https://cubonic.de",
+      "logo": "/logos/cubonic.png"
+    },
+    {
+      "key": "autoscout24",
+      "name": "AutoScout24",
+      "url": "https://www.autoscout24.de",
+      "logo": "/logos/autoscout24.png"
+    },
+    {
+      "key": "cazoo",
+      "name": "Cazoo",
+      "url": "https://www.cazoo.co.uk",
+      "logo": "/logos/cazoo.png"
+    },
+    {
+      "key": "cluno",
+      "name": "Cluno",
+      "url": "https://www.cazoo.co.uk",
+      "logo": null
+    },
+    {
+      "key": "zeissImt",
+      "name": "Carl Zeiss IMT GmbH",
+      "url": "https://www.zeiss.com/metrology",
+      "logo": "/logos/zeiss.png"
+    },
+    {
+      "key": "semiClient",
+      "name": "Semiconductor industry",
+      "url": null,
+      "logo": null
+    },
+    {
+      "key": "clampingClient",
+      "name": "Clamping-technology manufacturer",
+      "url": null,
+      "logo": null
+    },
+    {
+      "key": "tcs",
+      "name": "Tata Consultancy Services",
+      "url": "https://www.tcs.com",
+      "logo": "/logos/tcs.png"
+    },
+    {
+      "key": "extend3d",
+      "name": "Extend3D",
+      "url": "https://www.extend3d.com",
+      "logo": "/logos/extend3d.svg"
+    },
+    {
+      "key": "nal",
+      "name": "National Aerospace Laboratories",
+      "url": "https://www.nal.res.in",
+      "logo": null
+    },
+    {
+      "key": "meggitt",
+      "name": "Meggitt",
+      "url": "https://www.meggitt.com",
+      "logo": null
+    },
+    {
+      "key": "negele",
+      "name": "Anderson-Negele",
+      "url": "https://www.anderson-negele.com",
+      "logo": "/logos/anderson-negele.png"
+    },
+    {
+      "key": "hireplusplus",
+      "name": "HirePlusPlus",
+      "url": "https://hireplusplus.com",
+      "logo": null
+    },
+    {
+      "key": "labs",
+      "name": "UtpalDasLabs",
+      "url": "https://github.com/UtpalDasLabs",
+      "logo": null
+    }
+  ]
+}

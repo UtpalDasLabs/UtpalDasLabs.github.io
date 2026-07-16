@@ -4,8 +4,10 @@ import { Layout } from "@/components/Layout";
 import { CinematicBackground } from "@/components/CinematicBackground";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
-const firstName = "UTPAL";
-const lastName = "DAS";
+import { siteCopy } from "@/data/site";
+
+const firstName = siteCopy.heroFirstName;
+const lastName = siteCopy.heroLastName;
 
 const Index = () => {
   usePageMeta(
@@ -57,7 +59,7 @@ const Index = () => {
             >
               <span className="h-px w-8 bg-accent md:w-14" />
               <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-foreground/70 md:text-xs">
-                Father · Builder · Problem Solver
+                {siteCopy.tagline}
               </span>
               <span className="h-px w-8 bg-accent md:w-14" />
             </div>
@@ -83,12 +85,10 @@ const Index = () => {
           style={{ animationDelay: "1.4s", animationFillMode: "forwards" }}
         >
           <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
-            Head of Digital Solutions · CUBONIC
+            {siteCopy.heroRole}
           </p>
           <p className="text-sm leading-relaxed text-foreground/80 md:text-base">
-            18+ years shipping software that had to work — cockpit displays,
-            robot metrology, Europe's largest car marketplace. Now I hold AI
-            to the same bar.
+            {siteCopy.heroBio}
           </p>
         </div>
 
@@ -124,15 +124,13 @@ const Index = () => {
             02 / 06 · MANIFESTO
           </p>
           <blockquote className="font-display text-3xl font-semibold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            <span className="text-foreground">Planes. Production lines. Marketplaces.</span>{" "}
-            <span className="text-foreground/60">
-              Eighteen years of software that had to work.
-            </span>{" "}
-            <span className="text-foreground">That's the bar</span>{" "}
-            <span className="text-accent">AI has to clear.</span>
+            <span className="text-foreground">{siteCopy.manifestoLead}</span>{" "}
+            <span className="text-foreground/60">{siteCopy.manifestoMiddle}</span>{" "}
+            <span className="text-foreground">{siteCopy.manifestoEnd}</span>{" "}
+            <span className="text-accent">{siteCopy.manifestoAccent}</span>
           </blockquote>
           <p className="mt-10 text-sm text-muted-foreground">
-            — the thesis behind everything below.
+            {siteCopy.manifestoFootnote}
           </p>
           <Link
             to="/work"

@@ -1,0 +1,164 @@
+# Pages CMS schema — https://pagescms.org
+# Edit this site's content at https://app.pagescms.org (sign in with GitHub).
+# Every save commits to this repo; the GitHub Pages workflow redeploys in ~2 min.
+
+media:
+  input: public
+  output: /
+
+content:
+  - name: site
+    label: Site & Hero Copy
+    type: file
+    path: content/site.json
+    fields:
+      - { name: heroFirstName, label: Hero first name, type: string }
+      - { name: heroLastName, label: Hero last name (accent color), type: string }
+      - { name: tagline, label: Tagline strip, type: string }
+      - { name: heroRole, label: Hero role line, type: string }
+      - { name: heroBio, label: Hero bio, type: text }
+      - { name: manifestoLead, label: Manifesto — line 1, type: string }
+      - { name: manifestoMiddle, label: Manifesto — line 2 (muted), type: string }
+      - { name: manifestoEnd, label: Manifesto — line 3, type: string }
+      - { name: manifestoAccent, label: Manifesto — line 4 (accent), type: string }
+      - { name: manifestoFootnote, label: Manifesto footnote, type: string }
+      - { name: contactEmail, label: Contact email, type: string }
+      - { name: linkedin, label: LinkedIn URL, type: string }
+      - { name: github, label: GitHub URL, type: string }
+      - { name: location, label: Location, type: string }
+
+  - name: projects
+    label: Projects
+    type: file
+    path: content/projects.json
+    list: false
+    fields:
+      - name: projects
+        label: Project
+        type: object
+        list: true
+        fields:
+          - { name: id, label: URL slug (lowercase-hyphens), type: string }
+          - { name: title, label: Title, type: string }
+          - name: category
+            label: Category
+            type: select
+            options:
+              values:
+                - AI Systems
+                - Mobility & Marketplaces
+                - Industrial & Vision
+                - Avionics & Embedded
+                - Leadership
+          - { name: year, label: Year(s), type: string }
+          - { name: tags, label: Tags, type: string, list: true }
+          - { name: companies, label: Company keys (see companies.json), type: string, list: true }
+          - { name: description, label: Description, type: text }
+          - { name: link, label: External link (optional), type: string, required: false }
+          - { name: coverImage, label: Cover image / SVG, type: image }
+          - { name: coverVideo, label: Cover video (optional), type: file, required: false }
+
+  - name: recommendations
+    label: Recommendations (Kind Words)
+    type: file
+    path: content/recommendations.json
+    list: false
+    fields:
+      - name: recommendations
+        label: Recommendation
+        type: object
+        list: true
+        fields:
+          - { name: author, label: Author, type: string }
+          - { name: role, label: Role & company, type: string }
+          - { name: context, label: Context (how you worked together), type: string }
+          - { name: company, label: Company (for filter), type: string }
+          - { name: quote, label: Quote, type: text }
+          - { name: featured, label: Featured?, type: boolean }
+
+  - name: profile
+    label: Profile (Experience & Skills)
+    type: file
+    path: content/profile.json
+    fields:
+      - { name: headline, label: LinkedIn headline, type: text }
+      - name: positions
+        label: Positions
+        type: object
+        list: true
+        fields:
+          - { name: company, label: Company, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: location, label: Location, type: string }
+          - { name: start, label: Start (e.g. Feb 2024), type: string }
+          - { name: end, label: End (blank = present), type: string, required: false }
+          - { name: summary, label: Summary, type: text }
+      - name: skillGroups
+        label: Skill groups
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Group label, type: string }
+          - { name: skills, label: Skills, type: string, list: true }
+      - name: topEndorsed
+        label: Top endorsed skills
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Skill, type: string }
+          - { name: count, label: Endorsement count, type: number }
+      - name: languages
+        label: Languages
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Language, type: string }
+          - { name: level, label: Level, type: string }
+      - name: education
+        label: Education
+        type: object
+        list: true
+        fields:
+          - { name: school, label: School, type: string }
+          - { name: degree, label: Degree, type: string }
+          - { name: period, label: Period, type: string }
+          - { name: activities, label: Activities, type: string, required: false }
+      - name: certifications
+        label: Certifications
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: authority, label: Authority, type: string }
+          - { name: year, label: Year, type: string }
+      - name: honors
+        label: Honors
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: issued, label: Issued by / year, type: string }
+      - name: volunteering
+        label: Volunteering
+        type: object
+        list: true
+        fields:
+          - { name: org, label: Organisation, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: cause, label: Cause, type: string }
+          - { name: since, label: Since, type: string, required: false }
+
+  - name: companies
+    label: Companies (logos & links)
+    type: file
+    path: content/companies.json
+    fields:
+      - name: companies
+        label: Company
+        type: object
+        list: true
+        fields:
+          - { name: key, label: Key (referenced by projects), type: string }
+          - { name: name, label: Name, type: string }
+          - { name: url, label: URL, type: string, required: false }
+          - { name: logo, label: Logo, type: image, required: false }

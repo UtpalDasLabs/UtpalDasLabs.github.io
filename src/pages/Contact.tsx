@@ -1,7 +1,9 @@
 import { Layout } from "@/components/Layout";
 import { Mail, Linkedin, Github } from "lucide-react";
-import contactCover from "@/assets/covers/ai-b.svg";
+import { siteCopy } from "@/data/site";
 import { usePageMeta } from "@/hooks/use-page-meta";
+
+const contactCover = "/covers/ai-b.svg";
 
 const Contact = () => {
   usePageMeta(
@@ -27,15 +29,15 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               <a
-                href="mailto:utpal.inbox@hotmail.com"
+                href={`mailto:${siteCopy.contactEmail}`}
                 className="flex items-center gap-4 text-lg hover-highlight group"
               >
                 <Mail size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
-                <span>utpal.inbox@hotmail.com</span>
+                <span>{siteCopy.contactEmail}</span>
               </a>
 
               <a
-                href="https://www.linkedin.com/in/iamdasutpal/"
+                href={siteCopy.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-lg hover-highlight group"
@@ -45,7 +47,7 @@ const Contact = () => {
               </a>
 
               <a
-                href="https://github.com/UtpalDasLabs"
+                href={siteCopy.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 text-lg hover-highlight group"
@@ -58,7 +60,7 @@ const Contact = () => {
             {/* Location */}
             <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
               <p className="text-label mb-2">Based in</p>
-              <p className="text-lg">Berlin, Germany</p>
+              <p className="text-lg">{siteCopy.location}</p>
             </div>
           </div>
 
