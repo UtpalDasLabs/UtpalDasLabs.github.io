@@ -55,7 +55,7 @@ export const positions: Position[] = [
     start: "Aug 2022",
     end: "Jan 2024",
     summary:
-      "Owned the native apps of Europe's largest car marketplace — iOS & Android search, listing and selling experiences serving millions of users across 2M+ vehicle listings.",
+      "Owned vision, strategy and roadmap for the native apps of Europe's largest car marketplace — iOS, Android and all white-label apps (AutoTrader, Gebrauchtwagen.de) — leading 4 senior PMs and 24 engineers. Grew organic user acquisition 30% across European markets, doubled app engagement, improved conversion 23%, and lifted app advertising & media revenue 10%.",
   },
   {
     company: "Cazoo",
@@ -64,7 +64,7 @@ export const positions: Position[] = [
     start: "Jul 2021",
     end: "Aug 2022",
     summary:
-      "After Cazoo's acquisition of Cluno, responsible for product across asset financing and car production.",
+      "After Cazoo's acquisition of Cluno, responsible for product across asset financing, fleet management and car production. Grew subscription revenue 30% and vehicle contribution margin 50%; helped launch the Cazoo retail proposition across 5 European markets and was part of the product leadership team when Cazoo listed on the NYSE in 2021.",
   },
   {
     company: "Cluno",
@@ -73,7 +73,7 @@ export const positions: Position[] = [
     start: "Feb 2019",
     end: "Aug 2022",
     summary:
-      "Led cross-functional teams building the Cluno Partner Platform, digital handover app, purchasing, operations, remarketing, and the Cluno iOS & Android apps for Germany's car-subscription pioneer.",
+      "Owned the end-to-end digital transformation of Germany's car-subscription pioneer — partner platform connecting 131 dealerships plus logistics, refurbisher and assessor partners, digital handover, damage reporting, OCR fine handling, automated invoicing, and the Cluno iOS & Android apps. Cut operating costs ~25% through lean, automated operations.",
   },
   {
     company: "MERZ Group",
@@ -82,7 +82,7 @@ export const positions: Position[] = [
     start: "Sep 2015",
     end: "Jan 2019",
     summary:
-      "Led three departments: atline inspection (application engineering & system testing), optical metrology systems (consulting & application engineering), and software development (architecture, GUI design, development and sales).",
+      "Led 7 software teams building computer-vision products for Carl Zeiss IMT — industrial metrology and car-body measurement — while consulting on manufacturing quality at Porsche, Daimler, VW, Volvo and Ford plants. Architected the core point-cloud processing product, ran business development from first contact to closed deal, and received a Microsoft MVP award.",
   },
   {
     company: "MERZ Group",
@@ -91,7 +91,7 @@ export const positions: Position[] = [
     start: "May 2013",
     end: "Sep 2015",
     summary:
-      "Built CAD reverse-engineering application software (C++/C#/.NET, WPF) for metrology, and engineered automated inspection systems combining computer vision and robotics.",
+      "Built ZEISS Reverse Engineering (C++/C#/WPF on the ACIS kernel) — CAD reverse engineering and tool correction for mould making — and engineered robot-based automated inspection combining optical sensors with FANUC, KUKA and ABB robots.",
   },
   {
     company: "Tata Consultancy Services",
@@ -100,7 +100,7 @@ export const positions: Position[] = [
     start: "Sep 2008",
     end: "May 2013",
     summary:
-      "Software developer — C++ (native & managed), C#/.NET, CAD software development on the ACIS kernel, point-cloud processing, visualization & modeling, and product GUIs in WPF.",
+      "Embedded systems and CAD software across regulated industries: avionics for the SARAS aircraft programme at National Aerospace Laboratories (DO-178B), sensor firmware for Anderson-Negele, assembly-level V&V for Meggitt flight displays — then technical lead building ZEISS Reverse Engineering from scratch, the product that took me to Germany.",
   },
 ];
 
@@ -168,11 +168,15 @@ export const skillGroups: SkillGroup[] = [
       "C++",
       "C#",
       "Python",
+      "TypeScript",
+      "Qt",
+      "OpenCV & Point Clouds",
       "Android",
       "iOS",
+      "Salesforce",
+      "Tableau & Amplitude",
       "SDLC",
       "Agile Project Management",
-      "Software Project Management",
     ],
   },
 ];
@@ -192,6 +196,7 @@ export const topEndorsed: EndorsedSkill[] = [
 
 export const languages = [
   { name: "English", level: "Full professional proficiency" },
+  { name: "Assamese", level: "Native" },
   { name: "Hindi", level: "Full professional proficiency" },
   { name: "German", level: "Professional working proficiency" },
   { name: "Japanese", level: "Elementary proficiency" },
@@ -208,10 +213,16 @@ export const certifications = [
     authority: "FANUC Robotics Deutschland GmbH",
     year: "2015",
   },
+  {
+    name: "DMIS CMM Programming",
+    authority: "ZEISS Academy, Germany",
+    year: "2018",
+  },
 ];
 
 export const honors = [
-  { title: "Service & Commitment Award", issued: "Sep 2011" },
+  { title: "Microsoft MVP Award", issued: "Merz Technologies" },
+  { title: "Service & Commitment Award", issued: "TCS, 2011" },
 ];
 
 export const volunteering = [

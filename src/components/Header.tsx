@@ -44,12 +44,13 @@ export function Header({ revealMode = false }: HeaderProps) {
   };
 
   return (
-    <header 
+    <>
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isVisible 
-          ? 'opacity-100 translate-y-0' 
+        isVisible
+          ? 'opacity-100 translate-y-0'
           : 'opacity-0 -translate-y-full pointer-events-none'
-      }`}
+      } ${isMenuOpen ? 'bg-background' : ''}`}
     >
       <div className="container-wide relative">
         <div className="flex items-center justify-between h-20 md:h-24">
@@ -123,6 +124,7 @@ export function Header({ revealMode = false }: HeaderProps) {
               className="p-2 -mr-2 text-foreground"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -130,24 +132,34 @@ export function Header({ revealMode = false }: HeaderProps) {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      {isMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-20 bg-background z-40 animate-fade-in">
-          <nav className="container-wide py-12 flex flex-col gap-8">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-4xl font-display text-foreground animate-fade-in-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
     </header>
+
+    {/* Mobile Navigation — rendered OUTSIDE the header: the header's reveal
+        transform would otherwise make this fixed overlay position against the
+        80px header box instead of the viewport, leaving links floating
+        transparently over page content. */}
+    {isMenuOpen && (
+      <div
+        className="md:hidden fixed inset-0 z-40"
+        style={{ backgroundColor: "hsl(var(--background))" }}
+      >
+        <nav className="container-wide mt-20 border-t border-separator py-12 flex flex-col gap-8">
+          {navItems.map((item, index) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={() => setIsMenuOpen(false)}
+              className={`text-4xl font-display animate-fade-in-up ${
+                location.pathname === item.path ? "text-accent" : "text-foreground"
+              }`}
+              style={{ animationDelay: `${index * 0.08}s` }}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    )}
+    </>
   );
 }

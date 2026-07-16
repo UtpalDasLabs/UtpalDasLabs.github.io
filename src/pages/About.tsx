@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ThumbsUp } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { ExperienceJourney } from "@/components/ExperienceJourney";
 import { skillGroups, topEndorsed } from "@/data/profile";
@@ -75,20 +75,20 @@ const About = () => {
               style={{ animationDelay: "0.1s" }}
             >
               <p>
-                <span className="text-foreground">Utpal Das</span> is Head of Digital
+                Hi, I'm <span className="text-foreground">Utpal</span> — Head of Digital
                 Solutions at <span className="text-foreground">CUBONIC</span> in Berlin,
-                leading AI strategy, local LLM deployments, and agentic solutions.
+                where I lead AI strategy, local LLM deployments, and agentic solutions.
               </p>
               <p>
-                18+ years across software engineering, product management, and new
-                product introduction — from safety-critical avionics and industrial
-                metrology to Europe's largest car marketplace. I focus on turning
-                frontier AI into pragmatic systems: private by design, useful in
-                production, and aligned with real business outcomes.
+                I've spent 18+ years across software engineering, product management,
+                and new product introduction — from safety-critical avionics and
+                industrial metrology to Europe's largest car marketplace. These days I
+                focus on turning frontier AI into pragmatic systems: private by design,
+                useful in production, and aligned with real business outcomes.
               </p>
               <p>
-                Interests span future mobility, robotics, machine vision, and the
-                intersection of math, physics, and applied ML.
+                Outside of work you'll find me chasing future mobility, robotics,
+                machine vision, and the intersection of math, physics, and applied ML.
               </p>
             </div>
           </div>
@@ -122,7 +122,21 @@ const About = () => {
 
           {/* What I work with — one compact strip */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.35s" }}>
-            <h2 className="text-label mb-6">What I work with</h2>
+            <h2 className="text-label mb-2">What I work with</h2>
+            <p className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
+              <ThumbsUp size={14} aria-hidden="true" className="text-accent" />
+              <span>
+                <span className="text-accent">×N</span> = endorsed N times by colleagues on{" "}
+                <a
+                  href="https://www.linkedin.com/in/iamdasutpal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-4 hover:text-foreground transition-colors"
+                >
+                  LinkedIn
+                </a>
+              </span>
+            </p>
             <div className="flex flex-wrap gap-3">
               {coreSkills.map((skill) => {
                 const count = endorsementCount(skill);
@@ -164,7 +178,7 @@ const About = () => {
               <div className="border-t border-separator pt-4">
                 <dt className="mb-1 uppercase tracking-widest text-muted-foreground text-xs">Languages</dt>
                 <dd>
-                  English &amp; Hindi <span className="text-muted-foreground">· native-level</span> — German{" "}
+                  English, Hindi &amp; Assamese <span className="text-muted-foreground">· native-level</span> — German{" "}
                   <span className="text-muted-foreground">· professional</span> — Japanese{" "}
                   <span className="text-muted-foreground">· basic</span>
                 </dd>
@@ -179,15 +193,16 @@ const About = () => {
               <div className="border-t border-separator pt-4">
                 <dt className="mb-1 uppercase tracking-widest text-muted-foreground text-xs">Certifications &amp; Honors</dt>
                 <dd>
-                  FANUC Robotics &amp; Dual Check Safety <span className="text-muted-foreground">· .NET/WPF</span> —
-                  TCS Service &amp; Commitment Award <span className="text-muted-foreground">(2011)</span>
+                  FANUC Robotics <span className="text-muted-foreground">· DMIS CMM (ZEISS Academy)</span> —
+                  Microsoft MVP Award <span className="text-muted-foreground">· TCS Service &amp; Commitment Award</span>
                 </dd>
               </div>
               <div className="border-t border-separator pt-4">
                 <dt className="mb-1 uppercase tracking-widest text-muted-foreground text-xs">Beyond work</dt>
                 <dd>
                   Greenpeace <span className="text-muted-foreground">· environment</span> — WWF{" "}
-                  <span className="text-muted-foreground">· wildlife</span>
+                  <span className="text-muted-foreground">· wildlife</span> — national-level basketball,
+                  cricket &amp; hammer throw <span className="text-muted-foreground">· 4× U-19 athletics champion</span>
                 </dd>
               </div>
             </dl>
