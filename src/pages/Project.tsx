@@ -2,6 +2,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { projects } from "@/data/projects";
+import { CoverMedia } from "@/components/CoverMedia";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 const Project = () => {
@@ -22,9 +23,8 @@ const Project = () => {
     <Layout noPadding headerRevealMode showEchelonFooter>
       {/* Hero - Full Screen */}
       <section className="relative h-screen overflow-hidden">
-        <img
-          src={project.coverImage}
-          alt={project.title}
+        <CoverMedia
+          project={project}
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-background/50" />

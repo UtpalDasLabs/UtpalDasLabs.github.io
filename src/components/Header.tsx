@@ -39,8 +39,27 @@ export function Header({ revealMode = false }: HeaderProps) {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [revealMode]);
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+  const toggleTheme = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const next = theme === "dark" ? "light" : "dark";
+    const doc = document as Document & {
+      startViewTransition?: (cb: () => void) => void;
+    };
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (doc.startViewTransition && !reduced) {
+      // Circular wipe from the toggle button
+      const rect = e.currentTarget.getBoundingClientRect();
+      document.documentElement.style.setProperty(
+        "--wipe-x",
+        `${rect.left + rect.width / 2}px`,
+      );
+      document.documentElement.style.setProperty(
+        "--wipe-y",
+        `${rect.top + rect.height / 2}px`,
+      );
+      doc.startViewTransition(() => setTheme(next));
+    } else {
+      setTheme(next);
+    }
   };
 
   return (

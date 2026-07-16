@@ -329,6 +329,26 @@
 }
 
 
+/* Theme toggle — circular wipe from the toggle button (View Transitions API) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-new(root) {
+  animation: theme-wipe 0.55s ease-out;
+}
+
+@keyframes theme-wipe {
+  from {
+    clip-path: circle(0px at var(--wipe-x, 50%) var(--wipe-y, 50%));
+  }
+  to {
+    clip-path: circle(150vmax at var(--wipe-x, 50%) var(--wipe-y, 50%));
+  }
+}
+
 /* Respect users who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -86,9 +86,9 @@ const Index = () => {
             Head of Digital Solutions · CUBONIC
           </p>
           <p className="text-sm leading-relaxed text-foreground/80 md:text-base">
-            Designing at the seam where humans keep the judgment and models
-            keep the toil. 18+ years turning frontier tech into products people
-            actually trust.
+            18+ years shipping software that had to work — cockpit displays,
+            robot metrology, Europe's largest car marketplace. Now I hold AI
+            to the same bar.
           </p>
         </div>
 
@@ -124,13 +124,15 @@ const Index = () => {
             02 / 06 · MANIFESTO
           </p>
           <blockquote className="font-display text-3xl font-semibold leading-tight tracking-tight md:text-5xl lg:text-6xl">
-            <span className="text-foreground">Humans keep the judgment.</span>{" "}
-            <span className="text-foreground/60">Models keep the toil.</span>{" "}
-            <span className="text-foreground">The interface earns trust</span>{" "}
-            <span className="text-accent">through delight.</span>
+            <span className="text-foreground">Planes. Production lines. Marketplaces.</span>{" "}
+            <span className="text-foreground/60">
+              Eighteen years of software that had to work.
+            </span>{" "}
+            <span className="text-foreground">That's the bar</span>{" "}
+            <span className="text-accent">AI has to clear.</span>
           </blockquote>
           <p className="mt-10 text-sm text-muted-foreground">
-            — the working thesis behind everything below.
+            — the thesis behind everything below.
           </p>
           <Link
             to="/work"

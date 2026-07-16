@@ -54,6 +54,7 @@ export interface Project {
   description: string;
   link?: string;
   coverImage: string;
+  coverVideo?: string;
   images: string[];
 }
 
@@ -81,6 +82,7 @@ export const projects: Project[] = [
     description:
       "Head of Product for the native apps of Europe's largest car marketplace — search, favorites, price-drop alerts, dealer contact and selling flows across 2M+ listings, plus the AutoTrader and Gebrauchtwagen.de white-label apps. Led 4 senior PMs and 24 engineers; grew organic user acquisition 30% across European markets, doubled engagement, improved conversion 23% and lifted app advertising revenue 10%.",
     link: "https://www.autoscout24.de/",
+    coverVideo: "/videos/as24.mp4",
     coverImage: mobilityA,
     images: [mobilityA],
   },
@@ -105,6 +107,7 @@ export const projects: Project[] = [
     companies: [companies.cluno],
     description:
       "One platform connecting Cluno with its whole partner ecosystem — 131 dealerships, logistics carriers, refurbishers and vehicle assessors across Germany, with 100% dealership adoption and nearly 1,000 vehicles ordered through it. Order confirmation, scheduling, digital handover protocols, invoicing, one-click remarketing auctions via Auto1 and vehicle-health reporting replaced email-and-spreadsheet workflows, letting a lean operations team run a growing subscription fleet. Cluno was later acquired by Cazoo.",
+    coverVideo: "/videos/cluno-app.mp4",
     coverImage: mobilityB,
     images: [mobilityB],
   },
@@ -130,6 +133,7 @@ export const projects: Project[] = [
     companies: [companies.cazoo],
     description:
       "After Cazoo's acquisition of Cluno, led product for asset financing, fleet management and car production — the systems that financed and tracked the subscription fleet. Contributed to a 30% rise in subscription revenue and a 50% improvement in vehicle contribution margin, and supported the Cazoo retail launch across 5 European markets.",
+    coverVideo: "/videos/hub-check.mp4",
     coverImage: mobilityB,
     images: [mobilityB],
   },
@@ -167,6 +171,7 @@ export const projects: Project[] = [
     description:
       "A three-step digital protocol replacing paper checklists for every vehicle transaction — 3,700+ digital handovers, 54% of them home deliveries, and a beta rollout with 100% successful handovers. Real-time handover status in Salesforce, plus in-app damage reporting with dynamic questionnaires, photos and location sharing that cut per-unit repair costs 5–10%.",
     link: "https://apps.apple.com/de/app/cluno-auto-abo/id1434401969",
+    coverVideo: "/videos/handover.mp4",
     coverImage: mobilityA,
     images: [mobilityA],
   },
@@ -179,6 +184,7 @@ export const projects: Project[] = [
     companies: [companies.cluno, companies.cazoo],
     description:
       "The systems behind lean operations: a work-order management system mapping every job and invoice line item across logistics, maintenance, repair and inspection; OCR-based fine handling from scanned police notice to customer invoice; automated monthly invoicing; on-demand vehicle-health reports; S&OP and mid-mile planning; and the Glide Intake app for VIN-scan check-in. Net effect: over 80% less manual effort on vehicle availability alone.",
+    coverVideo: "/videos/glide-intake.mp4",
     coverImage: mobilityB,
     images: [mobilityB],
   },
@@ -192,6 +198,7 @@ export const projects: Project[] = [
     description:
       "Robot-mounted optical measurement cell inspecting car-body parts next to the production line for Carl Zeiss IMT. Product owner, application engineer and software release manager from hardware & software requirements to release — piloted at Porsche Weissach and Daimler Sindelfingen, with cells in Germany, Shanghai and Detroit.",
     link: "https://pages.zeiss.com/RIM_AIBox_Info.html",
+    coverVideo: "/videos/ai-box.mp4",
     coverImage: engineeringA,
     images: [engineeringA],
   },
@@ -202,6 +209,7 @@ export const projects: Project[] = [
     tags: ["CAD", "COMPUTER VISION"],
     year: "2011–2017",
     companies: [companies.zeissImt],
+    link: "https://www.zeiss.de/messtechnik/software/zeiss-reverse-engineering.html",
     description:
       "ZEISS Reverse Engineering — CAD reverse engineering and tool correction for mould making, built on point-cloud processing and BRep modelling (ACIS kernel). Technical lead from the first line of code at TCS, then owner through requirements, architecture, release, sales and support at MERZ for Carl Zeiss IMT. Followed by Merz CAD Workmate, an in-house CAD app later ported to Android and Microsoft HoloLens for holographic on-part reverse engineering.",
     coverImage: engineeringA,

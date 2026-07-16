@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { CinematicBackground } from "@/components/CinematicBackground";
+import { CoverMedia } from "@/components/CoverMedia";
 import { projects, type Domain } from "@/data/projects";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
@@ -174,15 +175,17 @@ const Work = () => {
                   )}
                 </div>
 
-                {/* Cover media */}
-                <div className="mt-10 aspect-[16/9] w-full overflow-hidden border border-separator">
-                  <img
-                    src={project.coverImage}
-                    alt=""
-                    className="h-full w-full object-cover opacity-90 transition-transform duration-700 hover:scale-[1.02]"
-                    loading="lazy"
+                {/* Cover media — real product footage where we have it */}
+                <Link
+                  to={`/work/${project.id}`}
+                  data-cursor-label="View"
+                  className="mt-10 block aspect-[16/9] w-full overflow-hidden border border-separator"
+                >
+                  <CoverMedia
+                    project={project}
+                    className="h-full w-full object-cover object-top opacity-90 transition-transform duration-700 hover:scale-[1.02]"
                   />
-                </div>
+                </Link>
               </div>
             </div>
           </article>
