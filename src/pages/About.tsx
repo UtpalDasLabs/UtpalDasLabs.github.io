@@ -96,6 +96,51 @@ const About = () => {
             </div>
           </div>
 
+          {/* Currently — signature card */}
+          <div
+            className="animate-fade-in-up border border-separator p-6 md:p-8"
+            style={{ animationDelay: "0.15s" }}
+          >
+            <p className="text-label mb-6">Currently</p>
+            <dl className="grid grid-cols-1 gap-4 text-sm md:grid-cols-3">
+              <div>
+                <dt className="mb-1 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                  Role
+                </dt>
+                <dd className="text-foreground">
+                  Head of Digital Solutions
+                  <span className="block text-muted-foreground">CUBONIC · Berlin</span>
+                </dd>
+              </div>
+              <div>
+                <dt className="mb-1 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                  Building
+                </dt>
+                <dd className="text-foreground">
+                  Agentic AI, local LLMs
+                  <span className="block text-muted-foreground">Private by design</span>
+                </dd>
+              </div>
+              <div>
+                <dt className="mb-1 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                  Tinkering
+                </dt>
+                <dd className="text-foreground">
+                  <a
+                    href="https://github.com/UtpalDasLabs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-accent transition-colors"
+                  >
+                    UtpalDasLabs
+                  </a>
+                  <span className="block text-muted-foreground">Weekend workshop</span>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+
           {/* Experience — the journey */}
           <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
             <ExperienceJourney />
