@@ -1,80 +1,72 @@
-## What's great about andrewcunliffe.ai
+# Incorporate the podcast-style interview into the portfolio
 
-A quick teardown so we're aligned on what to steal (respectfully):
+The transcript is a long, chronological "case study interview" that pulls out things a static CV can't — the *why* behind each project, leadership moments, culture-shock lessons, and a personal operating system. Here's what's worth lifting and where it should live.
 
-**1. Signature intro sequence**
-- A slow "01 / 04 INTRO" counter with the name unfurling letter-by-letter (`ANDREW … CUNLIFFE`, "Since — 2014" tucked between).
-- A single confident line: *"Designer & agent choreographer building interfaces where AI empowers human intelligence."*
-- Playful anti-rule copy: *"Above the fold was always a dumb rule."* — invites the scroll.
+## 1. A new "Philosophy" strip on the About page
 
-**2. Cinematic background media (the part you loved)**
-- Full-bleed silent looping video / WebGL clips behind hero + between sections.
-- Muted color grade, slow motion, grain overlay — feels like a title sequence, not a stock reel.
-- Media pins while text scrolls over it (scroll-jacked "chapters").
+Three pillars the user explicitly named as the foundation of how he operates:
 
-**3. Numbered case-study chapters**
-- Each project is a full-height chapter with a big `01 · 02 · 03` marker, title, one-sentence pitch, and 2–3 device/screen mockups.
-- "Confidential preview — sign in to view" gating for NDA work — a clever way to show breadth without leaking.
-- Before/After toggle for redesign work (Oddlot, Nexus).
+> **Transparency → Trust → Positivity.**
+> "These are the three pillars I stand and deliver on."
 
-**4. Sidebar "Currently" card**
-- Portrait + three lines: role, side project, community thing. Grounds the person.
+Plus two signature lines that keep resurfacing:
 
-**5. Micro-personality**
-- Pull-quotes in the designer's own voice ("I don't take myself that seriously but admit that sounds cool.").
-- Tiny location/date stamp ("Marin County · 2026").
+- **"Problem-obsessed, not solution-obsessed."** — engineer's job is to save cost or save time; every product he ships is measured against those two.
+- **"MLP, not MVP — Most Lovable Product."** — from the Cluno era; ship small, but ship something people love, because love = trust.
 
----
+Placement: short section under the intro on `/about`, before the "Currently" card. Three tiles for the pillars, then a pull-quote for MLP.
 
-## What to incorporate into your site
+## 2. Project stories rewritten as mini case studies
 
-Mapped to your existing structure (Home / Work / About / Kind Words / Contact):
+Right now each project card is a thematic blurb. The interview gives us the *actual narrative arc* for the real projects, in chronological order. I'd rewrite the `description` fields in `content/projects.json` (and add a `story` field for the detail page) using this material:
 
-### A. Cinematic hero — replace the parallax image grid
-- Full-viewport silent looping background: your choice of
-  - abstract AI/agent visuals (particles, flowing graphs, neural mesh), or
-  - Berlin cityscape B-roll, or
-  - screen-recording montage of your work (LLMs, dashboards, agents in action).
-- Grain + subtle vignette overlay so text stays legible.
-- Kinetic name reveal: `UTPAL` … `DAS` with "Since — 2007" (or your start year) between.
-- One-liner: *"Head of Digital Solutions. Turning agents into products humans trust."*
-- Chapter counter top-left: `01 / 06 · INTRO`.
+| Project | Story beat to add |
+|---|---|
+| **Avionics / Cockpit displays (NAL, TCS, Meggitt)** | First job out of college; software that had to fly. Then six months reviewing UK-written code for McCabe complexity — "boring but sharpened my eye for what should be broken down." |
+| **Anderson food & pharma sensor** | Solo, one-man-army embedded project (2010). Microcontroller as a mini-router — I²C to display, Wi-Fi to subscribers, RS-232 out. First time owning something end-to-end. |
+| **Zeiss Reverse Engineering (TCS → Merz)** | Traveled to Germany at 25 to inherit Prof. Deets' point-cloud-to-surface algorithm; wrote first line of a new CAD system. Later hired 12–25 engineers, then rebuilt the whole thing from scratch when he owned it directly at Merz. **Lesson:** "Judge people by their work, not their words" — from working with Germans. |
+| **Zeiss AIBOX (headlight/robot inspection)** | Traveled to Porsche/Daimler; got FANUC-certified; integrated cameras onto robots on production lines. Ran "LAN parties" across geographies to debug — "leading people to solve a problem, and we failed as a team, succeeded as a team." |
+| **Zeiss Caligo DMS (laser projection)** | The turning point where he stopped being a software person and became a product person. First time customers exposed pain instead of requirements; empathy → solutioning. |
+| **Extend3D** | First time working *with* a startup as effectively their outsourced CTO/CPO. 3D-to-2D projection onto physical objects. |
+| **Fraunhofer CT defect detection** | His **first AI project, 2017** — training a neural net on CT voxel data to catch tiny defects in pipes that a human took a week to find. Pre-Transformer. Kicked off the dream of "write English, get code." |
+| **Cluno** | Built the entire operating engine of a car-subscription company: partner portal, Schufa checks, billing, insurance, refurb, remarketing, logistics, digital handover, plus iOS + Android customer apps. Coined **MLP over MVP.** Two intertwined journeys — customer lifecycle + vehicle lifecycle — as one business engine. Moved the needle on revenue, CAC, and unit economics. |
+| **Cazoo (post-acquisition)** | Cluno acquired by Cazoo; Munich becomes European HQ. Reporting to the Cazoo CPO through the IPO. Built asset financing, first/mid/last-mile vehicle logistics across DE/FR/ES. "Flying a rocket ship while it's being built." |
+| **CUBONIC (current) / AI + agents** | Head of Digital Solutions; agentic AI, local LLMs. The future-facing dream he named on tape: **"correctional facilities for bad agents"** — governments building agent-accountability systems. Bold, memorable, and uniquely his. |
 
-### B. Scroll-driven chapter structure for /work
-- Convert Projects into 6 numbered chapters (Agentic AI, Local LLM Stack, AI Strategy, Mobility, RAG Knowledge, UtpalDasLabs).
-- Each chapter: sticky background video/still + overlaid title, pitch, KPIs, mockups.
-- Add a **Confidential** variant for CUBONIC internal work: blurred preview + "Request access" button that opens contact.
+## 3. New "Signature quotes" that can pepper the site
 
-### C. "Currently" card on About
-- Portrait + three chips: `Head of Digital Solutions — CUBONIC`, `Founder — UtpalDasLabs`, `Local LLM & Agent tinkerer`.
-- Location/date stamp: `Berlin · 2026`.
+Pulled verbatim, ready to use as marquee/pull-quote content:
 
-### D. Signature quote strip
-- One handwritten-style pull-quote per page in your voice (e.g., *"Humans keep the judgment. Models keep the toil."* — adapted to your POV).
+- "I'm a builder at heart, engineer at heart — but I've learned the art of product management by empathizing."
+- "Never do more for less price." *(private, per user's request — do NOT publish)*
+- "My adrenaline rush and dopamine boost are directly linked with problem-solving."
+- "Flying a rocket ship while it's being built."
+- "We failed as a team. We succeeded as a team."
+- "I don't trust words. I trust work."
+- "Save cost. Save time. That's what an engineer does."
 
-### E. Before/After module
-- Perfect for CUBONIC digital transformation stories: a slider showing legacy workflow → AI-augmented workflow.
+I'd slot 2–3 of these into the existing marquee/footer and one big one under the manifesto on Home.
 
-### F. Footer keeps the marquee, add contact CTA
-- Big `LET'S BUILD SOMETHING →` block above the `@IAMDASUTPAL` marquee, linking to contact.
+## 4. A new "Dream" / manifesto note on Home
 
----
+The **agent-accountability** vision is a genuinely differentiating hook for an AI leader's portfolio. Add a short second-paragraph note under the current manifesto, something like:
 
-## Technical approach (for when you say go)
+> "One day, governments will build correctional facilities for bad agents. I'd like to build them."
 
-- **Background media:** `<video autoplay muted loop playsinline>` with a poster image fallback + `prefers-reduced-motion` swap to a static frame. If we want fancier: a lightweight Three.js/R3F shader for the hero only.
-- **Scroll choreography:** Framer Motion (`useScroll` + sticky sections) — no scroll-jack library needed. Reduced-motion friendly.
-- **Chapter counter:** small fixed top-left indicator that updates as sections cross the viewport.
-- **Assets to source:** 3–5 short (6–10s) 1080p loops, ~2–4 MB each after compression, or generate them (I can prompt image/video gen when ready).
-- **Perf guardrails:** lazy-load videos below the fold, serve `.webm` + `.mp4`, cap total hero payload ≈ 3 MB.
+Positions him as an AI *thinker*, not just an operator.
 
----
+## Technical scope
 
-## Open questions before I build
+- Edit `content/site.json` — add pillars + a second manifesto line.
+- Edit `content/projects.json` — rewrite `description`s and add an optional `story` field for the detail page.
+- Update `src/pages/Project.tsx` to render the `story` (multi-paragraph narrative) if present.
+- Add a small `Philosophy` section component on `/about`.
+- Add 2–3 new quotes to the footer marquee.
 
-1. **Background media flavor** — abstract AI visuals, Berlin/travel B-roll, your own screen recordings, or a mix?
-2. **Do we keep the current yellow accent** (`--accent: 66 100% 50%`) or shift to something more cinematic (cold cyan, warm amber)?
-3. **Confidential case studies** — do you want the "sign in / request access" gate, or just replace with public thematic write-ups?
-4. **Scope for round one** — start with just the Home hero + one numbered chapter as a proof, or overhaul Home + Work together?
+**No new dependencies, no schema changes beyond one optional field.** Everything is content + one component.
 
-Answer these and I'll switch to build mode.
+## What I'd like to confirm before building
+
+1. Publish the **"correctional facilities for bad agents"** vision on the home page, or keep it in About / Currently only?
+2. Confirmed private (never publish): the "Never do more for less price" pay story from the Merz head-of-software period.
+3. Rewrite the existing thematic project cards into these **real chronological projects** (Zeiss, Extend3D, Cluno, Cazoo, CUBONIC, Fraunhofer)? That's a bigger content shift than just adding stories to the existing thematic ones.
