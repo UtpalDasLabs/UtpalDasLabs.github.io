@@ -74,16 +74,16 @@ export function CursorRing() {
       style={{ opacity: 0, willChange: "transform" }}
     >
       <div
-        className={`-translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full border border-accent/70 transition-[width,height,background-color] duration-300 ease-out ${
+        className={`-translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full border transition-[width,height,background-color,border-color] duration-300 ease-out ${
           label
-            ? "h-16 w-16 bg-accent"
+            ? "h-14 w-14 border-accent bg-background/60 backdrop-blur-[2px]"
             : hovering
-              ? "h-12 w-12 bg-accent/15"
-              : "h-7 w-7 bg-transparent"
+              ? "h-10 w-10 border-accent/50 bg-transparent"
+              : "h-7 w-7 border-accent/70 bg-transparent"
         }`}
       >
         {label && (
-          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-accent-foreground">
+          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-accent">
             {label}
           </span>
         )}

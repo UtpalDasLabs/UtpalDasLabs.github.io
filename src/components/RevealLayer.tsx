@@ -30,11 +30,17 @@ export function RevealLayer() {
     const target = { x: -400, y: -400, r: 0 };
     let raf = 0;
     let idleTimer: number;
+    // Never obscure things the user wants to click: collapse the reveal
+    // whenever the cursor is over an interactive element.
+    let overInteractive = false;
+    const INTERACTIVE =
+      "a, button, [role='button'], input, select, textarea, label, [data-cursor-label], video";
 
     const onMove = (e: MouseEvent) => {
       target.x = e.clientX;
       target.y = e.clientY;
-      target.r = 160;
+      overInteractive = !!(e.target as Element).closest?.(INTERACTIVE);
+      target.r = overInteractive ? 0 : 160;
       window.clearTimeout(idleTimer);
       idleTimer = window.setTimeout(() => {
         target.r = 0;
@@ -44,7 +50,8 @@ export function RevealLayer() {
     const tick = () => {
       pos.x += (target.x - pos.x) * 0.14;
       pos.y += (target.y - pos.y) * 0.14;
-      pos.r += (target.r - pos.r) * 0.1;
+      // Shrink fast (get out of the way), grow gently
+      pos.r += (target.r - pos.r) * (target.r < pos.r ? 0.35 : 0.1);
       if (layerRef.current) {
         const mask = `radial-gradient(circle ${pos.r}px at ${pos.x}px ${pos.y}px, #000 0%, #000 70%, transparent 100%)`;
         layerRef.current.style.maskImage = mask;
