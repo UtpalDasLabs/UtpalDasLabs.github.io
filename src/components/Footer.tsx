@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { siteCopy } from "@/data/site";
 
 interface FooterProps {
   variant?: "default" | "echelon";
@@ -81,6 +82,27 @@ export function Footer({ variant = "default" }: FooterProps) {
             </div>
           </div>
         </div>
+
+        {/* Signature quotes strip */}
+        {siteCopy.signatureQuotes && siteCopy.signatureQuotes.length > 0 && (
+          <div className="border-t border-separator overflow-hidden py-5">
+            <div className="flex whitespace-nowrap animate-marquee">
+              {Array.from({ length: 3 }).flatMap((_, loop) =>
+                siteCopy.signatureQuotes.map((q, i) => (
+                  <span
+                    key={`${loop}-${i}`}
+                    className="mx-8 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground"
+                  >
+                    {q}
+                    <span aria-hidden="true" className="ml-8 text-accent">
+                      ///
+                    </span>
+                  </span>
+                )),
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Large Scrolling Text */}
         <div className="border-t border-separator overflow-hidden py-6 md:py-8">

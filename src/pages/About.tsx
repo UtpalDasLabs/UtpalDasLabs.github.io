@@ -5,6 +5,7 @@ import { Layout } from "@/components/Layout";
 import { ExperienceJourney } from "@/components/ExperienceJourney";
 import { skillGroups, topEndorsed } from "@/data/profile";
 import { recommendations } from "@/data/recommendations";
+import { siteCopy } from "@/data/site";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 const taglineWords = ["Father", "Builder", "Problem Solver"];
@@ -94,6 +95,33 @@ const About = () => {
                 machine vision, and the intersection of math, physics, and applied ML.
               </p>
             </div>
+          </div>
+
+          {/* Philosophy — three pillars */}
+          <div
+            className="animate-fade-in-up"
+            style={{ animationDelay: "0.12s" }}
+          >
+            <p className="text-label mb-6">Philosophy</p>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+              {siteCopy.pillars.map((p, i) => (
+                <div
+                  key={p.title}
+                  className="border border-separator p-5 transition-colors hover:border-accent/60"
+                >
+                  <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+                    0{i + 1} · {p.title}
+                  </p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {p.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <blockquote className="mt-6 border-l-2 border-accent pl-5 font-display text-lg italic leading-snug text-foreground/85 md:text-xl">
+              "Problem-obsessed, not solution-obsessed. Save cost. Save time.
+              That's what an engineer does."
+            </blockquote>
           </div>
 
           {/* Currently — signature card */}

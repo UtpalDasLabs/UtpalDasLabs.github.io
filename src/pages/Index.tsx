@@ -141,6 +141,25 @@ const Index = () => {
           </Link>
         </div>
       </section>
+
+      {/* Third panel — the dream */}
+      <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden border-t border-separator bg-background px-6 py-24 cinematic-grain cinematic-vignette">
+        <CinematicBackground variant="grid" intensity={0.4} />
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <p className="mb-6 font-mono text-xs uppercase tracking-[0.35em] text-accent">
+            03 / 06 · {siteCopy.dreamLabel}
+          </p>
+          <blockquote className="font-display text-2xl font-semibold leading-snug tracking-tight md:text-4xl lg:text-5xl">
+            <span className="text-foreground/85">{siteCopy.dreamLine}</span>{" "}
+            <span className="text-accent">{siteCopy.dreamAccent}</span>
+          </blockquote>
+          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            The next decade of AI isn't about smarter models. It's about accountable ones —
+            good agents, bad agents, and the systems that catch, correct, and release them.
+            That's the problem I'm obsessed with.
+          </p>
+        </div>
+      </section>
     </Layout>
   );
 };

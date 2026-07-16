@@ -108,11 +108,29 @@ const Project = () => {
             </div>
           </div>
 
-          {/* Description */}
-          <div className="md:col-span-2">
+          {/* Description + Story */}
+          <div className="md:col-span-2 space-y-8">
             <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground">
               {project.description}
             </p>
+
+            {project.story && project.story.length > 0 && (
+              <div className="space-y-6 border-l-2 border-accent/60 pl-6 md:pl-8">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+                  The story
+                </p>
+                {project.story.map((paragraph, i) => (
+                  <p
+                    key={i}
+                    className={`leading-relaxed text-foreground/85 ${
+                      i === 0 ? "text-lg md:text-xl" : "text-base md:text-lg"
+                    }`}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
