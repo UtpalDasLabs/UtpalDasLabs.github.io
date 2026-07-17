@@ -5,23 +5,32 @@ Personal portfolio site for **Utpal Das** — Head of Digital Solutions at CUBON
 
 **Live:** https://utpaldaslabs.github.io/
 
-## Content
+## Editing content (no code)
 
-All career data (positions, projects, skills, recommendations, education) is sourced
-from the public LinkedIn profile and lives as typed data in:
+Content is managed with [Pages CMS](https://pagescms.org) — sign in with GitHub at
+**https://app.pagescms.org**, pick this repo, and edit through forms. Every save
+commits here and redeploys automatically (~2 min).
 
-- `src/data/profile.ts` — positions, education, skills, languages, certifications
-- `src/data/recommendations.ts` — LinkedIn recommendations (featured + full set)
-- `src/data/projects.ts` — project case studies, 2005–present
+Editable collections (`.pages.yml` defines the forms):
 
-Project covers are hand-built abstract SVGs themed per domain (AI systems,
-mobility & marketplaces, industrial & vision, avionics & embedded, leadership)
-in `src/assets/covers/`.
+| Collection | File | What's in it |
+|---|---|---|
+| Site & Hero Copy | `content/site.json` | Hero name, tagline, bio, manifesto, contact details |
+| Projects | `content/projects.json` | Case studies — title, description, tags, cover image/video |
+| Recommendations | `content/recommendations.json` | LinkedIn recommendations shown on Kind Words |
+| Profile | `content/profile.json` | Positions, skills, education, languages, certifications |
+| Companies | `content/companies.json` | Company names, logos and links referenced by projects |
+
+Media (covers, logos, videos) lives in `public/` and can be uploaded through the CMS.
+
+The `src/data/*.ts` modules are thin typed loaders over those JSON files — components
+never read JSON directly, so types stay enforced at build time.
 
 ## Stack
 
 - Vite + React 18 + TypeScript
 - Tailwind CSS + shadcn/ui
+- Lenis smooth scroll, custom cursor + blueprint reveal layer, canvas backgrounds
 - React Router (SPA with GitHub Pages 404 fallback)
 
 ## Development
