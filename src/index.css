@@ -329,6 +329,13 @@
 }
 
 
+/* Text sitting over hero footage — keeps legibility on bright frames
+   without darkening the video further */
+.over-video {
+  text-shadow: 0 2px 18px hsl(var(--background) / 0.9),
+    0 0 4px hsl(var(--background) / 0.7);
+}
+
 /* Theme toggle — circular wipe from the toggle button (View Transitions API) */
 ::view-transition-old(root),
 ::view-transition-new(root) {

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { CinematicBackground } from "@/components/CinematicBackground";
+import { HeroVideo } from "@/components/HeroVideo";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 import { siteCopy } from "@/data/site";
@@ -19,25 +20,25 @@ const Index = () => {
   return (
     <Layout hideFooter noPadding>
       <section className="relative h-screen min-h-[720px] w-full overflow-hidden bg-background cinematic-grain cinematic-vignette">
-        {/* Animated background */}
-        <CinematicBackground variant="mesh" />
+        {/* Career-arc footage behind everything */}
+        <HeroVideo />
 
         {/* Chapter counter — top left */}
         <div className="pointer-events-none absolute left-6 top-24 z-20 md:left-12 md:top-28">
-          <p className="font-mono text-xs tracking-[0.3em] text-foreground/60">
+          <p className="over-video font-mono text-xs tracking-[0.3em] text-foreground/75">
             01 / 06 · INTRO
           </p>
         </div>
 
         {/* Micro-tagline — top right */}
         <div className="pointer-events-none absolute right-6 top-24 z-20 hidden md:block md:right-12 md:top-28">
-          <p className="text-right font-mono text-xs tracking-[0.3em] text-foreground/60">
+          <p className="over-video text-right font-mono text-xs tracking-[0.3em] text-foreground/75">
             BERLIN · 2026
           </p>
         </div>
 
         {/* Kinetic name reveal — centered */}
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
+        <div className="over-video absolute inset-0 z-10 flex flex-col items-center justify-center px-6">
           <div className="flex flex-col items-center gap-2 md:gap-4">
             {/* First name */}
             <h1 className="text-center font-display text-6xl font-bold leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11rem]">
@@ -58,7 +59,7 @@ const Index = () => {
               style={{ animationDelay: "0.7s" }}
             >
               <span className="h-px w-8 bg-accent md:w-14" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-foreground/70 md:text-xs">
+              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-foreground/90 md:text-xs">
                 {siteCopy.tagline}
               </span>
               <span className="h-px w-8 bg-accent md:w-14" />
@@ -81,7 +82,7 @@ const Index = () => {
 
         {/* Bio — bottom left */}
         <div
-          className="absolute bottom-10 left-6 z-10 max-w-xs animate-fade-in-up opacity-0 md:bottom-14 md:left-12 md:max-w-sm"
+          className="over-video absolute bottom-10 left-6 z-10 max-w-xs animate-fade-in-up opacity-0 md:bottom-14 md:left-12 md:max-w-sm"
           style={{ animationDelay: "1.4s", animationFillMode: "forwards" }}
         >
           <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
@@ -94,7 +95,7 @@ const Index = () => {
 
         {/* CTA — bottom right */}
         <div
-          className="absolute bottom-10 right-6 z-10 flex flex-col items-end gap-4 animate-fade-in-up opacity-0 md:bottom-14 md:right-12"
+          className="over-video absolute bottom-10 right-6 z-10 flex flex-col items-end gap-4 animate-fade-in-up opacity-0 md:bottom-14 md:right-12"
           style={{ animationDelay: "1.6s", animationFillMode: "forwards" }}
         >
           <Link
