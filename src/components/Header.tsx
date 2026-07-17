@@ -78,26 +78,36 @@ export function Header({ revealMode = false }: HeaderProps) {
             to="/"
             className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
           >
+            {/* Triple-line UD monogram */}
             <svg
-              viewBox="0 0 64 64"
-              className="h-7 w-7"
+              viewBox="0 0 150 116"
+              className="h-8 w-auto"
               role="img"
               aria-label="UD monogram"
             >
-              <path
-                d="M14 14 V34 A11 11 0 0 0 36 34 V14"
+              <defs>
+                <linearGradient id="ud-gold" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stopColor="#e8c37a" />
+                  <stop offset="45%" stopColor="#f7e2b0" />
+                  <stop offset="100%" stopColor="#b8873c" />
+                </linearGradient>
+              </defs>
+              <g
                 fill="none"
-                stroke="currentColor"
-                strokeWidth="7"
+                stroke="url(#ud-gold)"
+                strokeWidth="2.5"
                 strokeLinecap="round"
-              />
-              <path
-                d="M36 14 V50 M36 14 C53 15 53 49 36 50"
-                fill="none"
-                stroke="hsl(var(--accent))"
-                strokeWidth="7"
-                strokeLinecap="round"
-              />
+                strokeLinejoin="round"
+              >
+                {/* U */}
+                <path d="M14 14 V56 A28 28 0 0 0 70 56 V14" />
+                <path d="M21 14 V56 A21 21 0 0 0 63 56 V14" />
+                <path d="M28 14 V56 A14 14 0 0 0 56 56 V14" />
+                {/* D */}
+                <path d="M74 14 H84 A44 44 0 1 1 84 102 H68 L74 96 V14" />
+                <path d="M81 21 H84 A37 37 0 1 1 84 95 H81 V21" />
+                <path d="M88 28 A30 30 0 1 1 88 88 V28" />
+              </g>
             </svg>
             Utpal Das
           </Link>
