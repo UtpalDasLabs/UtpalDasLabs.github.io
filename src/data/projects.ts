@@ -45,7 +45,6 @@ export interface Project {
    *  projects — most cards use coverImage/coverVideo instead. */
   coverHeadline?: string;
   coverCaption?: string;
-  images: string[];
 }
 
 export const projects: Project[] = projectsRaw.projects.map((p) => ({
@@ -60,5 +59,4 @@ export const projects: Project[] = projectsRaw.projects.map((p) => ({
   story: (p as { story?: string[] }).story ?? undefined,
   coverHeadline: (p as { coverHeadline?: string }).coverHeadline ?? undefined,
   coverCaption: (p as { coverCaption?: string }).coverCaption ?? undefined,
-  images: [p.coverImage],
 }));

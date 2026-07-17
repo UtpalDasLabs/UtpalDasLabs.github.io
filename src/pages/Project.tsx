@@ -1,9 +1,22 @@
 import { useParams, Navigate, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import { projects } from "@/data/projects";
+import { projects, type Domain } from "@/data/projects";
 import { CoverMedia } from "@/components/CoverMedia";
+import { CinematicBackground } from "@/components/CinematicBackground";
 import { usePageMeta } from "@/hooks/use-page-meta";
+
+// Same domain-to-variant pairing the Work page used
+const bgFor = (cat: Domain): "mesh" | "flow" | "grid" => {
+  switch (cat) {
+    case "AI Systems":
+      return "mesh";
+    case "Mobility & Marketplaces":
+      return "flow";
+    default:
+      return "grid";
+  }
+};
 
 const Project = () => {
   const { id } = useParams();
@@ -21,12 +34,18 @@ const Project = () => {
 
   return (
     <Layout noPadding headerRevealMode showEchelonFooter>
-      {/* Hero - Full Screen */}
-      <section className="relative h-screen overflow-hidden">
-        <CoverMedia
-          project={project}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+      {/* Hero — real footage when we have it; otherwise the animated
+          domain background instead of a sparse static SVG blown up
+          to full screen */}
+      <section className="relative h-screen overflow-hidden cinematic-grain cinematic-vignette">
+        {project.coverVideo || project.coverPoster ? (
+          <CoverMedia
+            project={project}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : (
+          <CinematicBackground variant={bgFor(project.category)} intensity={0.7} />
+        )}
         <div className="absolute inset-0 bg-background/50" />
         
         {/* Centered Title */}
@@ -132,25 +151,6 @@ const Project = () => {
               </div>
             )}
           </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="container-wide pb-24">
-        <div className="space-y-8 md:space-y-12">
-          {project.images.map((image, index) => (
-            <div
-              key={index}
-              className="image-reveal animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <img
-                src={image}
-                alt={`${project.title} - ${index + 1}`}
-                className="w-full"
-              />
-            </div>
-          ))}
         </div>
       </section>
 
