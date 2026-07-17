@@ -22,6 +22,17 @@ content:
       - { name: manifestoEnd, label: Manifesto — line 3, type: string }
       - { name: manifestoAccent, label: Manifesto — line 4 (accent), type: string }
       - { name: manifestoFootnote, label: Manifesto footnote, type: string }
+      - { name: dreamLabel, label: Dream panel — label, type: string }
+      - { name: dreamLine, label: Dream panel — line, type: text }
+      - { name: dreamAccent, label: Dream panel — accent line, type: string }
+      - name: pillars
+        label: Philosophy pillars (About page)
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: note, label: Note, type: text }
+      - { name: signatureQuotes, label: Signature quotes, type: string, list: true }
       - { name: contactEmail, label: Contact email, type: string }
       - { name: linkedin, label: LinkedIn URL, type: string }
       - { name: github, label: GitHub URL, type: string }
@@ -54,6 +65,7 @@ content:
           - { name: tags, label: Tags, type: string, list: true }
           - { name: companies, label: Company keys (see companies.json), type: string, list: true }
           - { name: description, label: Description, type: text }
+          - { name: story, label: The story (one entry per paragraph), type: text, list: true }
           - { name: link, label: External link (optional), type: string, required: false }
           - { name: coverImage, label: Cover image / SVG, type: image }
           - { name: coverVideo, label: Cover video (optional), type: file, required: false }
