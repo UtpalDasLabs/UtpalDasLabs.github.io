@@ -36,6 +36,15 @@ export interface Project {
   link?: string;
   coverImage: string;
   coverVideo?: string;
+  /** Real frame extracted from coverVideo — used as the <video poster> and
+   *  as the fallback image, so a reused abstract SVG never shows before
+   *  playback starts or for reduced-motion users. */
+  coverPoster?: string;
+  /** Bold word/phrase shown on a typographic cover, for projects with no
+   *  video and a generic/reused SVG cover. Only set on a handful of
+   *  projects — most cards use coverImage/coverVideo instead. */
+  coverHeadline?: string;
+  coverCaption?: string;
   images: string[];
 }
 
@@ -47,6 +56,9 @@ export const projects: Project[] = projectsRaw.projects.map((p) => ({
     .filter(Boolean),
   link: p.link ?? undefined,
   coverVideo: p.coverVideo ?? undefined,
+  coverPoster: (p as { coverPoster?: string }).coverPoster ?? undefined,
   story: (p as { story?: string[] }).story ?? undefined,
+  coverHeadline: (p as { coverHeadline?: string }).coverHeadline ?? undefined,
+  coverCaption: (p as { coverCaption?: string }).coverCaption ?? undefined,
   images: [p.coverImage],
 }));

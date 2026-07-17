@@ -42,7 +42,7 @@ export function CoverMedia({ project, className }: { project: Project; className
   if (!project.coverVideo || reduced) {
     return (
       <img
-        src={project.coverImage}
+        src={project.coverPoster ?? project.coverImage}
         alt={`${project.title} cover artwork`}
         className={className}
         loading="lazy"
@@ -55,7 +55,7 @@ export function CoverMedia({ project, className }: { project: Project; className
       ref={videoRef}
       className={className}
       src={project.coverVideo}
-      poster={project.coverImage}
+      poster={project.coverPoster ?? project.coverImage}
       muted
       loop
       playsInline

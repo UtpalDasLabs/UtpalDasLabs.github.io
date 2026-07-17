@@ -4,9 +4,14 @@
       "id": "agentic-platform",
       "title": "Agentic AI Platform",
       "category": "AI Systems",
-      "tags": ["AGENTIC AI", "LLM ORCHESTRATION"],
+      "tags": [
+        "AGENTIC AI",
+        "LLM ORCHESTRATION"
+      ],
       "year": "2025",
-      "companies": ["cubonic"],
+      "companies": [
+        "cubonic"
+      ],
       "description": "An internal platform for building multi-agent workflows on top of local and hosted LLMs — tool use, memory, guardrails, and human-in-the-loop review for mobility and operations teams.",
       "story": [
         "Agents are the next interface — and the next attack surface. Most enterprise AI still stops at chat. We're building past that: multi-agent workflows that can actually reach into tools, remember context, and hand work back to a human when the risk is too high.",
@@ -14,15 +19,22 @@
       ],
       "link": null,
       "coverImage": "/covers/ai-a.svg",
-      "coverVideo": null
+      "coverVideo": null,
+      "coverHeadline": "MULTI-AGENT",
+      "coverCaption": "tool use · memory · guardrails"
     },
     {
       "id": "autoscout24-apps",
       "title": "AutoScout24 Mobile Apps",
       "category": "Mobility & Marketplaces",
-      "tags": ["IOS & ANDROID", "MARKETPLACE"],
+      "tags": [
+        "IOS & ANDROID",
+        "MARKETPLACE"
+      ],
       "year": "2022–2024",
-      "companies": ["autoscout24"],
+      "companies": [
+        "autoscout24"
+      ],
       "description": "Head of Product for the native apps of Europe's largest car marketplace — search, favorites, price-drop alerts, dealer contact and selling flows across 2M+ listings, plus the AutoTrader and Gebrauchtwagen.de white-label apps. Led 4 senior PMs and 24 engineers; grew organic user acquisition 30% across European markets, doubled engagement, improved conversion 23% and lifted app advertising revenue 10%.",
       "story": [
         "Two million listings. Millions of users. One iOS and one Android app carrying the whole marketplace in your pocket — plus the white-label AutoTrader and Gebrauchtwagen.de apps on the same codebase.",
@@ -31,15 +43,21 @@
       ],
       "link": "https://www.autoscout24.de/",
       "coverImage": "/covers/mobility-a.svg",
-      "coverVideo": "/videos/as24.mp4"
+      "coverVideo": "/videos/as24.mp4",
+      "coverPoster": "/videos/posters/as24.jpg"
     },
     {
       "id": "local-llm-stack",
       "title": "Local LLM Stack",
       "category": "AI Systems",
-      "tags": ["LOCAL LLMS", "PRIVACY"],
+      "tags": [
+        "LOCAL LLMS",
+        "PRIVACY"
+      ],
       "year": "2025",
-      "companies": ["cubonic"],
+      "companies": [
+        "cubonic"
+      ],
       "description": "Private, on-prem LLM deployment stack for regulated data — model routing, quantization, evaluation harness, and observability, so sensitive workloads never leave the perimeter.",
       "story": [
         "In 2008, I dreamt of a world where I could type in plain English and get machine code back. In 2017, I trained my first neural net on industrial CT scans. In 2025, that dream is a product problem: how do you deploy it without leaking a single row of regulated data?",
@@ -47,15 +65,22 @@
       ],
       "link": null,
       "coverImage": "/covers/ai-b.svg",
-      "coverVideo": null
+      "coverVideo": null,
+      "coverHeadline": "ON-PREM",
+      "coverCaption": "private by design, zero perimeter exit"
     },
     {
       "id": "cluno-partner-platform",
       "title": "Cluno — Partner Platform & Business Engine",
       "category": "Mobility & Marketplaces",
-      "tags": ["B2B PLATFORM", "OPERATIONS"],
+      "tags": [
+        "B2B PLATFORM",
+        "OPERATIONS"
+      ],
       "year": "2019–2022",
-      "companies": ["cluno"],
+      "companies": [
+        "cluno"
+      ],
       "description": "One platform connecting Cluno with its whole partner ecosystem — 131 dealerships, logistics carriers, refurbishers and vehicle assessors across Germany, with 100% dealership adoption and nearly 1,000 vehicles ordered through it. Order confirmation, scheduling, digital handover protocols, invoicing, one-click remarketing auctions via Auto1 and vehicle-health reporting replaced email-and-spreadsheet workflows, letting a lean operations team run a growing subscription fleet. Cluno was later acquired by Cazoo.",
       "story": [
         "After a decade in embedded systems and industrial software, I made a hard pivot into the cloud. Cluno was the landing site — a small car-subscription startup in Munich with big ambitions and no operating engine.",
@@ -65,15 +90,21 @@
       ],
       "link": null,
       "coverImage": "/covers/mobility-b.svg",
-      "coverVideo": "/videos/cluno-app.mp4"
+      "coverVideo": "/videos/cluno-app.mp4",
+      "coverPoster": "/videos/posters/cluno-app.jpg"
     },
     {
       "id": "apollo-ar-projection",
       "title": "Extend3D — Werklicht AR Projection",
       "category": "Industrial & Vision",
-      "tags": ["AUGMENTED REALITY", "INDUSTRY 4.0"],
+      "tags": [
+        "AUGMENTED REALITY",
+        "INDUSTRY 4.0"
+      ],
       "year": "2017–2018",
-      "companies": ["extend3d"],
+      "companies": [
+        "extend3d"
+      ],
       "description": "Architect and scrum master for Extend3D's Werklicht laser/video projection system — augmented reality that projects CAD data directly onto physical parts on the automotive shop floor. Qt, C++ and the CGM modeler kernel, including a 3D data framework importing GOM, Polyworks and SpaceClaim formats.",
       "story": [
         "Extend3D was three people with a beautiful piece of math — an algorithm to transform 3D into 2D and project it back onto real objects at real scale. They had the hardware and the mathematics. They needed the software and the product thinking.",
@@ -88,9 +119,14 @@
       "id": "asset-financing",
       "title": "Cazoo — Asset Financing & European Rollout",
       "category": "Mobility & Marketplaces",
-      "tags": ["FINTECH", "AUTOMOTIVE"],
+      "tags": [
+        "FINTECH",
+        "AUTOMOTIVE"
+      ],
       "year": "2021–2022",
-      "companies": ["cazoo"],
+      "companies": [
+        "cazoo"
+      ],
       "description": "After Cazoo's acquisition of Cluno, led product for asset financing, fleet management and car production — the systems that financed and tracked the subscription fleet. Contributed to a 30% rise in subscription revenue and a 50% improvement in vehicle contribution margin, and supported the Cazoo retail launch across 5 European markets.",
       "story": [
         "Cluno was acquired by Cazoo mid-flight. Munich became the European HQ. Overnight I was reporting into the Cazoo CPO, in the room for the IPO conversations, with equity that suddenly meant working for yourself as well as the company.",
@@ -99,15 +135,23 @@
       ],
       "link": null,
       "coverImage": "/covers/mobility-b.svg",
-      "coverVideo": "/videos/hub-check.mp4"
+      "coverVideo": "/videos/hub-check.mp4",
+      "coverPoster": "/videos/posters/hub-check.jpg"
     },
     {
       "id": "eicas-avionics",
       "title": "Avionics & Safety-Critical Systems",
       "category": "Avionics & Embedded",
-      "tags": ["AVIONICS", "SAFETY-CRITICAL"],
+      "tags": [
+        "AVIONICS",
+        "SAFETY-CRITICAL"
+      ],
       "year": "2008–2011",
-      "companies": ["nal", "meggitt", "negele"],
+      "companies": [
+        "nal",
+        "meggitt",
+        "negele"
+      ],
       "description": "Engine Indication and Crew Alert System for the pilot's primary display of NAL's SARAS aircraft — flight management, GPS position, fuel indication and ground-maintenance modules in C++ under DO-178B; assembly-level V&V of the TI DSP code in Meggitt's secondary flight display; and C firmware for Anderson-Negele food & pharma sensor systems.",
       "story": [
         "My first job out of college. Software that had to fly. EICAS — the pilot's primary display for NAL's SARAS aircraft — under DO-178B, with all the discipline that implies. Flight management, GPS position, fuel indication, ground maintenance. C++, real-time, no room for cleverness.",
@@ -118,15 +162,21 @@
       ],
       "link": null,
       "coverImage": "/covers/avionics-a.svg",
-      "coverVideo": null
+      "coverVideo": "/videos/eicas.mp4",
+      "coverPoster": "/videos/posters/eicas.jpg"
     },
     {
       "id": "ai-strategy",
       "title": "AI Strategy & Governance",
       "category": "AI Systems",
-      "tags": ["AI STRATEGY", "LEADERSHIP"],
+      "tags": [
+        "AI STRATEGY",
+        "LEADERSHIP"
+      ],
       "year": "2024",
-      "companies": ["cubonic"],
+      "companies": [
+        "cubonic"
+      ],
       "description": "A pragmatic AI operating model: opportunity mapping, capability roadmap, risk & governance framework, and vendor vs. build decisions — turning executive intent into shipped systems.",
       "story": [
         "Every executive team I meet is somewhere on the same curve: 'we know we need AI, we don't know where to start, and we don't want to become someone else's training data.'",
@@ -134,15 +184,22 @@
       ],
       "link": null,
       "coverImage": "/covers/ai-a.svg",
-      "coverVideo": null
+      "coverVideo": null,
+      "coverHeadline": "ROADMAP",
+      "coverCaption": "opportunity map → governance → shipped systems"
     },
     {
       "id": "digital-handover",
       "title": "Digital Handover & Damage Reporting",
       "category": "Mobility & Marketplaces",
-      "tags": ["MOBILE APPS", "OPERATIONS"],
+      "tags": [
+        "MOBILE APPS",
+        "OPERATIONS"
+      ],
       "year": "2019–2022",
-      "companies": ["cluno"],
+      "companies": [
+        "cluno"
+      ],
       "description": "A three-step digital protocol replacing paper checklists for every vehicle transaction — 3,700+ digital handovers, 54% of them home deliveries, and a beta rollout with 100% successful handovers. Real-time handover status in Salesforce, plus in-app damage reporting with dynamic questionnaires, photos and location sharing that cut per-unit repair costs 5–10%.",
       "story": [
         "The handover is the single moment a customer touches your operational reality. Paper checklists were the norm. We killed them.",
@@ -150,15 +207,22 @@
       ],
       "link": "https://apps.apple.com/de/app/cluno-auto-abo/id1434401969",
       "coverImage": "/covers/mobility-a.svg",
-      "coverVideo": "/videos/handover.mp4"
+      "coverVideo": "/videos/handover.mp4",
+      "coverPoster": "/videos/posters/handover.jpg"
     },
     {
       "id": "operations-automation",
       "title": "Operations & Logistics Automation",
       "category": "Mobility & Marketplaces",
-      "tags": ["SUPPLY CHAIN", "AUTOMATION"],
+      "tags": [
+        "SUPPLY CHAIN",
+        "AUTOMATION"
+      ],
       "year": "2019–2021",
-      "companies": ["cluno", "cazoo"],
+      "companies": [
+        "cluno",
+        "cazoo"
+      ],
       "description": "The systems behind lean operations: a work-order management system mapping every job and invoice line item across logistics, maintenance, repair and inspection; OCR-based fine handling from scanned police notice to customer invoice; automated monthly invoicing; on-demand vehicle-health reports; S&OP and mid-mile planning; and the Glide Intake app for VIN-scan check-in. Net effect: over 80% less manual effort on vehicle availability alone.",
       "story": [
         "Fleets don't fail at the exciting parts. They fail at the boring ones — a mis-typed VIN, a police notice that never becomes an invoice, a maintenance job nobody billed for.",
@@ -167,15 +231,21 @@
       ],
       "link": null,
       "coverImage": "/covers/mobility-b.svg",
-      "coverVideo": "/videos/glide-intake.mp4"
+      "coverVideo": "/videos/glide-intake.mp4",
+      "coverPoster": "/videos/posters/glide-intake.jpg"
     },
     {
       "id": "zeiss-measurement-cell",
       "title": "ZEISS AI Box — Robotic Inspection Cell",
       "category": "Industrial & Vision",
-      "tags": ["METROLOGY", "ROBOTICS"],
+      "tags": [
+        "METROLOGY",
+        "ROBOTICS"
+      ],
       "year": "2016–2017",
-      "companies": ["zeissImt"],
+      "companies": [
+        "zeissImt"
+      ],
       "description": "Robot-mounted optical measurement cell inspecting car-body parts next to the production line for Carl Zeiss IMT. Product owner, application engineer and software release manager from hardware & software requirements to release — piloted at Porsche Weissach and Daimler Sindelfingen, with cells in Germany, Shanghai and Detroit.",
       "story": [
         "This project put me on airplanes. Porsche in Weissach. Daimler in Sindelfingen. Understand the requirement in the room, not in a spec doc. Get FANUC-certified so I could programme the robot myself. Mount a Zeiss camera on it. Drop the whole cell into a live production line.",
@@ -185,15 +255,21 @@
       ],
       "link": "https://pages.zeiss.com/RIM_AIBox_Info.html",
       "coverImage": "/covers/engineering-a.svg",
-      "coverVideo": "/videos/ai-box.mp4"
+      "coverVideo": "/videos/ai-box.mp4",
+      "coverPoster": "/videos/posters/ai-box.jpg"
     },
     {
       "id": "cad-reverse-engineering",
       "title": "ZEISS Reverse Engineering — CAD Suite",
       "category": "Industrial & Vision",
-      "tags": ["CAD", "COMPUTER VISION"],
+      "tags": [
+        "CAD",
+        "COMPUTER VISION"
+      ],
       "year": "2011–2017",
-      "companies": ["zeissImt"],
+      "companies": [
+        "zeissImt"
+      ],
       "description": "ZEISS Reverse Engineering — CAD reverse engineering and tool correction for mould making, built on point-cloud processing and BRep modelling (ACIS kernel). Technical lead from the first line of code at TCS, then owner through requirements, architecture, release, sales and support at MERZ for Carl Zeiss IMT. Followed by Merz CAD Workmate, an in-house CAD app later ported to Android and Microsoft HoloLens for holographic on-part reverse engineering.",
       "story": [
         "First trip to Germany. Twenty-something years old. Handed the code of a mathematics professor — Dr. Deets — whose algorithm extracted surfaces from point clouds so you could compare a physical part against its original CAD design.",
@@ -204,15 +280,23 @@
       ],
       "link": "https://www.zeiss.de/messtechnik/software/zeiss-reverse-engineering.html",
       "coverImage": "/covers/engineering-a.svg",
-      "coverVideo": null
+      "coverVideo": null,
+      "coverHeadline": "2011—2017",
+      "coverCaption": "TCS → MERZ, ZEISS Reverse Engineering from scratch"
     },
     {
       "id": "adaptive-clamping",
       "title": "ZEISS Caligo & Adaptive Clamping",
       "category": "Industrial & Vision",
-      "tags": ["AUTOMATION", "CAD ALGORITHMS"],
+      "tags": [
+        "AUTOMATION",
+        "CAD ALGORITHMS"
+      ],
       "year": "2016–2017",
-      "companies": ["zeissImt", "clampingClient"],
+      "companies": [
+        "zeissImt",
+        "clampingClient"
+      ],
       "description": "Two projects that turned me from a software person into a product person: Caligo DMS, a laser-projection measurement system where I first learned to solutionize with customers, and ROLEX — a universal clamping-pin field that adapts itself to any freeform part, computing per-pin Z-shifts from the CAD contour so the fixture physically reshapes to hold what it is about to machine.",
       "story": [
         "Caligo doesn't look like the biggest project on this page, but it's the one that changed my identity.",
@@ -222,15 +306,22 @@
       ],
       "link": null,
       "coverImage": "/covers/engineering-a.svg",
-      "coverVideo": null
+      "coverVideo": null,
+      "coverHeadline": "SELF-ADAPTING",
+      "coverCaption": "CAD contour → per-pin Z-shift, zero rework"
     },
     {
       "id": "ct-defect-detection",
       "title": "ML Defect Detection for CT Scans",
       "category": "Industrial & Vision",
-      "tags": ["MACHINE LEARNING", "AI SINCE 2017"],
+      "tags": [
+        "MACHINE LEARNING",
+        "AI SINCE 2017"
+      ],
       "year": "2017–2018",
-      "companies": ["semiClient"],
+      "companies": [
+        "semiClient"
+      ],
       "description": "I was training neural networks for industrial inspection in 2017 — years before AI became fashionable. Machine-learning defect detection (Caffe) on computed-tomography scans of precision components for semiconductor manufacturing: volumetric scan import, defect classification by probability, type, size and rest-wall thickness, and a trainable master/user workflow where engineers teach the model new defect classes. Project lead from requirement definition through delivery.",
       "story": [
         "My first AI project. 2017. Pre-Transformer, pre-hype. In collaboration with Fraunhofer, whose researchers advocated for neural nets harder than I did.",
@@ -239,15 +330,25 @@
       ],
       "link": null,
       "coverImage": "/covers/engineering-a.svg",
-      "coverVideo": null
+      "coverVideo": "/videos/ct-defect.mp4",
+      "coverPoster": "/videos/posters/ct-defect.jpg"
     },
     {
       "id": "product-leadership",
       "title": "Product & Engineering Leadership",
       "category": "Leadership",
-      "tags": ["LEADERSHIP", "TEAMS"],
+      "tags": [
+        "LEADERSHIP",
+        "TEAMS"
+      ],
       "year": "2013–present",
-      "companies": ["zeissImt", "cluno", "cazoo", "autoscout24", "cubonic"],
+      "companies": [
+        "zeissImt",
+        "cluno",
+        "cazoo",
+        "autoscout24",
+        "cubonic"
+      ],
       "description": "Building and leading cross-functional teams across engineering, product, and design — from three departments at MERZ to app teams at AutoScout24 — hiring, delivery cadence, and a bias toward shipping useful software over slideware.",
       "story": [
         "Promoted to Head of Software at Merz at 25 — not because I was close to the CEO, but because I'd shown him what the group could do beyond one or two customers. Seven teams, seven geographies, one product. That's where I learned that keeping people motivated across time zones is the actual job.",
@@ -262,9 +363,14 @@
       "id": "personal-labs",
       "title": "UtpalDasLabs",
       "category": "AI Systems",
-      "tags": ["LABS", "EXPERIMENTS"],
+      "tags": [
+        "LABS",
+        "EXPERIMENTS"
+      ],
       "year": "Ongoing",
-      "companies": ["labs"],
+      "companies": [
+        "labs"
+      ],
       "description": "A workshop for agentic systems, small models, and mobility-adjacent tinkering. Most repos are private while incubating — expect select open-source releases over time.",
       "story": [
         "The weekend workshop. Berlin property-search agent, small local models, ideas that aren't ready to have a business plan yet.",
@@ -272,7 +378,9 @@
       ],
       "link": "https://github.com/UtpalDasLabs",
       "coverImage": "/covers/ai-b.svg",
-      "coverVideo": null
+      "coverVideo": null,
+      "coverHeadline": "WORKSHOP",
+      "coverCaption": "agentic systems, small models, weekend builds"
     }
   ]
 }

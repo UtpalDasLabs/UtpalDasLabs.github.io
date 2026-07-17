@@ -69,6 +69,9 @@ content:
           - { name: link, label: External link (optional), type: string, required: false }
           - { name: coverImage, label: Cover image / SVG, type: image }
           - { name: coverVideo, label: Cover video (optional), type: file, required: false }
+          - { name: coverPoster, label: Video poster frame (optional — extracted still, not the SVG), type: image, required: false }
+          - { name: coverHeadline, label: Typographic cover — headline (only if no video), type: string, required: false }
+          - { name: coverCaption, label: Typographic cover — caption, type: string, required: false }
 
   - name: recommendations
     label: Recommendations (Kind Words)
