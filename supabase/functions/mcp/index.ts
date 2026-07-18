@@ -217,14 +217,14 @@ var site_default = {
   heroLastName: "DAS",
   tagline: "Father \xB7 Builder \xB7 Problem Solver",
   heroRole: "Head of Digital Solutions \xB7 CUBONIC",
-  heroBio: "18+ years shipping software that had to work \u2014 cockpit displays, CAD, robot metrology, Europe's largest car marketplace and autonomous movers . Now I hold AI to the same bar.",
-  manifestoLead: "Planes. Production lines. Marketplaces.",
+  heroBio: "18+ years shipping software that had to work \u2014 cockpit displays, CAD, robot metrology, Europe's largest car marketplace and autonomous movers. Now I hold AI to the same bar.",
+  manifestoLead: "Planes. Production lines. Marketplaces. Autonomous vehicles.",
   manifestoMiddle: "Eighteen years of software that had to work.",
   manifestoEnd: "That's the bar",
   manifestoAccent: "AI has to clear.",
   manifestoFootnote: "\u2014 the thesis behind everything below.",
   dreamLabel: "The next dream",
-  dreamLine: "One day, governments will build correctional facilities for bad agents.",
+  dreamLine: "One day, governments will build correctional facilities for bad AI agents.",
   dreamAccent: "I'd like to build them.",
   pillars: [
     {
@@ -277,22 +277,21 @@ var projects_default = {
       id: "agentic-platform",
       title: "Agentic AI Platform",
       category: "AI Systems",
+      year: "2025",
       tags: [
         "AGENTIC AI",
         "LLM ORCHESTRATION"
       ],
-      year: "2025",
       companies: [
         "cubonic"
       ],
       description: "An internal platform for building multi-agent workflows on top of local and hosted LLMs \u2014 tool use, memory, guardrails, and human-in-the-loop review for mobility and operations teams.",
       story: [
         "Agents are the next interface \u2014 and the next attack surface. Most enterprise AI still stops at chat. We're building past that: multi-agent workflows that can actually reach into tools, remember context, and hand work back to a human when the risk is too high.",
-        "The bigger bet: as agents get more autonomy, someone has to build the accountability layer around them. I dream of a world where governments run correctional facilities for bad agents \u2014 caught by other agents, corrected, released back onto the web. This platform is the first honest step toward that."
+        "The bigger bet: as agents get more autonomy, someone has to build the accountability layer around them \u2014 systems that catch bad behaviour, correct it, and only then hand autonomy back. This platform is the first honest step toward that."
       ],
-      link: null,
+      link: "www.cubonic.de",
       coverImage: "/covers/ai-a.svg",
-      coverVideo: null,
       coverHeadline: "MULTI-AGENT",
       coverCaption: "tool use \xB7 memory \xB7 guardrails"
     },
@@ -300,11 +299,11 @@ var projects_default = {
       id: "autoscout24-apps",
       title: "AutoScout24 Mobile Apps",
       category: "Mobility & Marketplaces",
+      year: "2022\u20132024",
       tags: [
         "IOS & ANDROID",
         "MARKETPLACE"
       ],
-      year: "2022\u20132024",
       companies: [
         "autoscout24"
       ],
@@ -312,7 +311,7 @@ var projects_default = {
       story: [
         "Two million listings. Millions of users. One iOS and one Android app carrying the whole marketplace in your pocket \u2014 plus the white-label AutoTrader and Gebrauchtwagen.de apps on the same codebase.",
         "Coming from Cluno, I brought the same instinct: connect the two journeys \u2014 the buyer's journey and the vehicle's journey \u2014 inside one engine. Every price-drop notification, every dealer contact, every save is a touch point in a much larger system.",
-        "Numbers moved: +30% organic acquisition across markets, 2\xD7 engagement, +23% conversion, +10% in-app ad revenue. Four senior PMs, 24 engineers. The proudest part isn't the metrics \u2014 it's that a lean app team owned a business result at that scale."
+        "Numbers moved: +30% organic acquisition across markets, 2\xD7 engagement, +23% conversion, +10% in-app ad revenue. Senior PMs, app marketing and engineers. The proudest part isn't the metrics \u2014 it's that a lean app team owned a business result at that scale."
       ],
       link: "https://www.autoscout24.de/",
       coverImage: "/covers/mobility-a.svg",
@@ -323,11 +322,11 @@ var projects_default = {
       id: "local-llm-stack",
       title: "Local LLM Stack",
       category: "AI Systems",
+      year: "2025",
       tags: [
         "LOCAL LLMS",
         "PRIVACY"
       ],
-      year: "2025",
       companies: [
         "cubonic"
       ],
@@ -336,9 +335,7 @@ var projects_default = {
         "In 2008, I dreamt of a world where I could type in plain English and get machine code back. In 2017, I trained my first neural net on industrial CT scans. In 2025, that dream is a product problem: how do you deploy it without leaking a single row of regulated data?",
         "This stack answers that. Model routing across sizes, quantization tuned per workload, an evaluation harness that actually tells you when a model regresses, and observability so nothing runs blind. Sensitive workloads stay inside the perimeter \u2014 by architecture, not by policy."
       ],
-      link: null,
       coverImage: "/covers/ai-b.svg",
-      coverVideo: null,
       coverHeadline: "ON-PREM",
       coverCaption: "private by design, zero perimeter exit"
     },
@@ -346,11 +343,11 @@ var projects_default = {
       id: "cluno-partner-platform",
       title: "Cluno \u2014 Partner Platform & Business Engine",
       category: "Mobility & Marketplaces",
+      year: "2019\u20132022",
       tags: [
         "B2B PLATFORM",
         "OPERATIONS"
       ],
-      year: "2019\u20132022",
       companies: [
         "cluno"
       ],
@@ -361,7 +358,6 @@ var projects_default = {
         "This is where I stopped talking about MVPs and started talking about MLPs \u2014 Most Lovable Products. Ship small, but ship something people love. Love means trust. You keep building on trust.",
         "The real insight of Cluno: two journeys running in parallel \u2014 the customer's lifecycle and the vehicle's lifecycle \u2014 meeting for a while, then parting. Stitch them into one system and you have a business engine. That engine is what Cazoo bought."
       ],
-      link: null,
       coverImage: "/covers/mobility-b.svg",
       coverVideo: "/videos/cluno-app.mp4",
       coverPoster: "/videos/posters/cluno-app.jpg"
@@ -370,11 +366,11 @@ var projects_default = {
       id: "apollo-ar-projection",
       title: "Extend3D \u2014 Werklicht AR Projection",
       category: "Industrial & Vision",
+      year: "2017\u20132018",
       tags: [
         "AUGMENTED REALITY",
         "INDUSTRY 4.0"
       ],
-      year: "2017\u20132018",
       companies: [
         "extend3d"
       ],
@@ -385,18 +381,17 @@ var projects_default = {
         "What we built projects CAD data straight onto a car body or aircraft panel \u2014 the operator sees the design overlaid on the part itself. That collaboration is still what I think of when someone says 'AR on the shop floor.'"
       ],
       link: "https://www.extend3d.com/de/produkt/werklicht-video/",
-      coverImage: "/covers/engineering-a.svg",
-      coverVideo: null
+      coverImage: "/covers/engineering-a.svg"
     },
     {
       id: "asset-financing",
       title: "Cazoo \u2014 Asset Financing & European Rollout",
       category: "Mobility & Marketplaces",
+      year: "2021\u20132022",
       tags: [
         "FINTECH",
         "AUTOMOTIVE"
       ],
-      year: "2021\u20132022",
       companies: [
         "cazoo"
       ],
@@ -406,7 +401,6 @@ var projects_default = {
         "Flying a rocket ship while it's being built. That's the honest description. We stood up asset financing across multiple credit lines, and built the first-mile / mid-mile / last-mile logistics for whole truckloads of cars across Germany, France, and Spain \u2014 refurb centres, distribution hubs, home delivery.",
         "The hardest part wasn't the tech; it was regulation, region by region. You couldn't wait for a perfect product. You shipped what worked, learned, iterated. +30% subscription revenue. +50% vehicle contribution margin. Retail launch in 5 markets."
       ],
-      link: null,
       coverImage: "/covers/mobility-b.svg",
       coverVideo: "/videos/hub-check.mp4",
       coverPoster: "/videos/posters/hub-check.jpg"
@@ -415,11 +409,11 @@ var projects_default = {
       id: "eicas-avionics",
       title: "Avionics & Safety-Critical Systems",
       category: "Avionics & Embedded",
+      year: "2008\u20132011",
       tags: [
         "AVIONICS",
         "SAFETY-CRITICAL"
       ],
-      year: "2008\u20132011",
       companies: [
         "nal",
         "meggitt",
@@ -433,7 +427,6 @@ var projects_default = {
         "In 2010, Anderson-Negele: a one-man-army embedded project. A microcontroller inside a food-and-pharma sensor, acting as a mini-router \u2014 turbidity and viscosity readings out to I\xB2C for the display, over Wi-Fi for subscribers, over RS-232 for downstream systems. First time I owned something end to end.",
         "By the end of this chapter I was frustrated. Real-time constraints meant I couldn't build big systems. So I started looking for problems where the memory budget wasn't the point \u2014 the product was."
       ],
-      link: null,
       coverImage: "/covers/avionics-a.svg",
       coverVideo: "/videos/eicas.mp4",
       coverPoster: "/videos/posters/eicas.jpg"
@@ -442,11 +435,11 @@ var projects_default = {
       id: "ai-strategy",
       title: "AI Strategy & Governance",
       category: "AI Systems",
+      year: "2024",
       tags: [
         "AI STRATEGY",
         "LEADERSHIP"
       ],
-      year: "2024",
       companies: [
         "cubonic"
       ],
@@ -455,9 +448,7 @@ var projects_default = {
         "Every executive team I meet is somewhere on the same curve: 'we know we need AI, we don't know where to start, and we don't want to become someone else's training data.'",
         "This is the framework I use to move them from intent to shipped systems \u2014 opportunity mapping against real business outcomes (save cost, save time \u2014 that's what an engineer does), a capability roadmap that respects what already exists, a governance and risk model that a CFO can defend, and honest build-vs-buy calls that don't optimize for looking impressive."
       ],
-      link: null,
       coverImage: "/covers/ai-a.svg",
-      coverVideo: null,
       coverHeadline: "ROADMAP",
       coverCaption: "opportunity map \u2192 governance \u2192 shipped systems"
     },
@@ -465,11 +456,11 @@ var projects_default = {
       id: "digital-handover",
       title: "Digital Handover & Damage Reporting",
       category: "Mobility & Marketplaces",
+      year: "2019\u20132022",
       tags: [
         "MOBILE APPS",
         "OPERATIONS"
       ],
-      year: "2019\u20132022",
       companies: [
         "cluno"
       ],
@@ -487,11 +478,11 @@ var projects_default = {
       id: "operations-automation",
       title: "Operations & Logistics Automation",
       category: "Mobility & Marketplaces",
+      year: "2019\u20132021",
       tags: [
         "SUPPLY CHAIN",
         "AUTOMATION"
       ],
-      year: "2019\u20132021",
       companies: [
         "cluno",
         "cazoo"
@@ -502,7 +493,6 @@ var projects_default = {
         "So we automated the boring parts. A work-order management system that mapped every job and invoice line across logistics, maintenance, repair, and inspection. OCR that turned a scanned traffic fine into a customer invoice. Automated monthly billing. On-demand vehicle-health reports. S&OP for the fleet, mid-mile planning for the trucks. A Glide app for VIN-scan check-in at intake.",
         "Result: 80%+ less manual effort just on vehicle availability. Not glamorous. Very profitable."
       ],
-      link: null,
       coverImage: "/covers/mobility-b.svg",
       coverVideo: "/videos/glide-intake.mp4",
       coverPoster: "/videos/posters/glide-intake.jpg"
@@ -511,11 +501,11 @@ var projects_default = {
       id: "zeiss-measurement-cell",
       title: "ZEISS AI Box \u2014 Robotic Inspection Cell",
       category: "Industrial & Vision",
+      year: "2016\u20132017",
       tags: [
         "METROLOGY",
         "ROBOTICS"
       ],
-      year: "2016\u20132017",
       companies: [
         "zeissImt"
       ],
@@ -535,11 +525,11 @@ var projects_default = {
       id: "cad-reverse-engineering",
       title: "ZEISS Reverse Engineering \u2014 CAD Suite",
       category: "Industrial & Vision",
+      year: "2011\u20132017",
       tags: [
         "CAD",
         "COMPUTER VISION"
       ],
-      year: "2011\u20132017",
       companies: [
         "zeissImt"
       ],
@@ -553,7 +543,6 @@ var projects_default = {
       ],
       link: "https://www.zeiss.de/messtechnik/software/zeiss-reverse-engineering.html",
       coverImage: "/covers/engineering-a.svg",
-      coverVideo: null,
       coverHeadline: "2011\u20142017",
       coverCaption: "TCS \u2192 MERZ, ZEISS Reverse Engineering from scratch"
     },
@@ -561,11 +550,11 @@ var projects_default = {
       id: "adaptive-clamping",
       title: "ZEISS Caligo & Adaptive Clamping",
       category: "Industrial & Vision",
+      year: "2016\u20132017",
       tags: [
         "AUTOMATION",
         "CAD ALGORITHMS"
       ],
-      year: "2016\u20132017",
       companies: [
         "zeissImt",
         "clampingClient"
@@ -577,9 +566,7 @@ var projects_default = {
         "That's when I stopped calling myself a software person. I was a product person who could still write code.",
         "In parallel, ROLEX: a universal clamping-pin field that shape-shifts to any freeform part. Compute the CAD contour, project per-pin Z-shifts, and the fixture literally reforms itself to hold whatever's about to be machined. Modular libraries, reusable across products, from feasibility prototype to delivery plan."
       ],
-      link: null,
       coverImage: "/covers/engineering-a.svg",
-      coverVideo: null,
       coverHeadline: "SELF-ADAPTING",
       coverCaption: "CAD contour \u2192 per-pin Z-shift, zero rework"
     },
@@ -587,11 +574,11 @@ var projects_default = {
       id: "ct-defect-detection",
       title: "ML Defect Detection for CT Scans",
       category: "Industrial & Vision",
+      year: "2017\u20132018",
       tags: [
         "MACHINE LEARNING",
         "AI SINCE 2017"
       ],
-      year: "2017\u20132018",
       companies: [
         "semiClient"
       ],
@@ -601,7 +588,6 @@ var projects_default = {
         "The problem: precision pipes for semiconductor manufacturing had to be inspected for micro-defects. A trained human spent a week per batch, squinting at CT scans. We trained a Caffe model on labelled defects \u2014 probability, type, size, rest-wall thickness \u2014 with a master/user workflow so an engineer could teach the model new defect classes as they appeared in production.",
         "Every time I told someone what I was working on, they thought it wouldn't work. It worked. That's when the 2008 daydream came back to me \u2014 a world where you type in English and machines write code. Fifteen years early. But the direction was right."
       ],
-      link: null,
       coverImage: "/covers/engineering-a.svg",
       coverVideo: "/videos/ct-defect.mp4",
       coverPoster: "/videos/posters/ct-defect.jpg"
@@ -610,11 +596,11 @@ var projects_default = {
       id: "product-leadership",
       title: "Product & Engineering Leadership",
       category: "Leadership",
+      year: "2013\u2013present",
       tags: [
         "LEADERSHIP",
         "TEAMS"
       ],
-      year: "2013\u2013present",
       companies: [
         "zeissImt",
         "cluno",
@@ -628,19 +614,17 @@ var projects_default = {
         "Since then: PMs and engineers at Cluno, Cazoo, AutoScout24, and CUBONIC. Same hiring signal every time \u2014 is this person telling the truth about their CV, can they think under pressure, and can they communicate? Genius that can't communicate loses to competence that can.",
         "The way I lead sits on three pillars: Transparency \u2192 Trust \u2192 Positivity. And underneath all of it, one operating rule: judge people by what they ship, not what they promise. Then give them the room to ship."
       ],
-      link: null,
-      coverImage: "/covers/leadership-a.svg",
-      coverVideo: null
+      coverImage: "/covers/leadership-a.svg"
     },
     {
       id: "personal-labs",
       title: "UtpalDasLabs",
       category: "AI Systems",
+      year: "Ongoing",
       tags: [
         "LABS",
         "EXPERIMENTS"
       ],
-      year: "Ongoing",
       companies: [
         "labs"
       ],
@@ -651,7 +635,6 @@ var projects_default = {
       ],
       link: "https://github.com/UtpalDasLabs",
       coverImage: "/covers/ai-b.svg",
-      coverVideo: null,
       coverHeadline: "WORKSHOP",
       coverCaption: "agentic systems, small models, weekend builds"
     }
