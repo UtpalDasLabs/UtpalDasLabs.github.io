@@ -37,7 +37,10 @@ const Project = () => {
       {/* Hero — real footage when we have it; otherwise the animated
           domain background instead of a sparse static SVG blown up
           to full screen */}
-      <section className="relative h-screen overflow-hidden cinematic-grain cinematic-vignette">
+      {/* Title and meta sit in normal flow (flex column) rather than stacked
+          absolute overlays, so a long title can never run into the tag row
+          on small screens. */}
+      <section className="relative flex min-h-[100svh] flex-col overflow-hidden cinematic-grain cinematic-vignette">
         {project.coverVideo || project.coverPoster ? (
           <CoverMedia
             project={project}
@@ -47,24 +50,24 @@ const Project = () => {
           <CinematicBackground variant={bgFor(project.category)} intensity={0.7} />
         )}
         <div className="absolute inset-0 bg-background/50" />
-        
+
         {/* Centered Title */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-foreground text-center px-4 animate-fade-in">
+        <div className="relative z-10 flex flex-1 items-center justify-center px-4 pt-20 md:pt-24">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight text-foreground text-center animate-fade-in">
             {project.title}
           </h1>
         </div>
 
         {/* Bottom Info */}
-        <div className="absolute bottom-8 left-0 right-0 z-10 container-wide">
-          <div className="flex justify-between items-end">
+        <div className="relative z-10 container-wide pb-8">
+          <div className="flex flex-wrap items-end justify-between gap-4">
             {/* Date */}
             <div className="text-label">
               {project.year}
             </div>
 
             {/* Tags */}
-            <div className="flex gap-3">
+            <div className="flex flex-wrap justify-end gap-2 md:gap-3">
               {project.tags.map((tag) => (
                 <span
                   key={tag}

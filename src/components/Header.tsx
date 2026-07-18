@@ -31,6 +31,13 @@ export function Header({ revealMode = false }: HeaderProps) {
       return;
     }
 
+    // Touch devices never fire mousemove, so reveal-on-hover would leave the
+    // header (and with it all navigation) permanently hidden there.
+    if (window.matchMedia("(hover: none)").matches) {
+      setIsVisible(true);
+      return;
+    }
+
     const handleMouseMove = (e: MouseEvent) => {
       setIsVisible(e.clientY < 100);
     };
