@@ -27,6 +27,12 @@ jobs:
       - run: npm run build
       # SPA fallback: GitHub Pages serves 404.html for unknown paths
       - run: cp dist/index.html dist/404.html
+      # Retailor (CV tailoring app) is served under /retailor/
+      - run: npm ci
+        working-directory: retailor
+      - run: npm run build
+        working-directory: retailor
+      - run: cp -r retailor/dist dist/retailor
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

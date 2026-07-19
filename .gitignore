@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 *.tsbuildinfo
 graphify-out/
+
+# Real personal data never enters the repo (Retailor)
+*.private.json
+/private/
+retailor/private/
