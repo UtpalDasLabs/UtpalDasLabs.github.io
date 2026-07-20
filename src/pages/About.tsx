@@ -154,15 +154,10 @@ const About = () => {
                   Tinkering
                 </dt>
                 <dd className="text-foreground">
-                  <a
-                    href="https://github.com/UtpalDasLabs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-accent transition-colors"
-                  >
+                  <Link to="/labs" className="hover:text-accent transition-colors">
                     UtpalDasLabs
-                  </a>
-                  <span className="block text-muted-foreground">Weekend workshop</span>
+                  </Link>
+                  <span className="block text-muted-foreground">Free tools · the workshop</span>
                 </dd>
               </div>
             </dl>

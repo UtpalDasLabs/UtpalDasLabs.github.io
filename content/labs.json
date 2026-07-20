@@ -1,0 +1,26 @@
+{
+  "intro": {
+    "eyebrow": "Labs · Berlin · 2026",
+    "title": "Labs",
+    "lead": "The workshop. Free, browser-first tools I build on weekends — private by design, no sign-up, nothing uploaded. Selected experiments from UtpalDasLabs, live for anyone to use.",
+    "githubUrl": "https://github.com/UtpalDasLabs"
+  },
+  "tools": [
+    {
+      "id": "retailor",
+      "name": "Retailor",
+      "tagline": "Tailor your CV to any job with the AI you already use.",
+      "description": "Put your CV in, copy a ready-made prompt into ChatGPT, Claude, Gemini or Perplexity along with the job advert, paste the reply back, review every suggested change side by side, and download a polished PDF. Runs entirely in your browser — no sign-up, no upload, no tracking.",
+      "tags": [
+        "CV TAILORING",
+        "BRING YOUR OWN AI",
+        "PDF EXPORT",
+        "PRIVACY-FIRST"
+      ],
+      "url": "https://utpaldaslabs.github.io/Retailor/",
+      "status": "live",
+      "coverHeadline": "TAILOR YOUR CV",
+      "coverCaption": "browser-only · bring your own AI · PDF out"
+    }
+  ]
+}

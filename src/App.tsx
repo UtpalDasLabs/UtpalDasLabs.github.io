@@ -11,6 +11,7 @@ import { useLenis } from "@/hooks/use-lenis";
 import Index from "./pages/Index";
 import Work from "./pages/Work";
 import Project from "./pages/Project";
+import Labs from "./pages/Labs";
 import About from "./pages/About";
 import KindWords from "./pages/KindWords";
 import Contact from "./pages/Contact";
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/work" element={<Work />} />
             <Route path="/work/:id" element={<Project />} />
+            <Route path="/labs" element={<Labs />} />
             <Route path="/about" element={<About />} />
             <Route path="/kind-words" element={<KindWords />} />
             <Route path="/contact" element={<Contact />} />
