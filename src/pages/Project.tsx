@@ -89,8 +89,9 @@ const Project = () => {
         </div>
       </section>
 
-      {/* Project Info */}
-      <section className="container-wide py-16 md:py-24">
+      {/* Project Info — navigation lands here (see ScrollManager) so readers
+          start on the content and can scroll up to the hero if they want. */}
+      <section id="project-content" className="container-wide py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
           {/* Details */}
           <div className="space-y-8">

@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
-// Custom cursor ring: lerp-follows the pointer, grows over interactive
-// elements, shows a VIEW label over project chapters ([data-cursor-label]).
-// Desktop (fine pointer) only; never blocks events.
+// Custom cursor ring. Tracks the pointer 1:1 (no easing, so it never feels
+// like it lags behind a click) and only appears over interactive elements —
+// links, buttons and project chapters ([data-cursor-label]). Everywhere else
+// the normal system cursor shows and text stays selectable. It never blurs or
+// covers content. Desktop (fine pointer) only; never blocks events.
 export function CursorRing() {
   const ringRef = useRef<HTMLDivElement>(null);
   const [enabled, setEnabled] = useState(false);
-  const [hovering, setHovering] = useState(false);
+  const [active, setActive] = useState(false);
   const [label, setLabel] = useState<string | null>(null);
 
   useEffect(() => {
@@ -15,52 +17,25 @@ export function CursorRing() {
     if (!fine || reduced) return;
     setEnabled(true);
 
-    const pos = { x: -100, y: -100 };
-    const target = { x: -100, y: -100 };
-    let raf = 0;
-    let visible = false;
+    const INTERACTIVE = "a, button, [role='button'], [data-cursor-label]";
 
     const onMove = (e: MouseEvent) => {
-      target.x = e.clientX;
-      target.y = e.clientY;
-      if (!visible && ringRef.current) {
-        pos.x = target.x;
-        pos.y = target.y;
-        ringRef.current.style.opacity = "1";
-        visible = true;
+      // Position exactly on the pointer — no interpolation, no trailing.
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
       }
-    };
-    const onLeave = () => {
-      if (ringRef.current) ringRef.current.style.opacity = "0";
-      visible = false;
-    };
-    const onOver = (e: MouseEvent) => {
-      const el = (e.target as Element).closest?.(
-        "a, button, [role='button'], [data-cursor-label]",
-      );
+      const el = (e.target as Element).closest?.(INTERACTIVE);
       const labelled = (e.target as Element).closest?.("[data-cursor-label]");
-      setHovering(!!el);
+      setActive(!!el);
       setLabel(labelled ? labelled.getAttribute("data-cursor-label") : null);
     };
-
-    const tick = () => {
-      pos.x += (target.x - pos.x) * 0.18;
-      pos.y += (target.y - pos.y) * 0.18;
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
-      }
-      raf = requestAnimationFrame(tick);
-    };
+    const onLeave = () => setActive(false);
 
     window.addEventListener("mousemove", onMove, { passive: true });
     document.documentElement.addEventListener("mouseleave", onLeave);
-    window.addEventListener("mouseover", onOver, { passive: true });
-    raf = requestAnimationFrame(tick);
     return () => {
       window.removeEventListener("mousemove", onMove);
       document.documentElement.removeEventListener("mouseleave", onLeave);
-      window.removeEventListener("mouseover", onOver);
-      cancelAnimationFrame(raf);
     };
   }, []);
 
@@ -71,15 +46,15 @@ export function CursorRing() {
       ref={ringRef}
       aria-hidden="true"
       className="pointer-events-none fixed left-0 top-0 z-[199] hidden md:block"
-      style={{ opacity: 0, willChange: "transform" }}
+      style={{ willChange: "transform" }}
     >
       <div
-        className={`-translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full border transition-[width,height,background-color,border-color] duration-300 ease-out ${
-          label
-            ? "h-14 w-14 border-accent bg-background/60 backdrop-blur-[2px]"
-            : hovering
-              ? "h-10 w-10 border-accent/50 bg-transparent"
-              : "h-7 w-7 border-accent/70 bg-transparent"
+        className={`-translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full border border-accent transition-[width,height,opacity] duration-200 ease-out ${
+          active
+            ? label
+              ? "h-14 w-14 opacity-100"
+              : "h-9 w-9 opacity-100"
+            : "h-9 w-9 opacity-0"
         }`}
       >
         {label && (

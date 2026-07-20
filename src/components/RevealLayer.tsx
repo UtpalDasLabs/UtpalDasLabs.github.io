@@ -30,17 +30,19 @@ export function RevealLayer() {
     const target = { x: -400, y: -400, r: 0 };
     let raf = 0;
     let idleTimer: number;
-    // Never obscure things the user wants to click: collapse the reveal
-    // whenever the cursor is over an interactive element.
-    let overInteractive = false;
-    const INTERACTIVE =
-      "a, button, [role='button'], input, select, textarea, label, [data-cursor-label], video";
+    // Never obscure anything the user wants to read, copy or click: collapse
+    // the reveal whenever the cursor is over interactive OR text content. The
+    // blueprint only peeks through in genuinely empty areas.
+    let overContent = false;
+    const KEEP_CLEAR =
+      "a, button, [role='button'], input, select, textarea, label, [data-cursor-label], video, " +
+      "p, h1, h2, h3, h4, h5, h6, li, blockquote, dd, dt, figcaption, code, pre, img, table";
 
     const onMove = (e: MouseEvent) => {
       target.x = e.clientX;
       target.y = e.clientY;
-      overInteractive = !!(e.target as Element).closest?.(INTERACTIVE);
-      target.r = overInteractive ? 0 : 160;
+      overContent = !!(e.target as Element).closest?.(KEEP_CLEAR);
+      target.r = overContent ? 0 : 160;
       window.clearTimeout(idleTimer);
       idleTimer = window.setTimeout(() => {
         target.r = 0;
