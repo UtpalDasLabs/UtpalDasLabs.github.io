@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "next-themes";
 import { CursorRing } from "@/components/CursorRing";
 import { RevealLayer } from "@/components/RevealLayer";
+import { ScrollManager } from "@/components/ScrollManager";
 import { useLenis } from "@/hooks/use-lenis";
 import Index from "./pages/Index";
 import Work from "./pages/Work";
@@ -28,6 +29,7 @@ const App = () => {
         <RevealLayer />
         <CursorRing />
         <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <ScrollManager />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/work" element={<Work />} />

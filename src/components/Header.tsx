@@ -85,23 +85,18 @@ export function Header({ revealMode = false }: HeaderProps) {
             to="/"
             className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
           >
-            {/* Triple-line UD monogram */}
+            {/* Triple-line UD monogram — drawn in the foreground colour so it
+                stays crisp in both light and dark themes (was a gold gradient
+                that vanished on the light background). */}
             <svg
               viewBox="0 0 150 116"
-              className="h-8 w-auto"
+              className="h-8 w-auto text-foreground"
               role="img"
               aria-label="UD monogram"
             >
-              <defs>
-                <linearGradient id="ud-gold" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#e8c37a" />
-                  <stop offset="45%" stopColor="#f7e2b0" />
-                  <stop offset="100%" stopColor="#b8873c" />
-                </linearGradient>
-              </defs>
               <g
                 fill="none"
-                stroke="url(#ud-gold)"
+                stroke="currentColor"
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"

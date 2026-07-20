@@ -22,9 +22,9 @@ const Work = () => {
   );
 
   const visible = active === "All" ? projects : projects.filter((p) => p.category === active);
-  // Featured row only makes sense on the unfiltered view — filtering shows
-  // a flat grid so switching categories doesn't reshuffle card sizes.
-  const featuredCount = active === "All" ? 3 : 0;
+  // Every card is the same size — a uniform grid reads as a clean archive and
+  // avoids the first three dominating the page.
+  const featuredCount = 0;
 
   return (
     <Layout showEchelonFooter>

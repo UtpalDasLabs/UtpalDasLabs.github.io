@@ -1,16 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { CinematicBackground } from "@/components/CinematicBackground";
 import { HeroVideo } from "@/components/HeroVideo";
+import { HeroSequence } from "@/components/HeroSequence";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 import { siteCopy } from "@/data/site";
 
-const firstName = siteCopy.heroFirstName;
-const lastName = siteCopy.heroLastName;
-
 const Index = () => {
+  const [introDone, setIntroDone] = useState(false);
   usePageMeta(
     "Utpal Das — Father, Builder, Problem Solver",
     "Utpal Das — Head of Digital Solutions @ CUBONIC, Berlin. AI strategy, local LLMs, and agentic solutions. 18+ years turning emerging tech into real products.",
@@ -37,55 +37,21 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Kinetic name reveal — centered in the flexible middle */}
+        {/* Title sequence — types the name, reveals the tagline, then fades
+            out and hands off to the bio + CTA below. */}
         <div className="over-video relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-10">
-          <div className="flex flex-col items-center gap-2 md:gap-4">
-            {/* First name */}
-            <h1 className="text-center font-display text-6xl font-bold leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11rem]">
-              {firstName.split("").map((ch, i) => (
-                <span
-                  key={`f-${i}`}
-                  className="kinetic-letter"
-                  style={{ animationDelay: `${0.15 + i * 0.08}s` }}
-                >
-                  {ch}
-                </span>
-              ))}
-            </h1>
-
-            {/* Tagline mid-strip */}
-            <div
-              className="kinetic-letter flex items-center gap-3 py-1"
-              style={{ animationDelay: "0.7s" }}
-            >
-              <span className="h-px w-8 bg-accent md:w-14" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-foreground/90 md:text-xs">
-                {siteCopy.tagline}
-              </span>
-              <span className="h-px w-8 bg-accent md:w-14" />
-            </div>
-
-            {/* Last name */}
-            <h1 className="text-center font-display text-6xl font-bold leading-[0.9] tracking-tight sm:text-7xl md:text-8xl lg:text-9xl xl:text-[11rem]">
-              {lastName.split("").map((ch, i) => (
-                <span
-                  key={`l-${i}`}
-                  className="kinetic-letter text-accent"
-                  style={{ animationDelay: `${0.85 + i * 0.08}s` }}
-                >
-                  {ch}
-                </span>
-              ))}
-            </h1>
-          </div>
+          <HeroSequence onDone={() => setIntroDone(true)} />
         </div>
 
-        {/* Bottom strip — bio and CTA stack on mobile, split left/right from md up */}
-        <div className="relative z-10 flex flex-col gap-8 px-6 pb-10 md:flex-row md:items-end md:justify-between md:px-12 md:pb-14">
-          <div
-            className="over-video max-w-sm animate-fade-in-up opacity-0"
-            style={{ animationDelay: "1.4s", animationFillMode: "forwards" }}
-          >
+        {/* Bottom strip — bio and CTA appear only after the intro finishes,
+            then stay for the rest of the visit. Stacks on mobile, splits
+            left/right from md up. */}
+        <div
+          className={`relative z-10 flex flex-col gap-8 px-6 pb-10 transition-opacity duration-700 ease-out md:flex-row md:items-end md:justify-between md:px-12 md:pb-14 ${
+            introDone ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+        >
+          <div className="over-video max-w-sm">
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
               {siteCopy.heroRole}
             </p>
@@ -94,10 +60,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div
-            className="over-video flex flex-col items-start gap-4 animate-fade-in-up opacity-0 md:items-end"
-            style={{ animationDelay: "1.6s", animationFillMode: "forwards" }}
-          >
+          <div className="over-video flex flex-col items-start gap-4 md:items-end">
             <Link
               to="/work"
               className="group inline-flex items-center gap-3 border border-accent/60 bg-background/40 px-5 py-3 text-xs uppercase tracking-[0.25em] text-foreground backdrop-blur-sm transition-all duration-300 hover:accent-glow hover:bg-accent/10"
