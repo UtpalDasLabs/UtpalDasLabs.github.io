@@ -52,6 +52,7 @@ export function Footer({ variant = "default" }: FooterProps) {
               <p className="text-label">Navigate</p>
               <div className="text-sm space-y-1">
                 <Link to="/work" className="block text-foreground hover:text-accent transition-colors">Projects</Link>
+                <Link to="/labs" className="block text-foreground hover:text-accent transition-colors">Labs</Link>
                 <Link to="/about" className="block text-foreground hover:text-accent transition-colors">About</Link>
                 <Link to="/contact" className="block text-foreground hover:text-accent transition-colors">Contact</Link>
               </div>
