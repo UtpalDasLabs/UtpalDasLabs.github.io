@@ -274,6 +274,31 @@ import { z } from "npm:zod@^3.25.76";
 var projects_default = {
   projects: [
     {
+      id: "retailor",
+      title: "Retailor \u2014 Tailor Your CV with AI",
+      category: "AI Systems",
+      year: "2026",
+      tags: [
+        "BRING YOUR OWN AI",
+        "PRIVACY-FIRST",
+        "PDF EXPORT",
+        "NO SIGN-UP"
+      ],
+      companies: [
+        "labs"
+      ],
+      description: "A privacy-first web app that tailors your CV to any job using the AI you already use \u2014 then exports a polished PDF. Everything runs in your browser: no sign-up, no upload, no tracking.",
+      story: [
+        "Job hunting means rewriting your CV for every role. Retailor hands that work to whatever AI assistant you already use \u2014 ChatGPT, Claude, Gemini, Perplexity \u2014 and turns the result into a clean, professional PDF. Four steps: bring your CV in, copy a ready-made prompt into your chatbot along with the job advert, paste the reply back, then review every suggested change side by side and download.",
+        "The point is control and privacy. Retailor runs entirely in your browser \u2014 your CV, photo and edits stay in local storage, with no server, no account, no analytics, and no third-party requests (even the fonts and PDF worker are bundled from its own domain). You see every change the AI proposes and decide what to keep. A built-in reminder keeps you honest: AIs exaggerate, and you own what your CV claims.",
+        "Try it yourself \u2014 it's free, and nothing you type ever leaves your device."
+      ],
+      link: "https://utpaldaslabs.github.io/Retailor/",
+      coverImage: "/covers/ai-b.svg",
+      coverHeadline: "TAILOR YOUR CV",
+      coverCaption: "browser-only \xB7 bring your own AI \xB7 PDF out"
+    },
+    {
       id: "agentic-platform",
       title: "Agentic AI Platform",
       category: "AI Systems",

@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { projects, type Domain } from "@/data/projects";
 import { CoverMedia } from "@/components/CoverMedia";
@@ -31,6 +31,14 @@ const Project = () => {
   if (!project) {
     return <Navigate to="/work" replace />;
   }
+
+  // Some entries store the link without a protocol (e.g. "www.cubonic.de");
+  // normalise so the anchor always resolves to an absolute URL.
+  const liveUrl = project.link
+    ? project.link.startsWith("http")
+      ? project.link
+      : `https://${project.link}`
+    : null;
 
   return (
     <Layout noPadding headerRevealMode showEchelonFooter>
@@ -135,6 +143,23 @@ const Project = () => {
             <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground">
               {project.description}
             </p>
+
+            {/* Live-app CTA — only for projects with a usable public link */}
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 border border-accent/60 bg-accent/10 px-6 py-3 text-sm uppercase tracking-[0.25em] text-foreground transition-all duration-300 hover:accent-glow hover:bg-accent/20"
+              >
+                <span>Launch app</span>
+                <ArrowUpRight
+                  size={16}
+                  aria-hidden="true"
+                  className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+            )}
 
             {project.story && project.story.length > 0 && (
               <div className="space-y-6 border-l-2 border-accent/60 pl-6 md:pl-8">
