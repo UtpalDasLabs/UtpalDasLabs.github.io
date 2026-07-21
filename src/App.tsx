@@ -16,6 +16,8 @@ import About from "./pages/About";
 import KindWords from "./pages/KindWords";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
+import OAuthConsent from "./pages/OAuthConsent";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +41,8 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/kind-words" element={<KindWords />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
             {/* Old project-site URLs (utpaldaslabs.github.io/dasutpal/...) */}
             <Route path="/dasutpal" element={<Navigate to="/" replace />} />
             <Route path="/dasutpal/*" element={<Navigate to="/" replace />} />

@@ -3,7 +3,7 @@
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
 // src/lib/mcp/index.ts
-import { defineMcp } from "npm:@lovable.dev/mcp-js@0.23.0";
+import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.23.0";
 
 // src/lib/mcp/tools/get-profile.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.23.0";
@@ -904,11 +904,16 @@ var list_recommendations_default = defineTool5({
 });
 
 // src/lib/mcp/index.ts
+var projectRef = "hwlpdguadmofhlftjznl";
 var mcp_default = defineMcp({
   name: "utpal-das-portfolio",
   title: "Utpal Das \u2014 Portfolio",
-  version: "0.1.0",
-  instructions: "Public MCP server for Utpal Das's portfolio. Use these read-only tools to answer questions about his profile, projects, past companies, and recommendations. Start with get_profile for identity/contact, list_projects to browse work, get_project for a full case study, and list_companies / list_recommendations for career context.",
+  version: "0.2.0",
+  instructions: "Authenticated MCP server for Utpal Das's portfolio. Sign-in required. Read-only tools: get_profile, list_projects, get_project, list_companies, list_recommendations.",
+  auth: auth.oauth.issuer({
+    issuer: `https://${projectRef}.supabase.co/auth/v1`,
+    acceptedAudiences: "authenticated"
+  }),
   tools: [get_profile_default, list_projects_default, get_project_default, list_companies_default, list_recommendations_default]
 });
 
