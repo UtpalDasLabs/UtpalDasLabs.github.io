@@ -6,6 +6,7 @@ import { CinematicBackground } from "@/components/CinematicBackground";
 import { HeroVideo } from "@/components/HeroVideo";
 import { HeroSequence } from "@/components/HeroSequence";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { track } from "@/lib/analytics";
 
 import { siteCopy } from "@/data/site";
 
@@ -63,6 +64,7 @@ const Index = () => {
           <div className="over-video flex flex-col items-start gap-4 md:items-end">
             <Link
               to="/work"
+              onClick={() => track("cta_click", { label: "see_the_work", from: "home_hero" })}
               className="group inline-flex items-center gap-3 border border-accent/60 bg-background/40 px-5 py-3 text-xs uppercase tracking-[0.25em] text-foreground backdrop-blur-sm transition-all duration-300 hover:accent-glow hover:bg-accent/10"
             >
               <span>See the work</span>
@@ -99,6 +101,7 @@ const Index = () => {
           </p>
           <Link
             to="/work"
+            onClick={() => track("cta_click", { label: "enter_archive", from: "home_manifesto" })}
             className="mt-12 inline-flex items-center gap-3 border-b border-accent/60 pb-1 text-sm uppercase tracking-[0.25em] text-foreground transition-colors hover:text-accent"
           >
             Enter the archive
