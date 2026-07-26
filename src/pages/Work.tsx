@@ -3,6 +3,7 @@ import { Layout } from "@/components/Layout";
 import { OverlayProjectCard } from "@/components/OverlayProjectCard";
 import { projects, type Domain } from "@/data/projects";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { track } from "@/lib/analytics";
 
 const categories: ("All" | Domain)[] = [
   "All",
@@ -54,7 +55,10 @@ const Work = () => {
             <button
               key={cat}
               type="button"
-              onClick={() => setActive(cat)}
+              onClick={() => {
+                setActive(cat);
+                track("project_filter", { category: cat });
+              }}
               aria-pressed={active === cat}
               className={`cursor-pointer px-4 py-2 text-xs uppercase tracking-widest border transition-colors duration-200 ${
                 active === cat

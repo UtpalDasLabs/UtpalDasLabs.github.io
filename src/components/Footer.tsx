@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { siteCopy } from "@/data/site";
+import { track } from "@/lib/analytics";
 
 interface FooterProps {
   variant?: "default" | "echelon";
@@ -18,6 +19,7 @@ export function Footer({ variant = "default" }: FooterProps) {
           </p>
           <Link
             to="/contact"
+            onClick={() => track("cta_click", { label: "lets_build", from: "footer" })}
             className="group inline-flex flex-wrap items-baseline gap-x-4 gap-y-2 font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground transition-colors hover:text-accent"
           >
             <span>Let's build</span>
@@ -62,13 +64,13 @@ export function Footer({ variant = "default" }: FooterProps) {
             <div className="space-y-3">
               <p className="text-label">Contact</p>
               <div className="text-sm text-foreground space-y-1">
-                <a href="mailto:utpal.inbox@hotmail.com" className="block hover:text-accent transition-colors">
+                <a href="mailto:utpal.inbox@hotmail.com" onClick={() => track("contact_intent", { method: "email", from: "footer" })} className="block hover:text-accent transition-colors">
                   utpal.inbox@hotmail.com
                 </a>
-                <a href="https://www.linkedin.com/in/iamdasutpal/" target="_blank" rel="noopener noreferrer" className="block hover:text-accent transition-colors">
+                <a href="https://www.linkedin.com/in/iamdasutpal/" target="_blank" rel="noopener noreferrer" onClick={() => track("contact_intent", { method: "linkedin", from: "footer" })} className="block hover:text-accent transition-colors">
                   LinkedIn
                 </a>
-                <a href="https://github.com/UtpalDasLabs" target="_blank" rel="noopener noreferrer" className="block hover:text-accent transition-colors">
+                <a href="https://github.com/UtpalDasLabs" target="_blank" rel="noopener noreferrer" onClick={() => track("outbound_click", { dest: "github", from: "footer" })} className="block hover:text-accent transition-colors">
                   GitHub
                 </a>
               </div>

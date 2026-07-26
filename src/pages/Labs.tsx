@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { CinematicBackground } from "@/components/CinematicBackground";
 import { labsIntro, labsTools, type LabsTool } from "@/data/labs";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { track } from "@/lib/analytics";
 
 const gridPanelStyle = {
   backgroundImage:
@@ -70,6 +72,10 @@ function ToolCard({ tool }: { tool: LabsTool }) {
               href={tool.url}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                track("tool_launch", { tool: tool.id, from: "labs" });
+                track("outbound_click", { dest: tool.id });
+              }}
               className="group/btn inline-flex items-center gap-3 border border-accent/60 bg-accent/10 px-6 py-3 text-sm uppercase tracking-[0.25em] text-foreground transition-all duration-300 hover:accent-glow hover:bg-accent/20"
             >
               <span>Launch {tool.name}</span>
@@ -97,6 +103,10 @@ const Labs = () => {
     "/labs",
   );
 
+  useEffect(() => {
+    track("labs_view");
+  }, []);
+
   return (
     <Layout showEchelonFooter>
       {/* Hero */}
@@ -116,6 +126,7 @@ const Labs = () => {
             href={labsIntro.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track("outbound_click", { dest: "github" })}
             className="mt-8 inline-flex items-center gap-2 text-sm uppercase tracking-widest text-foreground transition-colors hover:text-accent"
           >
             <Github size={16} aria-hidden="true" />

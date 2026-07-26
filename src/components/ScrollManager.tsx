@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import type Lenis from "lenis";
+import { track, trackPageView } from "@/lib/analytics";
 
 // Deterministic scroll position on every navigation.
 //  - Project detail pages (/work/:id) land directly on the text content, so
@@ -11,6 +12,30 @@ import type Lenis from "lenis";
 // back to the previous position; falls back to native scrolling otherwise.
 export function ScrollManager() {
   const { pathname } = useLocation();
+
+  // SPA page-view: GA4 doesn't auto-fire on client-side navigation.
+  useEffect(() => {
+    trackPageView(pathname);
+  }, [pathname]);
+
+  // Scroll-depth milestones — one event per threshold per page.
+  useEffect(() => {
+    const fired = new Set<number>();
+    const milestones = [25, 50, 75, 100];
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max <= 0) return;
+      const pct = Math.min(100, Math.round((window.scrollY / max) * 100));
+      for (const m of milestones) {
+        if (pct >= m && !fired.has(m)) {
+          fired.add(m);
+          track("scroll_depth", { page: pathname, percent: m });
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname]);
 
   useEffect(() => {
     const isProject = /^\/work\/.+/.test(pathname);

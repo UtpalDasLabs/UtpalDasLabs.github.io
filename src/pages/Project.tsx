@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
@@ -5,6 +6,7 @@ import { projects, type Domain } from "@/data/projects";
 import { CoverMedia } from "@/components/CoverMedia";
 import { CinematicBackground } from "@/components/CinematicBackground";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { track } from "@/lib/analytics";
 
 // Same domain-to-variant pairing the Work page used
 const bgFor = (cat: Domain): "mesh" | "flow" | "grid" => {
@@ -27,6 +29,10 @@ const Project = () => {
     project ? project.description.slice(0, 155) : "Projects by Utpal Das.",
     project ? `/work/${project.id}` : "/work",
   );
+
+  useEffect(() => {
+    if (project) track("project_view", { id: project.id, category: project.category });
+  }, [project]);
 
   if (!project) {
     return <Navigate to="/work" replace />;
@@ -151,6 +157,10 @@ const Project = () => {
                 href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  track("tool_launch", { tool: project.id, from: "project" });
+                  track("outbound_click", { dest: project.id });
+                }}
                 className="group inline-flex items-center gap-3 border border-accent/60 bg-accent/10 px-6 py-3 text-sm uppercase tracking-[0.25em] text-foreground transition-all duration-300 hover:accent-glow hover:bg-accent/20"
               >
                 <span>Launch app</span>

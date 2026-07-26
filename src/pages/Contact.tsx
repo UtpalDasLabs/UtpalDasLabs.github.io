@@ -2,6 +2,7 @@ import { Layout } from "@/components/Layout";
 import { Mail, Linkedin, Github } from "lucide-react";
 import { siteCopy } from "@/data/site";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { track } from "@/lib/analytics";
 
 const contactCover = "/covers/ai-b.svg";
 
@@ -30,6 +31,7 @@ const Contact = () => {
             <div className="space-y-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
               <a
                 href={`mailto:${siteCopy.contactEmail}`}
+                onClick={() => track("contact_intent", { method: "email", from: "contact" })}
                 className="flex items-center gap-4 text-lg hover-highlight group"
               >
                 <Mail size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
@@ -40,6 +42,7 @@ const Contact = () => {
                 href={siteCopy.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track("contact_intent", { method: "linkedin", from: "contact" })}
                 className="flex items-center gap-4 text-lg hover-highlight group"
               >
                 <Linkedin size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
@@ -50,6 +53,7 @@ const Contact = () => {
                 href={siteCopy.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track("outbound_click", { dest: "github", from: "contact" })}
                 className="flex items-center gap-4 text-lg hover-highlight group"
               >
                 <Github size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
