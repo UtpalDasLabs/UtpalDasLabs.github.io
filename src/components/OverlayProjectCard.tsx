@@ -57,7 +57,7 @@ export function OverlayProjectCard({ project, index, featured }: OverlayProjectC
           <span className="flex h-6 w-6 items-center justify-center rounded-sm bg-white/90 p-[3px]">
             <img
               src={project.companies[0].logo}
-              alt=""
+              alt={project.companies[0].name ? `${project.companies[0].name} logo` : ""}
               className="max-h-full max-w-full object-contain"
             />
           </span>
