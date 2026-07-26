@@ -5,8 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm run check:content && tsc -b && vite build",
+    "build:vite-only": "vite build",
     "build:dev": "vite build --mode development",
+    "typecheck": "tsc -b",
+    "check:content": "node scripts/check-content.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
