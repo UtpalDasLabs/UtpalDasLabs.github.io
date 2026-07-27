@@ -51,6 +51,9 @@ const Project = () => {
     ? recommendations.find((r) => r.author === project.recommendationRef)
     : undefined;
 
+  // A case study leads with the hook; plain projects lead with the info grid.
+  const hasHook = Boolean(project.oneLiner || project.metrics?.length);
+
   return (
     <Layout noPadding headerRevealMode showEchelonFooter>
       {/* Hero — real footage when we have it; otherwise the animated
@@ -104,8 +107,8 @@ const Project = () => {
           One-line value prop plus the headline numbers, so a hiring manager
           gets the outcome in seconds instead of mining it out of the prose.
           Only renders for projects that carry this data. */}
-      {(project.oneLiner || project.metrics?.length) && (
-        <section className="border-b border-separator bg-background">
+      {hasHook && (
+        <section id="project-content" className="border-b border-separator bg-background">
           <div className="container-wide py-12 md:py-16">
             {project.oneLiner && (
               <p className="max-w-4xl font-display text-2xl font-semibold leading-snug tracking-tight text-foreground md:text-3xl lg:text-4xl">
@@ -138,9 +141,13 @@ const Project = () => {
         </section>
       )}
 
-      {/* Project Info — navigation lands here (see ScrollManager) so readers
-          start on the content and can scroll up to the hero if they want. */}
-      <section id="project-content" className="container-wide py-16 md:py-24">
+      {/* Project Info. Carries the scroll anchor only when there's no hook
+          above it, so a case study lands on its headline metrics instead of
+          scrolling straight past them. */}
+      <section
+        id={hasHook ? undefined : "project-content"}
+        className="container-wide py-16 md:py-24"
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
           {/* Details */}
           <div className="space-y-8">

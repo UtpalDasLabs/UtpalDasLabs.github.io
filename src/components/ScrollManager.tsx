@@ -40,24 +40,49 @@ export function ScrollManager() {
   useEffect(() => {
     const isProject = /^\/work\/.+/.test(pathname);
     const lenis = (window as Window & { __lenis?: Lenis }).__lenis;
+    let raf = 0;
+    let cancelled = false;
 
-    // Wait a frame so the new route's DOM (and the #project-content anchor)
-    // has rendered before we measure and scroll.
-    const raf = requestAnimationFrame(() => {
-      const target = isProject ? document.getElementById("project-content") : null;
+    const scrollTo = (target: HTMLElement | null) => {
       if (target) {
         if (lenis) lenis.scrollTo(target, { immediate: true, offset: -88 });
-        else {
-          const y = target.getBoundingClientRect().top + window.scrollY - 88;
-          window.scrollTo(0, y);
-        }
+        else window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY - 88);
+      } else if (lenis) {
+        lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    };
+
+    if (!isProject) {
+      raf = requestAnimationFrame(() => scrollTo(null));
+      return () => cancelAnimationFrame(raf);
+    }
+
+    // Project routes are code-split, so the anchor doesn't exist while the
+    // chunk is still loading behind Suspense. Poll for a short window rather
+    // than checking a single frame and giving up (which left the reader on
+    // the hero instead of the content).
+    const deadline = performance.now() + 1500;
+    const waitForAnchor = () => {
+      if (cancelled) return;
+      const target = document.getElementById("project-content");
+      if (target) {
+        scrollTo(target);
         return;
       }
-      if (lenis) lenis.scrollTo(0, { immediate: true });
-      else window.scrollTo(0, 0);
-    });
+      if (performance.now() < deadline) {
+        raf = requestAnimationFrame(waitForAnchor);
+      } else {
+        scrollTo(null);
+      }
+    };
+    raf = requestAnimationFrame(waitForAnchor);
 
-    return () => cancelAnimationFrame(raf);
+    return () => {
+      cancelled = true;
+      cancelAnimationFrame(raf);
+    };
   }, [pathname]);
 
   return null;

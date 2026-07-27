@@ -286,6 +286,25 @@ var projects_default = {
         "cubonic"
       ],
       description: "An internal platform for building multi-agent workflows on top of local and hosted LLMs \u2014 tool use, memory, guardrails, and human-in-the-loop review for mobility and operations teams.",
+      oneLiner: "Enterprise AI that reaches past chat \u2014 agents that use tools, keep context, and hand risky work back to a human.",
+      role: "Head of Digital Solutions",
+      scale: "Mobility & operations teams",
+      period: "2025 \u2013 present",
+      stack: [
+        "Local & hosted LLMs",
+        "Multi-agent orchestration",
+        "Tool use",
+        "Memory",
+        "Guardrails"
+      ],
+      problem: "Most enterprise AI stops at a chat window: it can answer, but it can't act, it forgets everything between sessions, and there is no safe way to let it touch a real system. The teams who would benefit most \u2014 mobility operations \u2014 need AI that reaches into tools and data, while staying inside limits a business can defend.",
+      approach: [
+        "Built an internal platform for composing multi-agent workflows rather than one-off bots, so teams assemble what they need instead of commissioning a new integration each time.",
+        "Gave agents real capability \u2014 tool use and memory \u2014 so they can carry out a task end to end instead of returning text for a human to re-key.",
+        "Wrapped every workflow in guardrails, with human-in-the-loop review that triggers when the risk of an action is too high.",
+        "Ran it on both local and hosted models, so sensitive workloads can stay private without giving up frontier capability elsewhere."
+      ],
+      outcome: "A platform mobility and operations teams build on, where agents do real work under explicit limits \u2014 and the first step toward the accountability layer autonomous agents will need.",
       story: [
         "Agents are the next interface \u2014 and the next attack surface. Most enterprise AI still stops at chat. We're building past that: multi-agent workflows that can actually reach into tools, remember context, and hand work back to a human when the risk is too high.",
         "The bigger bet: as agents get more autonomy, someone has to build the accountability layer around them \u2014 systems that catch bad behaviour, correct it, and only then hand autonomy back. This platform is the first honest step toward that."
@@ -373,6 +392,24 @@ var projects_default = {
         "cubonic"
       ],
       description: "Private, on-prem LLM deployment stack for regulated data \u2014 model routing, quantization, evaluation harness, and observability, so sensitive workloads never leave the perimeter.",
+      oneLiner: "Frontier AI on regulated data \u2014 private by architecture, not by policy.",
+      role: "Head of Digital Solutions",
+      period: "2025 \u2013 present",
+      stack: [
+        "Local LLMs",
+        "Model routing",
+        "Quantization",
+        "Evaluation harness",
+        "Observability"
+      ],
+      problem: "Regulated data cannot leave the perimeter, but the useful models mostly live outside it. The usual answer is a policy promising nobody will paste anything sensitive into a chatbot \u2014 which is not an architecture, and does not survive contact with a deadline.",
+      approach: [
+        "Routed requests across model sizes, so each workload runs on the smallest model that actually does the job.",
+        "Tuned quantization per workload to make on-prem deployment economic instead of theoretical.",
+        "Built an evaluation harness that tells you when a model regresses \u2014 the difference between shipping AI and hoping.",
+        "Added observability so nothing runs blind, and every answer can be traced."
+      ],
+      outcome: "Sensitive workloads stay inside the perimeter by architecture. Private deployment became a default option for the business rather than a special case.",
       story: [
         "In 2008, I dreamt of a world where I could type in plain English and get machine code back. In 2017, I trained my first neural net on industrial CT scans. In 2025, that dream is a product problem: how do you deploy it without leaking a single row of regulated data?",
         "This stack answers that. Model routing across sizes, quantization tuned per workload, an evaluation harness that actually tells you when a model regresses, and observability so nothing runs blind. Sensitive workloads stay inside the perimeter \u2014 by architecture, not by policy."
@@ -394,6 +431,43 @@ var projects_default = {
         "cluno"
       ],
       description: "One platform connecting Cluno with its whole partner ecosystem \u2014 131 dealerships, logistics carriers, refurbishers and vehicle assessors across Germany, with 100% dealership adoption and nearly 1,000 vehicles ordered through it. Order confirmation, scheduling, digital handover protocols, invoicing, one-click remarketing auctions via Auto1 and vehicle-health reporting replaced email-and-spreadsheet workflows, letting a lean operations team run a growing subscription fleet. Cluno was later acquired by Cazoo.",
+      oneLiner: "The operating engine for a car-subscription business \u2014 one platform for every partner, from order to remarketing.",
+      role: "Senior Product Manager \u2014 end-to-end owner",
+      team: "Cross-functional product & engineering",
+      scale: "131 dealerships \xB7 nationwide partner network",
+      period: "Mar 2019 \u2013 Jul 2022",
+      stack: [
+        "Partner portal",
+        "Salesforce",
+        "Auto1 integration",
+        "iOS",
+        "Android"
+      ],
+      metrics: [
+        {
+          value: "131",
+          label: "dealerships connected"
+        },
+        {
+          value: "100%",
+          label: "dealership adoption"
+        },
+        {
+          value: "~1,000",
+          label: "vehicles ordered",
+          note: "through the platform"
+        }
+      ],
+      problem: "Cluno was a car-subscription startup with real ambition and no operating engine: dealerships, logistics carriers, refurbishers and assessors were all coordinated by email and spreadsheets. That works until volume arrives \u2014 then every new vehicle costs manual effort, and growth is capped by the operations team's inbox.",
+      approach: [
+        "Owned the whole journey from the moment a customer says 'I want this car' \u2014 Schufa credit checks, billing, insurance, refurbishment, remarketing, logistics and handover.",
+        "Built one partner portal for dealerships, carriers, refurbishers and assessors, replacing email-and-spreadsheet workflows with order confirmation, scheduling and invoicing.",
+        "Added one-click remarketing auctions via Auto1, so end-of-life vehicles left the fleet without a manual process.",
+        "Shipped digital handover protocols and vehicle-health reporting, plus the customer's iOS and Android apps.",
+        "Stitched the two parallel journeys \u2014 the customer's lifecycle and the vehicle's lifecycle \u2014 into a single system."
+      ],
+      outcome: "A lean operations team could run a growing subscription fleet: 131 dealerships connected with 100% adoption and nearly 1,000 vehicles ordered through the platform. That engine is what Cazoo acquired.",
+      recommendationRef: "Dr. Veronika von Heise-Rotenburg",
       story: [
         "After a decade in embedded systems and industrial software, I made a hard pivot into the cloud. Cluno was the landing site \u2014 a small car-subscription startup in Munich with big ambitions and no operating engine.",
         "My job was to build that engine. Not rebuild \u2014 build. From the moment a customer said 'I want this car,' I owned the whole journey: Schufa credit checks, billing, insurance, refurb, remarketing via Auto1, logistics, and a fully digital handover with zero paper. On top of that, iOS and Android apps for the customer, and a partner portal for the dealers, carriers, and refurbishers.",
@@ -417,6 +491,24 @@ var projects_default = {
         "extend3d"
       ],
       description: "Architect and scrum master for Extend3D's Werklicht laser/video projection system \u2014 augmented reality that projects CAD data directly onto physical parts on the automotive shop floor. Qt, C++ and the CGM modeler kernel, including a 3D data framework importing GOM, Polyworks and SpaceClaim formats.",
+      oneLiner: "Augmented reality for the shop floor \u2014 CAD data projected straight onto the physical part.",
+      role: "Architect & Scrum Master (effectively CTO/CPO for the client)",
+      team: "Three-person startup, delivered via MERZ",
+      period: "Aug 2017 \u2013 Sep 2018",
+      stack: [
+        "Qt",
+        "C++",
+        "CGM modeler kernel",
+        "GOM / Polyworks / SpaceClaim import"
+      ],
+      problem: "Extend3D had a beautiful piece of mathematics \u2014 an algorithm to transform 3D into 2D and project it back onto real objects at true scale \u2014 plus the hardware to do it. What they did not have was the software or the product thinking to turn it into something an automotive plant could use.",
+      approach: [
+        "Acted as architect and scrum master, effectively the CTO/CPO for someone else's company as a third party.",
+        "Built the Werklicht laser and video projection system on Qt, C++ and the CGM modeler kernel.",
+        "Wrote a 3D data framework importing the formats customers actually had \u2014 GOM, Polyworks and SpaceClaim.",
+        "Worked startup-style: nothing on the shelf, every test rig ordered and every invoice chased personally."
+      ],
+      outcome: "An operator on the line sees the design overlaid on the part itself \u2014 CAD projected directly onto a car body or aircraft panel. Still the reference point for what 'AR on the shop floor' should mean.",
       story: [
         "Extend3D was three people with a beautiful piece of math \u2014 an algorithm to transform 3D into 2D and project it back onto real objects at real scale. They had the hardware and the mathematics. They needed the software and the product thinking.",
         "This was my first taste of being effectively the CTO/CPO for someone else's company \u2014 as a third party, from Merz. Nothing was on the shelf: every test rig had to be ordered, every invoice chased. Big-company reflexes don't work in a startup.",
@@ -438,6 +530,39 @@ var projects_default = {
         "cazoo"
       ],
       description: "After Cazoo's acquisition of Cluno, led product for asset financing, fleet management and car production \u2014 the systems that financed and tracked the subscription fleet. Contributed to a 30% rise in subscription revenue and a 50% improvement in vehicle contribution margin, and supported the Cazoo retail launch across 5 European markets.",
+      oneLiner: "Financing and moving a subscription fleet across Europe \u2014 while the company was going public.",
+      role: "Senior Product Manager \u2014 asset financing, fleet & production",
+      scale: "5 European markets \xB7 multiple credit lines",
+      period: "Nov 2021 \u2013 Jul 2022",
+      stack: [
+        "Asset financing",
+        "Fleet management",
+        "Logistics planning"
+      ],
+      metrics: [
+        {
+          value: "+30%",
+          label: "subscription revenue"
+        },
+        {
+          value: "+50%",
+          label: "vehicle contribution margin"
+        },
+        {
+          value: "5",
+          label: "European markets",
+          note: "retail launch"
+        }
+      ],
+      problem: "Cluno was acquired by Cazoo mid-flight and Munich became the European HQ. The subscription fleet now had to be financed across multiple credit lines and moved across borders \u2014 while the company listed on the NYSE and every market applied its own regulation.",
+      approach: [
+        "Stood up asset financing across multiple credit lines, and the systems that tracked what each vehicle was worth.",
+        "Built first-mile, mid-mile and last-mile logistics for whole truckloads of cars across Germany, France and Spain \u2014 refurbishment centres, distribution hubs and home delivery.",
+        "Took regulation market by market rather than waiting for one perfect pan-European product.",
+        "Supported the Cazoo retail proposition launch across five European markets."
+      ],
+      outcome: "Subscription revenue up 30% and vehicle contribution margin up 50%, with the retail proposition live in five markets \u2014 delivered while the business was being rebuilt around an IPO.",
+      recommendationRef: "Louis Badcock",
       story: [
         "Cluno was acquired by Cazoo mid-flight. Munich became the European HQ. Overnight I was reporting into the Cazoo CPO, in the room for the IPO conversations, with equity that suddenly meant working for yourself as well as the company.",
         "Flying a rocket ship while it's being built. That's the honest description. We stood up asset financing across multiple credit lines, and built the first-mile / mid-mile / last-mile logistics for whole truckloads of cars across Germany, France, and Spain \u2014 refurb centres, distribution hubs, home delivery.",
@@ -462,6 +587,26 @@ var projects_default = {
         "negele"
       ],
       description: "Engine Indication and Crew Alert System for the pilot's primary display of NAL's SARAS aircraft \u2014 flight management, GPS position, fuel indication and ground-maintenance modules in C++ under DO-178B; assembly-level V&V of the TI DSP code in Meggitt's secondary flight display; and C firmware for Anderson-Negele food & pharma sensor systems.",
+      oneLiner: "Software that had to fly \u2014 the pilot's primary display, under DO-178B.",
+      role: "IT Analyst \u2192 technical anchor",
+      scale: "3 safety-critical programmes",
+      period: "Dec 2008 \u2013 Feb 2011",
+      stack: [
+        "C++",
+        "DO-178B",
+        "TI DSP assembly",
+        "C firmware",
+        "I\xB2C",
+        "RS-232"
+      ],
+      problem: "Avionics software has no tolerance for cleverness. The Engine Indication and Crew Alert System drives the pilot's primary display on NAL's SARAS aircraft \u2014 flight management, GPS position, fuel indication, ground maintenance \u2014 in real time, under DO-178B, where every line has to be justified.",
+      approach: [
+        "Built the EICAS modules in C++ under DO-178B: flight management, GPS position, fuel indication and ground maintenance.",
+        "Performed assembly-level verification and validation of the TI DSP code in Meggitt's secondary flight display \u2014 six months of hunting McCabe complexity in code written by teams in the UK.",
+        "Owned an embedded project end to end for Anderson-Negele: a microcontroller inside a food-and-pharma sensor acting as a mini-router \u2014 turbidity and viscosity readings out over I\xB2C, Wi-Fi and RS-232.",
+        "Became the technical anchor for a small team \u2014 leadership earned through the work rather than granted by title."
+      ],
+      outcome: "Three safety-critical programmes delivered, and a permanent change in how I read a function. It also showed me the limit I wanted to escape: with real-time constraints, the memory budget is the point \u2014 I wanted problems where the product was.",
       story: [
         "My first job out of college. Software that had to fly. EICAS \u2014 the pilot's primary display for NAL's SARAS aircraft \u2014 under DO-178B, with all the discipline that implies. Flight management, GPS position, fuel indication, ground maintenance. C++, real-time, no room for cleverness.",
         "This was also my first taste of leadership: not as a manager with disciplinary authority, but as the technical anchor for a small group of friends. Mentoring, guiding, showing them where to look. It stuck as my definition of leadership \u2014 earn it through the work.",
@@ -486,6 +631,23 @@ var projects_default = {
         "cubonic"
       ],
       description: "A pragmatic AI operating model: opportunity mapping, capability roadmap, risk & governance framework, and vendor vs. build decisions \u2014 turning executive intent into shipped systems.",
+      oneLiner: "From 'we know we need AI' to shipped systems \u2014 an operating model a CFO can defend.",
+      role: "Head of Digital Solutions",
+      period: "2024 \u2013 present",
+      stack: [
+        "Opportunity mapping",
+        "Capability roadmap",
+        "Risk & governance",
+        "Build vs. buy"
+      ],
+      problem: "Every executive team lands on the same curve: they know they need AI, they don't know where to start, and they don't want to become someone else's training data. The gap is rarely technology \u2014 it's the absence of an operating model that connects intent to something shipped.",
+      approach: [
+        "Mapped opportunities against real business outcomes \u2014 save cost, save time \u2014 rather than against what demos well.",
+        "Built a capability roadmap that respects the systems and skills already in the building.",
+        "Wrote a governance and risk framework a CFO can defend, not just an engineering team.",
+        "Made honest build-vs-buy calls that don't optimise for looking impressive."
+      ],
+      outcome: "A repeatable path from executive intent to systems in production \u2014 the framework behind the agentic platform and the private LLM stack.",
       story: [
         "Every executive team I meet is somewhere on the same curve: 'we know we need AI, we don't know where to start, and we don't want to become someone else's training data.'",
         "This is the framework I use to move them from intent to shipped systems \u2014 opportunity mapping against real business outcomes (save cost, save time \u2014 that's what an engineer does), a capability roadmap that respects what already exists, a governance and risk model that a CFO can defend, and honest build-vs-buy calls that don't optimize for looking impressive."
@@ -507,6 +669,44 @@ var projects_default = {
         "cluno"
       ],
       description: "A three-step digital protocol replacing paper checklists for every vehicle transaction \u2014 3,700+ digital handovers, 54% of them home deliveries, and a beta rollout with 100% successful handovers. Real-time handover status in Salesforce, plus in-app damage reporting with dynamic questionnaires, photos and location sharing that cut per-unit repair costs 5\u201310%.",
+      oneLiner: "Killing the paper checklist at the one moment a customer touches your operation.",
+      role: "Senior Product Manager",
+      scale: "Nationwide vehicle operations",
+      period: "Nov 2019 \u2013 Jul 2022",
+      stack: [
+        "iOS",
+        "Android",
+        "Salesforce",
+        "Dynamic questionnaires"
+      ],
+      metrics: [
+        {
+          value: "3,700+",
+          label: "digital handovers"
+        },
+        {
+          value: "54%",
+          label: "at the customer's home"
+        },
+        {
+          value: "100%",
+          label: "successful beta rollout"
+        },
+        {
+          value: "5\u201310%",
+          label: "lower repair cost",
+          note: "per unit"
+        }
+      ],
+      problem: "The handover is the single moment a customer physically touches your operational reality \u2014 and it was run on paper checklists. Paper means no real-time status, no structured damage record, and a workshop that only discovers what it is dealing with when the car is already on the ramp.",
+      approach: [
+        "Replaced the checklist with a three-step digital protocol, signed on a phone.",
+        "Streamed handover status into Salesforce in real time, so operations could see the fleet as it moved.",
+        "Built in-app damage reporting with dynamic questionnaires, photos and location sharing \u2014 the workshop knew what was coming before the car arrived.",
+        "Shipped it MLP-style: a lovable minimum first, then let the numbers grow into the vision."
+      ],
+      outcome: "3,700+ digital handovers with 54% at the customer's home, a beta rollout with 100% successful handovers, and per-unit repair costs down 5\u201310%.",
+      recommendationRef: "Annika Kaps",
       story: [
         "The handover is the single moment a customer touches your operational reality. Paper checklists were the norm. We killed them.",
         "A three-step digital protocol, signed on a phone, streamed to Salesforce in real time. In-app damage reporting with dynamic questionnaires, photos, and location sharing so the workshop already knew what it was dealing with when the car arrived. 3,700+ handovers, 54% at the customer's home, and per-unit repair costs down 5\u201310%. MLP philosophy in practice \u2014 ship a lovable minimum, learn, and let the numbers grow into the vision."
@@ -530,6 +730,34 @@ var projects_default = {
         "cazoo"
       ],
       description: "The systems behind lean operations: a work-order management system mapping every job and invoice line item across logistics, maintenance, repair and inspection; OCR-based fine handling from scanned police notice to customer invoice; automated monthly invoicing; on-demand vehicle-health reports; S&OP and mid-mile planning; and the Glide Intake app for VIN-scan check-in. Net effect: over 80% less manual effort on vehicle availability alone.",
+      oneLiner: "Fleets don't fail at the exciting parts \u2014 so we automated the boring ones.",
+      role: "Senior Product Manager \u2014 operations & logistics",
+      scale: "Subscription fleet operations, Germany",
+      period: "Mar 2019 \u2013 Nov 2021",
+      stack: [
+        "OCR",
+        "Work-order management",
+        "Automated invoicing",
+        "S&OP",
+        "VIN scanning"
+      ],
+      metrics: [
+        {
+          value: "80%+",
+          label: "less manual effort",
+          note: "on vehicle availability alone"
+        }
+      ],
+      problem: "Fleets fail at the boring parts: a mis-typed VIN, a police notice that never becomes an invoice, a maintenance job nobody billed for. Each one is small; together they cap how large a fleet a lean operations team can run.",
+      approach: [
+        "Built a work-order management system mapping every job and invoice line item across logistics, maintenance, repair and inspection.",
+        "Automated fine handling with OCR \u2014 from scanned police notice to customer invoice without a human retyping it.",
+        "Automated monthly invoicing and on-demand vehicle-health reports.",
+        "Added S&OP for the fleet and mid-mile planning for the trucks.",
+        "Shipped the Glide Intake app for VIN-scan check-in when cars arrive at a location."
+      ],
+      outcome: "Over 80% less manual effort on vehicle availability alone. Not glamorous \u2014 very profitable.",
+      recommendationRef: "Amr Mazen",
       story: [
         "Fleets don't fail at the exciting parts. They fail at the boring ones \u2014 a mis-typed VIN, a police notice that never becomes an invoice, a maintenance job nobody billed for.",
         "So we automated the boring parts. A work-order management system that mapped every job and invoice line across logistics, maintenance, repair, and inspection. OCR that turned a scanned traffic fine into a customer invoice. Automated monthly billing. On-demand vehicle-health reports. S&OP for the fleet, mid-mile planning for the trucks. A Glide app for VIN-scan check-in at intake.",
@@ -552,6 +780,36 @@ var projects_default = {
         "zeissImt"
       ],
       description: "Robot-mounted optical measurement cell inspecting car-body parts next to the production line for Carl Zeiss IMT. Product owner, application engineer and software release manager from hardware & software requirements to release \u2014 piloted at Porsche Weissach and Daimler Sindelfingen, with cells in Germany, Shanghai and Detroit.",
+      oneLiner: "A robot, a Zeiss camera and a live production line \u2014 optical inspection where the cars are actually built.",
+      role: "Product Owner, Application Engineer & Software Release Manager",
+      scale: "Cells in Germany, Shanghai & Detroit",
+      period: "Mar 2016 \u2013 Feb 2017",
+      stack: [
+        "FANUC robotics",
+        "ZEISS optical sensors",
+        "Systems integration"
+      ],
+      metrics: [
+        {
+          value: "3",
+          label: "continents shipped",
+          note: "Germany \xB7 Shanghai \xB7 Detroit"
+        },
+        {
+          value: "2",
+          label: "OEM pilots",
+          note: "Porsche Weissach \xB7 Daimler Sindelfingen"
+        }
+      ],
+      problem: "Car-body parts were measured away from the line, which means delay between making a part and knowing whether it was good. Moving optical measurement next to production means a robot, a camera and a dozen software components have to agree \u2014 and measurement is unforgiving: if one link in the chain lies, the whole result is a lie.",
+      approach: [
+        "Took requirements in the room at Porsche Weissach and Daimler Sindelfingen rather than from a spec document.",
+        "Got FANUC-certified to programme the robot personally, then mounted a ZEISS camera on it.",
+        "Owned hardware and software requirements through to release as product owner, application engineer and release manager.",
+        "Ran 'LAN parties' when things broke \u2014 engineers from every geography in one room, one problem, one week."
+      ],
+      outcome: "Cells piloted at Porsche and Daimler, and shipped in Germany, Shanghai and Detroit.",
+      recommendationRef: "Mohsin Jamadar",
       story: [
         "This project put me on airplanes. Porsche in Weissach. Daimler in Sindelfingen. Understand the requirement in the room, not in a spec doc. Get FANUC-certified so I could programme the robot myself. Mount a Zeiss camera on it. Drop the whole cell into a live production line.",
         "The technical challenge was systems integration at its purest \u2014 a plethora of software components had to talk to each other, and every one of them had to work. Measurement is unforgiving; if one link in the chain lies, the whole result is a lie.",
@@ -576,6 +834,40 @@ var projects_default = {
         "zeissImt"
       ],
       description: "ZEISS Reverse Engineering \u2014 CAD reverse engineering and tool correction for mould making, built on point-cloud processing and BRep modelling (ACIS kernel). Technical lead from the first line of code at TCS, then owner through requirements, architecture, release, sales and support at MERZ for Carl Zeiss IMT. Followed by Merz CAD Workmate, an in-house CAD app later ported to Android and Microsoft HoloLens for holographic on-part reverse engineering.",
+      oneLiner: "From a professor's algorithm to holograms \u2014 six years, two companies, one CAD product.",
+      role: "Technical lead \u2192 product owner (requirements to sales & support)",
+      team: "Hired and led 12 \u2192 25 engineers",
+      scale: "Shipped to Carl Zeiss IMT",
+      period: "Mar 2011 \u2013 2017",
+      stack: [
+        "C#",
+        "WPF / MVVM",
+        ".NET",
+        "C++",
+        "ACIS kernel",
+        "Point clouds",
+        "Android",
+        "HoloLens"
+      ],
+      metrics: [
+        {
+          value: "25",
+          label: "engineers hired & led"
+        },
+        {
+          value: "6",
+          label: "years, concept to HoloLens"
+        }
+      ],
+      problem: "A mathematics professor had an algorithm that extracted surfaces from point clouds, so a physical part could be compared against its original CAD design. Turning that into a product mould-makers could rely on \u2014 reverse engineering and tool correction, robust enough to sell and support \u2014 was an entirely different problem from proving the maths.",
+      approach: [
+        "Wrote the first line of the new system, learning C#, WPF, MVVM, .NET and agile simultaneously.",
+        "Built point-cloud processing and BRep modelling on the ACIS kernel for reverse engineering and tool correction in mould making.",
+        "Hired and led the team in Bangalore \u2014 12 engineers, then 25.",
+        "Rebuilt the product from scratch at MERZ with clean architecture and a smaller, stronger team, then owned it through requirements, architecture, release, sales and support.",
+        "Extended it into Merz CAD Workmate, ported to Android and Microsoft HoloLens for holographic, on-part reverse engineering."
+      ],
+      outcome: "A product that carried Carl Zeiss IMT's reverse engineering for years \u2014 and the experience that taught me to trust work over words.",
       story: [
         "First trip to Germany. Twenty-something years old. Handed the code of a mathematics professor \u2014 Dr. Deets \u2014 whose algorithm extracted surfaces from point clouds so you could compare a physical part against its original CAD design.",
         "I wrote the first line of the new system. Learned C#, WPF, MVVM, the .NET framework, agile \u2014 everything new, all at once, and I loved every minute of it. Back in Bangalore I hired the rest of the team: 12, then 25 engineers. Some of them were sharp enough to find flaws in the code I'd already written. That ego bruise turned out to be the fastest way to learn.",
@@ -602,6 +894,22 @@ var projects_default = {
         "clampingClient"
       ],
       description: "Two projects that turned me from a software person into a product person: Caligo DMS, a laser-projection measurement system where I first learned to solutionize with customers, and ROLEX \u2014 a universal clamping-pin field that adapts itself to any freeform part, computing per-pin Z-shifts from the CAD contour so the fixture physically reshapes to hold what it is about to machine.",
+      oneLiner: "The project that turned a software person into a product person \u2014 plus a fixture that reshapes itself.",
+      role: "Product Manager / Solution owner",
+      period: "2016 \u2013 2017",
+      stack: [
+        "CAD contour processing",
+        "Laser projection",
+        "Modular libraries"
+      ],
+      problem: "Caligo DMS was a laser-projection measurement system that almost worked \u2014 and customers had stopped handing over requirements. They were showing daily friction instead. Separately, holding freeform parts for machining meant a bespoke fixture per part, which is slow and expensive.",
+      approach: [
+        "Stopped executing specifications and started solutionising with customers in front of the real problem.",
+        "Turned that into work packages clean enough that engineers just built, with no back-and-forth.",
+        "Designed ROLEX, a universal clamping-pin field that adapts to any freeform part \u2014 computing per-pin Z-shifts from the CAD contour so the fixture physically reshapes around what it is about to hold.",
+        "Built it as modular libraries reusable across products, from feasibility prototype to delivery plan."
+      ],
+      outcome: "A fixture that reforms itself for any part \u2014 and the point where I stopped calling myself a software person and became a product person who could still write code.",
       story: [
         "Caligo doesn't look like the biggest project on this page, but it's the one that changed my identity.",
         "Customers weren't handing me requirements anymore. They were showing me their pain \u2014 the daily friction of working with a laser-projection measurement system that almost worked. For the first time I stopped executing and started solutionizing with them, then coming back to the team with a work package clean enough that engineers just built, no back-and-forth.",
@@ -625,6 +933,23 @@ var projects_default = {
         "semiClient"
       ],
       description: "I was training neural networks for industrial inspection in 2017 \u2014 years before AI became fashionable. Machine-learning defect detection (Caffe) on computed-tomography scans of precision components for semiconductor manufacturing: volumetric scan import, defect classification by probability, type, size and rest-wall thickness, and a trainable master/user workflow where engineers teach the model new defect classes. Project lead from requirement definition through delivery.",
+      oneLiner: "Training neural networks for industrial inspection in 2017 \u2014 years before AI was fashionable.",
+      role: "Project lead \u2014 requirements through delivery",
+      team: "In collaboration with Fraunhofer",
+      period: "2017 \u2013 2018",
+      stack: [
+        "Caffe",
+        "Neural networks",
+        "CT / volumetric data"
+      ],
+      problem: "Precision pipes for semiconductor manufacturing had to be checked for micro-defects. A trained human spent a week per batch squinting at computed-tomography scans \u2014 slow, expensive, and inconsistent in exactly the way a person gets tired.",
+      approach: [
+        "Trained a Caffe model on labelled defects, classifying by probability, type, size and rest-wall thickness.",
+        "Built volumetric scan import so CT data went straight into the pipeline.",
+        "Designed a trainable master/user workflow so engineers could teach the model new defect classes as they appeared in production.",
+        "Led the project from requirement definition through delivery, with Fraunhofer researchers advocating for neural nets harder than I did."
+      ],
+      outcome: "It worked \u2014 despite near-universal scepticism at the time. My first AI project, eight years before the rest of the industry arrived.",
       story: [
         "My first AI project. 2017. Pre-Transformer, pre-hype. In collaboration with Fraunhofer, whose researchers advocated for neural nets harder than I did.",
         "The problem: precision pipes for semiconductor manufacturing had to be inspected for micro-defects. A trained human spent a week per batch, squinting at CT scans. We trained a Caffe model on labelled defects \u2014 probability, type, size, rest-wall thickness \u2014 with a master/user workflow so an engineer could teach the model new defect classes as they appeared in production.",
@@ -651,6 +976,32 @@ var projects_default = {
         "cubonic"
       ],
       description: "Building and leading cross-functional teams across engineering, product, and design \u2014 from three departments at MERZ to app teams at AutoScout24 \u2014 hiring, delivery cadence, and a bias toward shipping useful software over slideware.",
+      oneLiner: "Seven teams, seven geographies, one product \u2014 and the operating rule underneath all of it.",
+      role: "Head of Software \u2192 Head of Product / Head of Digital Solutions",
+      team: "Up to 7 teams \xB7 4 PMs \xB7 24 engineers",
+      scale: "MERZ \xB7 Cluno \xB7 Cazoo \xB7 AutoScout24 \xB7 CUBONIC",
+      period: "2013 \u2013 present",
+      metrics: [
+        {
+          value: "7",
+          label: "teams across 7 geographies",
+          note: "at MERZ, aged 25"
+        },
+        {
+          value: "5",
+          label: "companies led in",
+          note: "industrial \u2192 mobility \u2192 AI"
+        }
+      ],
+      problem: "Leading software people is mostly not a software problem. Across three departments at MERZ, app teams at AutoScout24 and product teams at Cluno, Cazoo and CUBONIC, the recurring question is the same: how do you keep people motivated and aligned across time zones, and how do you hire so that shipping is the default?",
+      approach: [
+        "Led seven teams across seven geographies on one product after being promoted to Head of Software at MERZ at 25.",
+        "Hired against three signals every time: is this person telling the truth about their CV, can they think under pressure, and can they communicate.",
+        "Built on three pillars \u2014 Transparency \u2192 Trust \u2192 Positivity.",
+        "Applied one operating rule: judge people by what they ship, not what they promise, then give them the room to ship."
+      ],
+      outcome: "Teams that shipped useful software instead of slideware, across industrial metrology, mobility marketplaces and AI.",
+      recommendationRef: "Derek Charter",
       story: [
         "Promoted to Head of Software at Merz at 25 \u2014 not because I was close to the CEO, but because I'd shown him what the group could do beyond one or two customers. Seven teams, seven geographies, one product. That's where I learned that keeping people motivated across time zones is the actual job.",
         "Since then: PMs and engineers at Cluno, Cazoo, AutoScout24, and CUBONIC. Same hiring signal every time \u2014 is this person telling the truth about their CV, can they think under pressure, and can they communicate? Genius that can't communicate loses to competence that can.",
