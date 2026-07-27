@@ -42,6 +42,42 @@
       "coverCaption": "tool use · memory · guardrails"
     },
     {
+      "id": "cubonic-digital",
+      "title": "CUBONIC — Digital Infrastructure for Last-Mile Mobility",
+      "category": "Mobility & Marketplaces",
+      "year": "2024–present",
+      "tags": [
+        "CONNECTED VEHICLE",
+        "LAST MILE"
+      ],
+      "companies": [
+        "cubonic"
+      ],
+      "description": "Building CUBONIC's digital infrastructure from the ground up — connecting the vehicle and its autonomous driving stack to the wider ecosystem behind sustainable last-mile mobility: autonomous, connected electric light commercial vehicles.",
+      "oneLiner": "The digital backbone for autonomous, connected electric vans — built from the ground up.",
+      "role": "Head of Digital Solutions",
+      "scale": "Vehicle · autonomous driving · ecosystem",
+      "period": "Feb 2024 – present",
+      "stack": [
+        "Connected vehicle",
+        "Autonomous driving",
+        "Cloud platform",
+        "Fleet ecosystem"
+      ],
+      "problem": "A new vehicle programme is not just a vehicle. An autonomous, connected eLCV only delivers last-mile mobility if there is a digital layer underneath it — connecting what the vehicle knows to the operators, customers and systems around it. At CUBONIC that layer did not exist yet; it had to be built from the ground up, in parallel with the vehicle itself.",
+      "approach": [
+        "Built the digital infrastructure from zero rather than assembling it from off-the-shelf fleet tooling, so it fits an autonomous vehicle rather than a conventional one.",
+        "Connected the vehicle and its autonomous driving stack into the wider CUBONIC ecosystem, so vehicle data becomes operational capability.",
+        "Led AI strategy, private LLM deployment and agentic systems as part of the same backbone — the platform, the local model stack and the governance model are one programme, not three.",
+        "Kept it aimed at the actual business outcome: sustainable last-mile delivery that works commercially, not a technology demonstration."
+      ],
+      "outcome": "The digital foundation the CUBONIC vehicle and ecosystem run on — and the platform the agentic and private-LLM work is built into.",
+      "link": "www.cubonic.de",
+      "coverImage": "/covers/mobility-a.svg",
+      "coverHeadline": "LAST MILE, ELECTRIC",
+      "coverCaption": "autonomous · connected · eLCV"
+    },
+    {
       "id": "autoscout24-apps",
       "title": "AutoScout24 Mobile Apps",
       "category": "Mobility & Marketplaces",
@@ -478,10 +514,9 @@
       "problem": "Fleets fail at the boring parts: a mis-typed VIN, a police notice that never becomes an invoice, a maintenance job nobody billed for. Each one is small; together they cap how large a fleet a lean operations team can run.",
       "approach": [
         "Built a work-order management system mapping every job and invoice line item across logistics, maintenance, repair and inspection.",
-        "Automated fine handling with OCR — from scanned police notice to customer invoice without a human retyping it.",
-        "Automated monthly invoicing and on-demand vehicle-health reports.",
-        "Added S&OP for the fleet and mid-mile planning for the trucks.",
-        "Shipped the Glide Intake app for VIN-scan check-in when cars arrive at a location."
+        "Automated monthly invoicing so billing stopped depending on someone remembering.",
+        "Added on-demand vehicle-health reports, so availability was a question the system could answer.",
+        "Connected the specialised pieces — OCR fine handling, S&OP planning, mid-mile logistics and Glide intake — into one operating picture."
       ],
       "outcome": "Over 80% less manual effort on vehicle availability alone. Not glamorous — very profitable.",
       "recommendationRef": "Amr Mazen",
@@ -491,8 +526,134 @@
         "Result: 80%+ less manual effort just on vehicle availability. Not glamorous. Very profitable."
       ],
       "coverImage": "/covers/mobility-b.svg",
+      "coverHeadline": "80% LESS MANUAL",
+      "coverCaption": "work orders · invoicing · vehicle health"
+    },
+    {
+      "id": "glide-intake",
+      "title": "Glide Intake — VIN-Scan Vehicle Check-In",
+      "category": "Mobility & Marketplaces",
+      "year": "2021",
+      "tags": [
+        "MOBILE APP",
+        "OPERATIONS"
+      ],
+      "companies": [
+        "cazoo"
+      ],
+      "description": "A mobile app for taking cars in as they arrive at a Cazoo location — scan the VIN to check a vehicle in and confirm its details on the spot, replacing clipboard-and-spreadsheet intake.",
+      "oneLiner": "Scan a VIN, check the car in — intake in seconds instead of paperwork.",
+      "role": "Senior Product Manager",
+      "period": "Jun 2021 – Aug 2021",
+      "stack": [
+        "iOS",
+        "Android",
+        "VIN scanning"
+      ],
+      "problem": "Every car arriving at a hub or refurbishment centre has to be checked in and its details confirmed. Done on paper or in a spreadsheet, that is slow, easy to mistype, and invisible to everyone downstream until someone re-keys it — and a mis-typed VIN follows a vehicle through every system it touches afterwards.",
+      "approach": [
+        "Built a mobile app for intake at the point the car physically arrives, rather than a desk process afterwards.",
+        "Made VIN scanning the entry point, so the identifier is captured by the camera instead of typed.",
+        "Confirmed vehicle details on the spot, so discrepancies surface while the car is still in front of you."
+      ],
+      "outcome": "Vehicle intake became a scan rather than a form — feeding clean vehicle identity into the logistics and operations systems downstream.",
+      "coverImage": "/covers/mobility-b.svg",
       "coverVideo": "/videos/glide-intake.mp4",
       "coverPoster": "/videos/posters/glide-intake.jpg"
+    },
+    {
+      "id": "mid-mile-planning",
+      "title": "Mid-Mile Planning System",
+      "category": "Mobility & Marketplaces",
+      "year": "2021",
+      "tags": [
+        "LOGISTICS",
+        "PLANNING"
+      ],
+      "companies": [
+        "cazoo"
+      ],
+      "description": "Planning the middle leg of vehicle logistics for Cazoo — moving whole truckloads of cars between refurbishment centres, distribution hubs and delivery, across European markets.",
+      "oneLiner": "Hub to hub, truckload by truckload — planning the leg nobody sees.",
+      "role": "Senior Product Manager",
+      "period": "Jul 2021 – Sep 2021",
+      "stack": [
+        "Logistics planning",
+        "Fleet operations"
+      ],
+      "problem": "First mile and last mile get the attention; the middle leg is where the cost sits. Cars have to move between refurbishment centres and distribution hubs in whole truckloads, across markets, and a plan that looks fine on a spreadsheet fails the moment a hub is full or a truck is half empty.",
+      "approach": [
+        "Built planning for the mid-mile leg specifically, rather than treating it as a gap between first and last mile.",
+        "Planned at truckload level across refurbishment centres and distribution hubs.",
+        "Fitted it to the wider first-mile / mid-mile / last-mile chain being stood up across Germany, France and Spain."
+      ],
+      "outcome": "The middle leg of Cazoo's European vehicle logistics became something that could be planned rather than improvised.",
+      "coverImage": "/covers/mobility-b.svg",
+      "coverHeadline": "MID MILE",
+      "coverCaption": "hub → hub, truckload by truckload"
+    },
+    {
+      "id": "ocr-fine-handling",
+      "title": "OCR Digital Fine Handling",
+      "category": "Mobility & Marketplaces",
+      "year": "2020",
+      "tags": [
+        "OCR",
+        "AUTOMATION"
+      ],
+      "companies": [
+        "cluno"
+      ],
+      "description": "Turning a scanned police notice into a customer invoice without a human retyping it — OCR-based traffic-fine handling for a subscription fleet.",
+      "oneLiner": "Scanned police notice in, customer invoice out — with nobody retyping it.",
+      "role": "Senior Product Manager",
+      "period": "May 2020 – Oct 2020",
+      "stack": [
+        "OCR",
+        "Automated invoicing"
+      ],
+      "problem": "A subscription fleet collects traffic fines continuously, and each one arrives as a piece of paper naming the operator rather than the driver. Someone has to read it, identify the vehicle and the customer, and raise an invoice. It is pure manual cost, it scales linearly with the fleet, and every notice that falls through the cracks is money the business simply loses.",
+      "approach": [
+        "Used OCR to read the scanned notice instead of having an operator transcribe it.",
+        "Matched the notice to the vehicle and the customer responsible at that date automatically.",
+        "Carried it straight through to a customer invoice, closing the loop end to end."
+      ],
+      "outcome": "One of the boring, unglamorous processes that quietly caps how large a fleet a lean operations team can run — removed.",
+      "coverImage": "/covers/mobility-b.svg",
+      "coverHeadline": "NOTICE → INVOICE",
+      "coverCaption": "OCR in, customer invoice out"
+    },
+    {
+      "id": "sop-automation",
+      "title": "S&OP Process Automation",
+      "category": "Mobility & Marketplaces",
+      "year": "2019–2021",
+      "tags": [
+        "S&OP",
+        "FORECASTING"
+      ],
+      "companies": [
+        "cluno"
+      ],
+      "description": "Sales & operations planning for a growing subscription fleet — automating the process that matches vehicle supply to customer demand.",
+      "oneLiner": "Matching vehicle supply to customer demand, without the monthly spreadsheet ritual.",
+      "role": "Senior Product Manager",
+      "period": "Mar 2019 – Nov 2021",
+      "stack": [
+        "S&OP",
+        "Supply chain",
+        "Fleet planning"
+      ],
+      "problem": "A car-subscription business lives or dies on whether the right vehicles are available when customers want them. Get it wrong in one direction and capital sits idle on a lot; get it wrong in the other and you turn customers away. Doing that planning by hand each cycle does not survive growth.",
+      "approach": [
+        "Automated the sales & operations planning cycle instead of rebuilding it in a spreadsheet each period.",
+        "Connected vehicle supply and availability to actual customer demand signals.",
+        "Fed it into the wider supply-chain and logistics automation across the fleet."
+      ],
+      "outcome": "Supply planning became a system rather than a monthly ritual — part of the lean operations engine behind the subscription fleet.",
+      "coverImage": "/covers/mobility-b.svg",
+      "coverHeadline": "SUPPLY MEETS DEMAND",
+      "coverCaption": "planning the fleet, not the spreadsheet"
     },
     {
       "id": "zeiss-measurement-cell",
@@ -646,6 +807,39 @@
       "coverImage": "/covers/engineering-a.svg",
       "coverHeadline": "SELF-ADAPTING",
       "coverCaption": "CAD contour → per-pin Z-shift, zero rework"
+    },
+    {
+      "id": "merz-cad-workmate",
+      "title": "MERZ CAD Workmate — Cross-Platform & AR/VR CAD",
+      "category": "Industrial & Vision",
+      "year": "2017",
+      "tags": [
+        "AR / VR",
+        "CAD"
+      ],
+      "companies": [
+        "merz"
+      ],
+      "description": "Architect and product manager for a cross-platform CAD application with AR/VR support — later ported to Android and Microsoft HoloLens for holographic, on-part reverse engineering.",
+      "oneLiner": "CAD off the workstation and onto the part — cross-platform, and in holograms.",
+      "role": "Architect & Product Manager",
+      "period": "Feb 2017 – May 2017",
+      "stack": [
+        "Cross-platform CAD",
+        "Android",
+        "Microsoft HoloLens",
+        "AR / VR"
+      ],
+      "problem": "CAD lives on a workstation, but the part it describes lives on the shop floor. Every time an engineer has to walk between the two, the comparison happens from memory. Getting CAD onto the floor means a cross-platform application — and eventually a headset that puts the model on the part itself.",
+      "approach": [
+        "Architected an in-house CAD application that ran across platforms rather than one workstation.",
+        "Designed it for AR/VR devices from the outset instead of retrofitting a viewer.",
+        "Ported it to Android and Microsoft HoloLens for holographic, on-part reverse engineering."
+      ],
+      "outcome": "The point where a professor's point-cloud algorithm ended up as a hologram overlaid on the physical part.",
+      "coverImage": "/covers/engineering-a.svg",
+      "coverHeadline": "CAD IN AR",
+      "coverCaption": "Android · HoloLens · on the part"
     },
     {
       "id": "ct-defect-detection",
