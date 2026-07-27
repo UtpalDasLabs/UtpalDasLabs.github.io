@@ -64,7 +64,31 @@ content:
           - { name: year, label: Year(s), type: string }
           - { name: tags, label: Tags, type: string, list: true }
           - { name: companies, label: Company keys (see companies.json), type: string, list: true }
-          - { name: description, label: Description, type: text }
+          - { name: description, label: Description (shown on the Projects grid card), type: text }
+
+          # ---- Case study (all optional) ----
+          # Fill these in to upgrade a project from the compact layout to the
+          # full case study. Leave them empty and the project renders as before.
+          - { name: oneLiner, label: "Case study — one-line value proposition (under the hero)", type: text, required: false }
+          - name: metrics
+            label: "Case study — headline metrics (max 4, shown as big numbers)"
+            type: object
+            list: true
+            required: false
+            fields:
+              - { name: value, label: "Value (e.g. +30%, 2×, 3,700+)", type: string }
+              - { name: label, label: "Label (e.g. organic acquisition)", type: string }
+              - { name: note, label: Small note underneath (optional), type: string, required: false }
+          - { name: role, label: "Case study — my role", type: string, required: false }
+          - { name: team, label: "Case study — team (e.g. 4 senior PMs · 24 engineers)", type: string, required: false }
+          - { name: scale, label: "Case study — scale (e.g. 2M+ listings)", type: string, required: false }
+          - { name: period, label: "Case study — precise period (e.g. Aug 2022 – Jan 2024)", type: string, required: false }
+          - { name: stack, label: "Case study — stack / tools", type: string, list: true, required: false }
+          - { name: problem, label: "Case study — the problem", type: text, required: false }
+          - { name: approach, label: "Case study — what I built (one entry per bullet)", type: text, list: true, required: false }
+          - { name: outcome, label: "Case study — the outcome", type: text, required: false }
+          - { name: recommendationRef, label: "Case study — pull-quote: exact author name from Kind Words", type: string, required: false }
+
           - { name: story, label: The story (one entry per paragraph), type: text, list: true }
           - { name: link, label: External link (optional), type: string, required: false }
           - { name: coverImage, label: Cover image / SVG, type: image }
@@ -72,6 +96,41 @@ content:
           - { name: coverPoster, label: Video poster frame (optional — extracted still, not the SVG), type: image, required: false }
           - { name: coverHeadline, label: Typographic cover — headline (only if no video), type: string, required: false }
           - { name: coverCaption, label: Typographic cover — caption, type: string, required: false }
+
+  - name: labs
+    label: Labs (free tools)
+    type: file
+    path: content/labs.json
+    list: false
+    fields:
+      - name: intro
+        label: Page intro
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow line, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Lead paragraph, type: text }
+          - { name: githubUrl, label: GitHub org URL, type: string }
+      - name: tools
+        label: Tool
+        type: object
+        list: true
+        fields:
+          - { name: id, label: ID (lowercase-hyphens), type: string }
+          - { name: name, label: Tool name, type: string }
+          - { name: tagline, label: Tagline (one line), type: string }
+          - { name: description, label: Description, type: text }
+          - { name: tags, label: Tags, type: string, list: true }
+          - { name: url, label: "Live URL (required when status is live)", type: string, required: false }
+          - name: status
+            label: Status
+            type: select
+            options:
+              values:
+                - live
+                - soon
+          - { name: coverHeadline, label: Cover headline (big text), type: string }
+          - { name: coverCaption, label: Cover caption (small text), type: string }
 
   - name: recommendations
     label: Recommendations (Kind Words)
