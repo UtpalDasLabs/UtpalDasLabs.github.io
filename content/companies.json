@@ -31,6 +31,12 @@
       "logo": "/logos/zeiss.png"
     },
     {
+      "key": "merz",
+      "name": "MERZ Group",
+      "url": null,
+      "logo": null
+    },
+    {
       "key": "semiClient",
       "name": "Semiconductor industry",
       "url": null,
