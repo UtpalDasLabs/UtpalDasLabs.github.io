@@ -29,6 +29,9 @@ const PROJECT_CATEGORIES = new Set([
   "Leadership",
 ]);
 
+// Collected while scanning projects, resolved against recommendations below.
+const recommendationRefs = [];
+
 // --- projects.json ---
 const projects = read("projects.json");
 if (projects) {
@@ -50,6 +53,35 @@ if (projects) {
         err(`${at}: unknown category "${p.category}"`);
       }
       if (p?.tags && !Array.isArray(p.tags)) err(`${at}: "tags" must be an array`);
+
+      // Optional case-study fields: validate shape when present.
+      if (p?.metrics !== undefined) {
+        if (!Array.isArray(p.metrics)) {
+          err(`${at}: "metrics" must be an array`);
+        } else {
+          for (const [j, m] of p.metrics.entries()) {
+            if (!isNonEmptyString(m?.value) || !isNonEmptyString(m?.label)) {
+              err(`${at}: metrics[${j}] needs a non-empty "value" and "label"`);
+            }
+          }
+          if (p.metrics.length > 4) {
+            err(`${at}: ${p.metrics.length} metrics — keep it to 4 so the row stays scannable`);
+          }
+        }
+      }
+      for (const f of ["approach", "stack"]) {
+        if (p?.[f] !== undefined && !Array.isArray(p[f])) {
+          err(`${at}: "${f}" must be an array`);
+        }
+      }
+      // A recommendationRef must resolve to a real recommendation author.
+      if (p?.recommendationRef !== undefined) {
+        if (!isNonEmptyString(p.recommendationRef)) {
+          err(`${at}: "recommendationRef" must be a non-empty string`);
+        } else {
+          recommendationRefs.push([at, p.recommendationRef]);
+        }
+      }
     }
   }
 }
@@ -92,7 +124,18 @@ if (profile && !Array.isArray(profile.positions)) {
 const recs = read("recommendations.json");
 if (recs) {
   const list = Array.isArray(recs) ? recs : recs.recommendations;
-  if (!Array.isArray(list)) err("recommendations.json: expected an array of recommendations");
+  if (!Array.isArray(list)) {
+    err("recommendations.json: expected an array of recommendations");
+  } else {
+    // Every project's recommendationRef must name a real author, otherwise the
+    // pull-quote silently disappears from the case study.
+    const authors = new Set(list.map((r) => r?.author).filter(Boolean));
+    for (const [at, ref] of recommendationRefs) {
+      if (!authors.has(ref)) {
+        err(`${at}: recommendationRef "${ref}" matches no author in recommendations.json`);
+      }
+    }
+  }
 }
 
 if (errors.length) {
