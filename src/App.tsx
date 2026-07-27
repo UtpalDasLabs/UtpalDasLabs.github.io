@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -8,7 +8,6 @@ import { CursorRing } from "@/components/CursorRing";
 import { RevealLayer } from "@/components/RevealLayer";
 import { ScrollManager } from "@/components/ScrollManager";
 import { ConsentBanner } from "@/components/ConsentBanner";
-import { initAnalytics } from "@/lib/analytics";
 import { useLenis } from "@/hooks/use-lenis";
 import Index from "./pages/Index";
 
@@ -27,9 +26,6 @@ const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 
 const App = () => {
   useLenis();
-  useEffect(() => {
-    initAnalytics();
-  }, []);
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <TooltipProvider>

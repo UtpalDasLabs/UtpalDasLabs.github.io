@@ -34,10 +34,17 @@ declare global {
   }
 }
 
+// IMPORTANT: gtag.js only executes dataLayer entries that are real
+// `arguments` objects. Pushing a plain array (e.g. from rest parameters) is
+// silently ignored, so commands never reach GA. This must stay a classic
+// function that pushes `arguments` itself — matching Google's own snippet:
+//   function gtag(){dataLayer.push(arguments);}
 function gtag(...args: unknown[]) {
   if (typeof window === "undefined") return;
   window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push(args);
+  void args;
+  // eslint-disable-next-line prefer-rest-params
+  window.dataLayer.push(arguments);
 }
 
 let scriptInjected = false;
