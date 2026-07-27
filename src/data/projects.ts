@@ -24,6 +24,13 @@ export const companies: Record<string, Company> = Object.fromEntries(
   ]),
 );
 
+/** A headline number, pulled out of the prose so it's scannable in seconds. */
+export interface Metric {
+  value: string;
+  label: string;
+  note?: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -34,6 +41,22 @@ export interface Project {
   description: string;
   story?: string[];
   link?: string;
+  /** ---- Case-study fields. All optional: a project with none of them
+   *  renders as the original compact layout. Populated for flagships. ---- */
+  /** One-sentence value proposition, shown under the hero title. */
+  oneLiner?: string;
+  /** What Utpal himself owned — the first thing a hiring manager looks for. */
+  role?: string;
+  team?: string;
+  scale?: string;
+  period?: string;
+  stack?: string[];
+  metrics?: Metric[];
+  problem?: string;
+  approach?: string[];
+  outcome?: string;
+  /** Author name in recommendations.json — renders a pull-quote as proof. */
+  recommendationRef?: string;
   coverImage: string;
   coverVideo?: string;
   /** Real frame extracted from coverVideo — used as the <video poster> and
@@ -47,6 +70,22 @@ export interface Project {
   coverCaption?: string;
 }
 
+/** The optional case-study fields as they appear in the raw JSON. */
+type CaseStudyFields = Pick<
+  Project,
+  | "oneLiner"
+  | "role"
+  | "team"
+  | "scale"
+  | "period"
+  | "stack"
+  | "metrics"
+  | "problem"
+  | "approach"
+  | "outcome"
+  | "recommendationRef"
+>;
+
 export const projects: Project[] = projectsRaw.projects.map((p) => ({
   ...p,
   category: p.category as Domain,
@@ -59,4 +98,25 @@ export const projects: Project[] = projectsRaw.projects.map((p) => ({
   story: (p as { story?: string[] }).story ?? undefined,
   coverHeadline: (p as { coverHeadline?: string }).coverHeadline ?? undefined,
   coverCaption: (p as { coverCaption?: string }).coverCaption ?? undefined,
+  // Case-study fields — absent on projects still using the compact layout.
+  // Listed explicitly (rather than spread) so the mapped `companies` above
+  // isn't overwritten by the raw string keys.
+  ...(() => {
+    // Only the case-study fields — narrowed via `unknown` because the raw JSON
+    // shape differs from Project (companies are string keys there).
+    const c = p as unknown as CaseStudyFields;
+    return {
+      oneLiner: c.oneLiner,
+      role: c.role,
+      team: c.team,
+      scale: c.scale,
+      period: c.period,
+      stack: c.stack,
+      metrics: c.metrics,
+      problem: c.problem,
+      approach: c.approach,
+      outcome: c.outcome,
+      recommendationRef: c.recommendationRef,
+    };
+  })(),
 }));

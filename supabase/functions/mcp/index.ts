@@ -308,6 +308,48 @@ var projects_default = {
         "autoscout24"
       ],
       description: "Head of Product for the native apps of Europe's largest car marketplace \u2014 search, favorites, price-drop alerts, dealer contact and selling flows across 2M+ listings, plus the AutoTrader and Gebrauchtwagen.de white-label apps. Led 4 senior PMs and 24 engineers; grew organic user acquisition 30% across European markets, doubled engagement, improved conversion 23% and lifted app advertising revenue 10%.",
+      oneLiner: "Europe's largest car marketplace, in your pocket \u2014 four apps, one team, four numbers moved at once.",
+      role: "Head of Product / Head of Apps",
+      team: "4 senior PMs \xB7 24 engineers",
+      scale: "2M+ live listings \xB7 4 apps \xB7 European markets",
+      period: "Aug 2022 \u2013 Jan 2024",
+      stack: [
+        "iOS",
+        "Android",
+        "White-label platform",
+        "Amplitude",
+        "A/B testing"
+      ],
+      metrics: [
+        {
+          value: "+30%",
+          label: "organic acquisition",
+          note: "across European markets"
+        },
+        {
+          value: "2\xD7",
+          label: "app engagement"
+        },
+        {
+          value: "+23%",
+          label: "conversion"
+        },
+        {
+          value: "+10%",
+          label: "app ad revenue"
+        }
+      ],
+      problem: "Own the vision, strategy and roadmap for the native apps of Europe's largest car marketplace \u2014 iOS, Android and the white-label apps (AutoTrader, Gebrauchtwagen.de) \u2014 and move four numbers at once: organic acquisition, engagement, conversion and app advertising revenue. All of it across multiple European markets, on a marketplace where private buyers and professional dealers want very different things from the same product.",
+      approach: [
+        "Made search and discovery the core loop \u2014 filters, saved searches and a notepad for favourites, so returning to a shortlist is one tap rather than a new search.",
+        "Turned price-drop alerts into the retention engine: push notifications on saved cars bring users back at exactly the moment their decision changes.",
+        "Closed the buyer\u2013dealer gap with direct dealer contact and verified, authentic dealer reviews on every listing.",
+        "Opened the sell side in-app \u2014 photo upload and a free value check, so listing a car takes minutes on a phone.",
+        "Ran AutoScout24, AutoTrader and Gebrauchtwagen.de from one white-label platform, so a single team's work shipped to every market.",
+        "Kept decisions data-informed, pairing product analytics with insight from the international offices and business stakeholders."
+      ],
+      outcome: "Organic user acquisition up 30% across European markets, app engagement doubled, conversion up 23% and app advertising revenue up 10% \u2014 delivered by a lean app team of 4 senior PMs and 24 engineers owning a business result at marketplace scale.",
+      recommendationRef: "Nikita Belokopytov",
       story: [
         "Two million listings. Millions of users. One iOS and one Android app carrying the whole marketplace in your pocket \u2014 plus the white-label AutoTrader and Gebrauchtwagen.de apps on the same codebase.",
         "Coming from Cluno, I brought the same instinct: connect the two journeys \u2014 the buyer's journey and the vehicle's journey \u2014 inside one engine. Every price-drop notification, every dealer contact, every save is a touch point in a much larger system.",

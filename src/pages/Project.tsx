@@ -3,6 +3,7 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { projects, type Domain } from "@/data/projects";
+import { recommendations } from "@/data/recommendations";
 import { CoverMedia } from "@/components/CoverMedia";
 import { CinematicBackground } from "@/components/CinematicBackground";
 import { usePageMeta } from "@/hooks/use-page-meta";
@@ -45,6 +46,10 @@ const Project = () => {
       ? project.link
       : `https://${project.link}`
     : null;
+
+  const endorsement = project.recommendationRef
+    ? recommendations.find((r) => r.author === project.recommendationRef)
+    : undefined;
 
   return (
     <Layout noPadding headerRevealMode showEchelonFooter>
@@ -95,6 +100,44 @@ const Project = () => {
         </div>
       </section>
 
+      {/* ---- Case-study layer 1: the hook ----
+          One-line value prop plus the headline numbers, so a hiring manager
+          gets the outcome in seconds instead of mining it out of the prose.
+          Only renders for projects that carry this data. */}
+      {(project.oneLiner || project.metrics?.length) && (
+        <section className="border-b border-separator bg-background">
+          <div className="container-wide py-12 md:py-16">
+            {project.oneLiner && (
+              <p className="max-w-4xl font-display text-2xl font-semibold leading-snug tracking-tight text-foreground md:text-3xl lg:text-4xl">
+                {project.oneLiner}
+              </p>
+            )}
+            {!!project.metrics?.length && (
+              <dl className="mt-10 grid grid-cols-2 gap-x-6 gap-y-8 md:mt-12 md:grid-cols-4 md:gap-8">
+                {project.metrics.map((m) => (
+                  <div key={m.label} className="border-t-2 border-accent pt-4">
+                    <dt className="sr-only">{m.label}</dt>
+                    <dd>
+                      <span className="block font-display text-4xl font-bold leading-none tracking-tight text-accent md:text-5xl lg:text-6xl">
+                        {m.value}
+                      </span>
+                      <span className="mt-3 block text-sm text-foreground md:text-base">
+                        {m.label}
+                      </span>
+                      {m.note && (
+                        <span className="mt-1 block text-xs text-muted-foreground">
+                          {m.note}
+                        </span>
+                      )}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* Project Info — navigation lands here (see ScrollManager) so readers
           start on the content and can scroll up to the hero if they want. */}
       <section id="project-content" className="container-wide py-16 md:py-24">
@@ -126,10 +169,44 @@ const Project = () => {
                 )}
               </div>
             </div>
+            {/* Role first — the thing a hiring manager scans for. */}
+            {project.role && (
+              <div>
+                <p className="text-label mb-2">My role</p>
+                <p className="text-foreground">{project.role}</p>
+              </div>
+            )}
+            {project.team && (
+              <div>
+                <p className="text-label mb-2">Team</p>
+                <p>{project.team}</p>
+              </div>
+            )}
+            {project.scale && (
+              <div>
+                <p className="text-label mb-2">Scale</p>
+                <p>{project.scale}</p>
+              </div>
+            )}
             <div>
               <p className="text-label mb-2">Year</p>
-              <p>{project.year}</p>
+              <p>{project.period ?? project.year}</p>
             </div>
+            {!!project.stack?.length && (
+              <div>
+                <p className="text-label mb-2">Stack</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.stack.map((s) => (
+                    <span
+                      key={s}
+                      className="border border-separator px-2.5 py-1 text-xs text-muted-foreground"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
             <div>
               <p className="text-label mb-2">Categories</p>
               <div className="flex flex-wrap gap-2">
@@ -147,9 +224,15 @@ const Project = () => {
 
           {/* Description + Story */}
           <div className="md:col-span-2 space-y-8">
-            <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground">
-              {project.description}
-            </p>
+            {/* On a full case study the description is redundant — the hero
+                one-liner, problem and approach already cover it, and its
+                metrics are shown as headline numbers above. It still serves
+                the project card on the Projects grid. */}
+            {!project.problem && (
+              <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground">
+                {project.description}
+              </p>
+            )}
 
             {/* Live-app CTA — only for projects with a usable public link */}
             {liveUrl && (
@@ -172,6 +255,47 @@ const Project = () => {
               </a>
             )}
 
+            {/* ---- Case-study layer 2: the fast read ----
+                Problem → Approach → Outcome, for a founder or customer who
+                wants the substance in a minute without the full narrative. */}
+            {project.problem && (
+              <div>
+                <h2 className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+                  The problem
+                </h2>
+                <p className="text-base leading-relaxed text-foreground/85 md:text-lg">
+                  {project.problem}
+                </p>
+              </div>
+            )}
+
+            {!!project.approach?.length && (
+              <div>
+                <h2 className="mb-4 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+                  What I built
+                </h2>
+                <ul className="space-y-3">
+                  {project.approach.map((item) => (
+                    <li key={item} className="flex gap-3 text-base leading-relaxed text-muted-foreground md:text-lg">
+                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 bg-accent" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {project.outcome && (
+              <div className="border border-separator p-6 md:p-8">
+                <h2 className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
+                  The outcome
+                </h2>
+                <p className="text-base leading-relaxed text-foreground/90 md:text-lg">
+                  {project.outcome}
+                </p>
+              </div>
+            )}
+
             {project.story && project.story.length > 0 && (
               <div className="space-y-6 border-l-2 border-accent/60 pl-6 md:pl-8">
                 <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
@@ -192,6 +316,34 @@ const Project = () => {
           </div>
         </div>
       </section>
+
+      {/* ---- Case-study layer 4: proof ----
+          A recommendation from someone who was actually there, shown at the
+          moment of interest rather than stranded on the Kind Words page. */}
+      {endorsement && (
+        <section className="border-t border-separator">
+          <div className="container-wide py-16 md:py-20">
+            <figure className="mx-auto max-w-4xl">
+              <blockquote className="font-display text-xl font-semibold leading-snug tracking-tight text-foreground md:text-2xl lg:text-3xl">
+                <span aria-hidden="true" className="text-accent">“</span>
+                {endorsement.quote}
+                <span aria-hidden="true" className="text-accent">”</span>
+              </blockquote>
+              <figcaption className="mt-6 text-sm text-muted-foreground">
+                <span className="text-foreground">{endorsement.author}</span>
+                {endorsement.role && <> · {endorsement.role}</>}
+              </figcaption>
+              <Link
+                to="/kind-words"
+                className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-accent"
+              >
+                More kind words
+                <ArrowUpRight size={14} aria-hidden="true" />
+              </Link>
+            </figure>
+          </div>
+        </section>
+      )}
 
       {/* Back Link */}
       <section className="container-wide pb-24">
