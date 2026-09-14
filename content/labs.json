@@ -2,10 +2,42 @@
   "intro": {
     "eyebrow": "Labs · Berlin · 2026",
     "title": "Labs",
-    "lead": "The workshop. Free, browser-first tools I build on weekends — private by design, no sign-up, nothing uploaded. Selected experiments from UtpalDasLabs, live for anyone to use.",
+    "lead": "The workshop. Free tools I build on weekends, live for anyone to use — and each one tells you plainly what it does with your data. Selected experiments from UtpalDasLabs.",
     "githubUrl": "https://github.com/UtpalDasLabs"
   },
   "tools": [
+    {
+      "id": "german-citizenship",
+      "name": "Leben in Deutschland",
+      "tagline": "All 460 official citizenship-test questions — swipe to study, in German and English.",
+      "description": "A flashcard app for the official German citizenship test: all 460 questions, the 300 general ones plus 10 for each of the 16 Bundesländer. Every card carries the German original, an English translation, a plain-English note on what it actually means for someone living here, and a visual. Tell it when your test is and it works out how many cards a day you need. Installs to your home screen, works offline, and your progress stays on your device — with a backup file you can export and import.",
+      "tags": [
+        "460 QUESTIONS",
+        "DE + EN",
+        "WORKS OFFLINE",
+        "INSTALLABLE"
+      ],
+      "url": "https://utpaldaslabs.github.io/German-Citizenship-App/",
+      "status": "live",
+      "coverHeadline": "460 QUESTIONS",
+      "coverCaption": "swipe to study · offline · DE + EN"
+    },
+    {
+      "id": "wtf-india",
+      "name": "We the Future",
+      "tagline": "Public money, public proof — government projects checked against official records.",
+      "description": "A mobile-first app showing government projects near you, with map and list discovery, search, and filters for planned, ongoing, delayed, completed and finished early. Every project carries an evidence panel: official source links, source type, verification status, confidence, and when it was last verified. Verified facts and timelines are kept strictly separate from community ratings and reviews, so what the record says and what people say never blur together.",
+      "tags": [
+        "CIVIC TECH",
+        "EVIDENCE-BACKED",
+        "INDIA",
+        "PWA"
+      ],
+      "url": "https://utpaldaslabs.github.io/WTF-india/",
+      "status": "live",
+      "coverHeadline": "PUBLIC MONEY, PUBLIC PROOF",
+      "coverCaption": "official records · community voices, separate"
+    },
     {
       "id": "retailor",
       "name": "Retailor",
