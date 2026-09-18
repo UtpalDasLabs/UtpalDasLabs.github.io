@@ -23,6 +23,22 @@
       "coverCaption": "swipe to study · offline · DE + EN"
     },
     {
+      "id": "german-b1",
+      "name": "B1-Trainer",
+      "tagline": "Everything the German B1 exam tests — vocabulary, grammar, and all four modules.",
+      "description": "A study app for Zertifikat Deutsch B1, covering Goethe, telc and DTZ — pick your certificate and the facts, timings and official links change to match. 931 words across 22 themes, 166 grammar drills with an explanation every time, and 31 full exam tasks across Lesen, Hören, Schreiben and Sprechen — 1,097 items on a spaced-repetition schedule. Hören is spoken aloud by your device rather than shipped as audio files, with the same play limit as the real exam. Lesen and Hören are scored against an answer key; Schreiben and Sprechen are not pretend-graded — you get the clock, the phrase bank, a model answer and the examiner's criteria as a checklist. Installs to your home screen, works offline, progress stays on your device.",
+      "tags": [
+        "1,097 ITEMS",
+        "ALL 4 MODULES",
+        "GOETHE · TELC · DTZ",
+        "WORKS OFFLINE"
+      ],
+      "url": "https://utpaldaslabs.github.io/German-B1/",
+      "status": "live",
+      "coverHeadline": "ZERTIFIKAT B1",
+      "coverCaption": "931 words · 4 modules · offline"
+    },
+    {
       "id": "wtf-india",
       "name": "We the Future",
       "tagline": "Public money, public proof — government projects checked against official records.",
