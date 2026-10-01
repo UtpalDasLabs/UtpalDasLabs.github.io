@@ -1,0 +1,28 @@
+name: Check external links
+
+# Deliberately separate from the deploy workflow: a company site going down
+# should surface as a failed check, never block a deploy of the portfolio.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**.json"
+      - "scripts/check-links.mjs"
+      - ".github/workflows/check-links.yml"
+  schedule:
+    # Weekly, so rot is caught before a visitor finds it.
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/check-links.mjs
