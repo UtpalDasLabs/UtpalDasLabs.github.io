@@ -28,6 +28,13 @@ for (const file of readdirSync(contentDir).filter((f) => f.endsWith(".json"))) {
   }
 }
 
+// Statuses that mean "a bot was turned away", not "this link is broken".
+// LinkedIn answers 999 to anything without a browser; Meggitt and TCS sit
+// behind CDN bot walls that 403 a plain fetch. All three are fine for a human
+// visitor, so failing on them would make this check cry wolf every week and
+// get ignored — which is worse than not having it.
+const BOT_WALL = new Set([401, 403, 429, 999]);
+
 const check = async (url) => {
   // Some hosts reject HEAD outright, so fall back to a GET before judging.
   for (const method of ["HEAD", "GET"]) {
@@ -61,15 +68,24 @@ const results = await Promise.all(
 );
 
 const broken = [];
+const blocked = [];
 for (const r of results) {
   const where = [...found.get(r.url)].join(", ");
   if (r.ok) {
     const moved = r.finalUrl && r.finalUrl.replace(/\/$/, "") !== r.url.replace(/\/$/, "");
     console.log(`  ok   ${r.status}  ${r.url}${moved ? `\n         → redirects to ${r.finalUrl}` : ""}`);
+  } else if (BOT_WALL.has(r.status)) {
+    blocked.push({ ...r, where });
+    console.log(`  bot  ${r.status}  ${r.url}  (bot wall — not checkable, likely fine)`);
   } else {
     broken.push({ ...r, where });
     console.log(`  DEAD ${r.status || "---"}  ${r.url}  (${r.error ?? "http error"})  [${where}]`);
   }
+}
+
+if (blocked.length) {
+  console.log(`\n${blocked.length} link(s) refused an automated request; verify by hand if in doubt:`);
+  for (const b of blocked) console.log(`  - ${b.url}  (${b.status})`);
 }
 
 if (broken.length) {
@@ -79,4 +95,7 @@ if (broken.length) {
   }
   process.exit(1);
 }
-console.log(`\n✓ all ${urls.length} links reachable`);
+console.log(
+  `\n✓ ${urls.length - blocked.length} of ${urls.length} links verified reachable` +
+    (blocked.length ? `, ${blocked.length} bot-walled` : ""),
+);
