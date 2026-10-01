@@ -36,7 +36,7 @@
         "Agents are the next interface — and the next attack surface. Most enterprise AI still stops at chat. We're building past that: multi-agent workflows that can actually reach into tools, remember context, and hand work back to a human when the risk is too high.",
         "The bigger bet: as agents get more autonomy, someone has to build the accountability layer around them — systems that catch bad behaviour, correct it, and only then hand autonomy back. This platform is the first honest step toward that."
       ],
-      "link": "www.cubonic.de",
+      "link": "https://cubonic.de",
       "coverImage": "/covers/ai-a.svg",
       "coverHeadline": "MULTI-AGENT",
       "coverCaption": "tool use · memory · guardrails"
@@ -72,7 +72,7 @@
         "Kept it aimed at the actual business outcome: sustainable last-mile delivery that works commercially, not a technology demonstration."
       ],
       "outcome": "The digital foundation the CUBONIC vehicle and ecosystem run on — and the platform the agentic and private-LLM work is built into.",
-      "link": "www.cubonic.de",
+      "link": "https://cubonic.de",
       "coverImage": "/covers/mobility-a.svg",
       "coverHeadline": "LAST MILE, ELECTRIC",
       "coverCaption": "autonomous · connected · eLCV"

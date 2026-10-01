@@ -10,6 +10,7 @@
     "build:dev": "vite build --mode development",
     "typecheck": "tsc -b",
     "check:content": "node scripts/check-content.mjs",
+    "check:links": "node scripts/check-links.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
