@@ -6,7 +6,8 @@
       // The portfolio lives at utpaldas.com. This GitHub Pages copy (and its
       // 404.html, which serves deep links) forwards visitors there, keeping the
       // path, so old links and bookmarks still land on the right page. The Labs
-      // apps under utpaldaslabs.github.io/<App>/ are separate sites and stay put.
+      // apps' old addresses (utpaldaslabs.github.io/<App>/) are separate sites
+      // that hand visitors over to <app>.utpaldas.com themselves.
       if (location.hostname === "utpaldaslabs.github.io" && !location.pathname.startsWith("/.lovable/")) {
         location.replace("https://utpaldas.com" + location.pathname + location.search + location.hash);
       }
