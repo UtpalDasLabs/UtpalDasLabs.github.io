@@ -309,7 +309,7 @@ var projects_default = {
         "Agents are the next interface \u2014 and the next attack surface. Most enterprise AI still stops at chat. We're building past that: multi-agent workflows that can actually reach into tools, remember context, and hand work back to a human when the risk is too high.",
         "The bigger bet: as agents get more autonomy, someone has to build the accountability layer around them \u2014 systems that catch bad behaviour, correct it, and only then hand autonomy back. This platform is the first honest step toward that."
       ],
-      link: "www.cubonic.de",
+      link: "https://cubonic.de",
       coverImage: "/covers/ai-a.svg",
       coverHeadline: "MULTI-AGENT",
       coverCaption: "tool use \xB7 memory \xB7 guardrails"
@@ -345,7 +345,7 @@ var projects_default = {
         "Kept it aimed at the actual business outcome: sustainable last-mile delivery that works commercially, not a technology demonstration."
       ],
       outcome: "The digital foundation the CUBONIC vehicle and ecosystem run on \u2014 and the platform the agentic and private-LLM work is built into.",
-      link: "www.cubonic.de",
+      link: "https://cubonic.de",
       coverImage: "/covers/mobility-a.svg",
       coverHeadline: "LAST MILE, ELECTRIC",
       coverCaption: "autonomous \xB7 connected \xB7 eLCV"
@@ -747,7 +747,6 @@ var projects_default = {
         "The handover is the single moment a customer touches your operational reality. Paper checklists were the norm. We killed them.",
         "A three-step digital protocol, signed on a phone, streamed to Salesforce in real time. In-app damage reporting with dynamic questionnaires, photos, and location sharing so the workshop already knew what it was dealing with when the car arrived. 3,700+ handovers, 54% at the customer's home, and per-unit repair costs down 5\u201310%. MLP philosophy in practice \u2014 ship a lovable minimum, learn, and let the numbers grow into the vision."
       ],
-      link: "https://apps.apple.com/de/app/cluno-auto-abo/id1434401969",
       coverImage: "/covers/mobility-a.svg",
       coverVideo: "/videos/handover.mp4",
       coverPoster: "/videos/posters/handover.jpg"
@@ -977,7 +976,6 @@ var projects_default = {
         "When things broke, I ran what I called LAN parties \u2014 engineers from every geography in one room, one problem, one week. Leading people to solve a problem, not managing tickets. We failed as a team. We succeeded as a team. That's the frame I still lead by.",
         "Cells shipped in Germany, Shanghai, and Detroit."
       ],
-      link: "https://pages.zeiss.com/RIM_AIBox_Info.html",
       coverImage: "/covers/engineering-a.svg",
       coverVideo: "/videos/ai-box.mp4",
       coverPoster: "/videos/posters/ai-box.jpg"
@@ -1287,13 +1285,13 @@ var companies_default = {
     {
       key: "cazoo",
       name: "Cazoo",
-      url: "https://www.cazoo.co.uk",
+      url: null,
       logo: "/logos/cazoo.png"
     },
     {
       key: "cluno",
       name: "Cluno",
-      url: "https://www.cazoo.co.uk",
+      url: null,
       logo: null
     },
     {

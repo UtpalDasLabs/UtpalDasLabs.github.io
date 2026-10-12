@@ -1,13 +1,25 @@
 import { useEffect, useState } from "react";
-import { analyticsEnabled, getConsent, grantConsent, denyConsent } from "@/lib/analytics";
+import {
+  analyticsEnabled,
+  getConsent,
+  grantConsent,
+  denyConsent,
+  onConsentReopen,
+} from "@/lib/analytics";
 
-// Cookie-consent banner for GA4 (EU/GDPR). Renders only when analytics is
-// configured and the visitor hasn't chosen yet. Cookieless until "Accept".
+// Consent banner for GA4 (EU/GDPR). Renders only when analytics is configured
+// and the visitor hasn't chosen yet, or when they reopen it from the footer.
+// Nothing is fetched from Google until "Accept".
 export function ConsentBanner() {
   const [visible, setVisible] = useState(false);
+  const [current, setCurrent] = useState(getConsent);
 
   useEffect(() => {
     if (analyticsEnabled && getConsent() === null) setVisible(true);
+    return onConsentReopen(() => {
+      setCurrent(getConsent());
+      setVisible(true);
+    });
   }, []);
 
   if (!visible) return null;
@@ -30,9 +42,15 @@ export function ConsentBanner() {
     >
       <div className="container-wide flex flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between md:py-4">
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          I use privacy-friendly analytics (Google Analytics, IP anonymised) to
-          understand what's useful here. Nothing loads until you choose.{" "}
-          <span className="text-foreground/80">No ads, no cross-site tracking.</span>
+          I use Google Analytics to understand what's useful here — which pages
+          are read, which tools are launched. Nothing loads until you accept, and
+          you can change your mind any time under "Privacy settings" in the footer.{" "}
+          <span className="text-foreground/80">No ads, no advertising profile.</span>
+          {current ? (
+            <span className="mt-2 block text-xs text-muted-foreground">
+              Currently: {current === "granted" ? "accepted" : "declined"}.
+            </span>
+          ) : null}
         </p>
         <div className="flex shrink-0 items-center gap-3">
           <button
