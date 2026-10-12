@@ -110,8 +110,9 @@ export function initAnalytics() {
 
   gtag("js", new Date());
   // We send page_view manually on SPA route changes. (GA4 never stores IP
-  // addresses, so the old anonymize_ip flag is gone.) content_group splits the
-  // portfolio from the Labs apps that report into the same property.
+  // addresses, so the old anonymize_ip flag is gone.) content_group, here and
+  // on every event, splits the portfolio from the Labs apps that report into
+  // the same property.
   gtag("config", GA_ID, {
     send_page_view: false,
     content_group: "portfolio",
@@ -143,11 +144,15 @@ export function denyConsent() {
 export function track(event: string, params: GtagParams = {}) {
   if (debug) console.debug("[analytics]", event, params);
   if (!analyticsEnabled || getConsent() !== "granted") return;
-  gtag("event", event, params);
+  gtag("event", event, { content_group: "portfolio", ...params });
 }
 
 export function trackPageView(path: string) {
   if (debug) console.debug("[analytics] page_view", path);
   if (!analyticsEnabled || getConsent() !== "granted") return;
-  gtag("event", "page_view", { page_path: path, page_location: window.location.href });
+  gtag("event", "page_view", {
+    content_group: "portfolio",
+    page_path: path,
+    page_location: window.location.href,
+  });
 }
