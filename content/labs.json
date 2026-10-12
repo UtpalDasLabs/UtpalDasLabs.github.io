@@ -39,6 +39,22 @@
       "coverCaption": "931 words · 4 modules · offline"
     },
     {
+      "id": "german-driving",
+      "name": "Führerschein-Trainer",
+      "tagline": "The German car licence (class B) in the 13 languages the theory test can be taken in.",
+      "description": "A study app for the German driving licence. 220 practice questions across 16 topics, each with a drawn traffic scene, a plain explanation and the rule behind it, on a spaced-repetition schedule. The mock exam is built and scored like the real one: 30 questions, a pass at no more than 10 error points, and two wrong 5-point questions fail you. Plus 110 signs and road markings with their official numbers, a guide to the practical test with manoeuvre diagrams and the examiner's German instructions, and what to do with a foreign licence. Everything is translated into German, English, Turkish, Arabic, Russian, Polish, Romanian, Croatian, Greek, Italian, Spanish, Portuguese and French, with the German original a tap away. Installs to your home screen, works offline, progress stays on your device.",
+      "tags": [
+        "13 LANGUAGES",
+        "MOCK EXAM",
+        "110 SIGNS",
+        "WORKS OFFLINE"
+      ],
+      "url": "https://utpaldaslabs.github.io/German-Driving-/",
+      "status": "live",
+      "coverHeadline": "FÜHRERSCHEIN B",
+      "coverCaption": "220 questions · 13 languages · offline"
+    },
+    {
       "id": "wtf-india",
       "name": "We the Future",
       "tagline": "Public money, public proof — government projects checked against official records.",

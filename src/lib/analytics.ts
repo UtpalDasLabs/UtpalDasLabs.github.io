@@ -2,8 +2,12 @@
 //
 // - Dormant until VITE_GA_MEASUREMENT_ID is set: no script, no banner, no
 //   tracking. So the code can ship before the GA property exists.
-// - Google Consent Mode v2: analytics storage defaults to "denied"; nothing is
-//   sent until the visitor accepts in the consent banner. The choice persists.
+// - Strict opt-in: Consent Mode v2 defaults are queued locally, but gtag.js
+//   itself is not fetched until the visitor accepts (or on a later visit that
+//   already accepted). Declining never contacts Google. The choice persists
+//   and can be reopened from the footer ("Privacy settings").
+// - The Labs apps under this origin (/German-Citizenship-App/ etc.) share the
+//   same GA4 property but ask separately, each with its own stored choice.
 // - Provider-agnostic surface (track / trackPageView) so events read the same
 //   regardless of the backend, and could be repointed later.
 
@@ -21,10 +25,36 @@ const debug =
 
 type ConsentChoice = "granted" | "denied" | null;
 
+// Fallback when storage is blocked (private mode): the choice holds for this visit.
+let sessionChoice: ConsentChoice = null;
+
 export function getConsent(): ConsentChoice {
   if (typeof window === "undefined") return null;
-  const v = window.localStorage.getItem(CONSENT_KEY);
-  return v === "granted" || v === "denied" ? v : null;
+  try {
+    const v = window.localStorage.getItem(CONSENT_KEY);
+    return v === "granted" || v === "denied" ? v : null;
+  } catch {
+    return sessionChoice;
+  }
+}
+
+function storeChoice(choice: "granted" | "denied") {
+  sessionChoice = choice;
+  try {
+    window.localStorage.setItem(CONSENT_KEY, choice);
+  } catch {
+    // Private mode: sessionChoice carries it.
+  }
+}
+
+// The footer's "Privacy settings" reopens the banner through this.
+const reopenListeners = new Set<() => void>();
+export function onConsentReopen(listener: () => void): () => void {
+  reopenListeners.add(listener);
+  return () => reopenListeners.delete(listener);
+}
+export function openConsentSettings() {
+  reopenListeners.forEach((l) => l());
 }
 
 declare global {
@@ -47,16 +77,26 @@ function gtag(...args: unknown[]) {
   window.dataLayer.push(arguments);
 }
 
+let initialised = false;
 let scriptInjected = false;
 
+function loadScript() {
+  if (scriptInjected) return;
+  scriptInjected = true;
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(s);
+}
+
 /**
- * Set Consent Mode defaults and inject gtag.js. Safe to call once on startup.
- * With no stored consent, analytics_storage stays "denied" until the user
- * accepts — so gtag loads but sends nothing trackable.
+ * Queue Consent Mode defaults and config. Safe to call once on startup.
+ * gtag.js is only fetched when consent is already granted; otherwise it waits
+ * for grantConsent(), so a visitor who never accepts never contacts Google.
  */
 export function initAnalytics() {
-  if (!analyticsEnabled || scriptInjected || typeof window === "undefined") return;
-  scriptInjected = true;
+  if (!analyticsEnabled || initialised || typeof window === "undefined") return;
+  initialised = true;
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = gtag;
@@ -66,31 +106,35 @@ export function initAnalytics() {
     ad_user_data: "denied",
     ad_personalization: "denied",
     analytics_storage: getConsent() === "granted" ? "granted" : "denied",
-    wait_for_update: 500,
   });
 
   gtag("js", new Date());
-  // We send page_view manually on SPA route changes.
-  gtag("config", GA_ID, { send_page_view: false, anonymize_ip: true });
+  // We send page_view manually on SPA route changes. (GA4 never stores IP
+  // addresses, so the old anonymize_ip flag is gone.) content_group splits the
+  // portfolio from the Labs apps that report into the same property.
+  gtag("config", GA_ID, {
+    send_page_view: false,
+    content_group: "portfolio",
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false,
+  });
 
-  const s = document.createElement("script");
-  s.async = true;
-  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-  document.head.appendChild(s);
+  if (getConsent() === "granted") loadScript();
 }
 
 export function grantConsent() {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(CONSENT_KEY, "granted");
+  storeChoice("granted");
   if (!analyticsEnabled) return;
   gtag("consent", "update", { analytics_storage: "granted" });
+  loadScript();
   // First page after consent isn't captured by the manual router hook.
   trackPageView(window.location.pathname + window.location.search);
 }
 
 export function denyConsent() {
   if (typeof window === "undefined") return;
-  window.localStorage.setItem(CONSENT_KEY, "denied");
+  storeChoice("denied");
   if (!analyticsEnabled) return;
   gtag("consent", "update", { analytics_storage: "denied" });
 }

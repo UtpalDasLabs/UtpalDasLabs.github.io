@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { siteCopy } from "@/data/site";
-import { track } from "@/lib/analytics";
+import { analyticsEnabled, openConsentSettings, track } from "@/lib/analytics";
 
 interface FooterProps {
   variant?: "default" | "echelon";
@@ -81,6 +81,15 @@ export function Footer({ variant = "default" }: FooterProps) {
               <p className="text-label">Legal</p>
               <div className="text-sm text-muted-foreground space-y-1">
                 <p>© {currentYear} Utpal Das</p>
+                {analyticsEnabled ? (
+                  <button
+                    type="button"
+                    onClick={openConsentSettings}
+                    className="block cursor-pointer text-left hover:text-accent transition-colors"
+                  >
+                    Privacy settings
+                  </button>
+                ) : null}
               </div>
             </div>
           </div>
@@ -148,6 +157,15 @@ export function Footer({ variant = "default" }: FooterProps) {
           <div className="text-sm text-muted-foreground">
             <p>© {currentYear} Utpal Das</p>
             <p className="mt-1">Berlin, Germany</p>
+            {analyticsEnabled ? (
+              <button
+                type="button"
+                onClick={openConsentSettings}
+                className="mt-1 cursor-pointer hover-highlight"
+              >
+                Privacy settings
+              </button>
+            ) : null}
           </div>
         </div>
       </div>
