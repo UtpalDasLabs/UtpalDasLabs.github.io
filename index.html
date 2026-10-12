@@ -2,6 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      // The portfolio lives at utpaldas.com. This GitHub Pages copy (and its
+      // 404.html, which serves deep links) forwards visitors there, keeping the
+      // path, so old links and bookmarks still land on the right page. The Labs
+      // apps under utpaldaslabs.github.io/<App>/ are separate sites and stay put.
+      if (location.hostname === "utpaldaslabs.github.io" && !location.pathname.startsWith("/.lovable/")) {
+        location.replace("https://utpaldas.com" + location.pathname + location.search + location.hash);
+      }
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -13,8 +22,8 @@
     
     
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://utpaldaslabs.github.io/" />
-    <link rel="canonical" href="https://utpaldaslabs.github.io/" />
+    <meta property="og:url" content="https://utpaldas.com/" />
+    <link rel="canonical" href="https://utpaldas.com/" />
 
     <meta name="twitter:card" content="summary_large_image" />
     
@@ -35,7 +44,7 @@
     "name": "Utpal Das",
     "jobTitle": "Head of Digital Solutions",
     "worksFor": { "@type": "Organization", "name": "CUBONIC", "url": "https://cubonic.de" },
-    "url": "https://utpaldaslabs.github.io/",
+    "url": "https://utpaldas.com/",
     "sameAs": [
       "https://www.linkedin.com/in/iamdasutpal/",
       "https://github.com/UtpalDasLabs"
