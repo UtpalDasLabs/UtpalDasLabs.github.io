@@ -16,7 +16,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const contentDir = join(root, "content");
 const TIMEOUT_MS = 20000;
 const UA =
-  "Mozilla/5.0 (compatible; UtpalDasLabsLinkCheck/1.0; +https://utpaldaslabs.github.io)";
+  "Mozilla/5.0 (compatible; UtpalDasLabsLinkCheck/1.0; +https://utpaldas.com)";
 
 // Collect every absolute URL in the content files, remembering where it came from.
 const found = new Map(); // url -> Set<file>
