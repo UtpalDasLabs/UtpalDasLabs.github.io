@@ -247,7 +247,7 @@ var site_default = {
     "We failed as a team. We succeeded as a team.",
     "Flying a rocket ship while it's being built."
   ],
-  contactEmail: "utpal.inbox@hotmail.com",
+  contactEmail: "hello@utpaldas.com",
   linkedin: "https://www.linkedin.com/in/iamdasutpal/",
   github: "https://github.com/UtpalDasLabs",
   location: "Berlin, Germany"

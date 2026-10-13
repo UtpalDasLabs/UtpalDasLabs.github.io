@@ -64,8 +64,8 @@ export function Footer({ variant = "default" }: FooterProps) {
             <div className="space-y-3">
               <p className="text-label">Contact</p>
               <div className="text-sm text-foreground space-y-1">
-                <a href="mailto:utpal.inbox@hotmail.com" onClick={() => track("contact_intent", { method: "email", from: "footer" })} className="block hover:text-accent transition-colors">
-                  utpal.inbox@hotmail.com
+                <a href={`mailto:${siteCopy.contactEmail}`} onClick={() => track("contact_intent", { method: "email", from: "footer" })} className="block hover:text-accent transition-colors">
+                  {siteCopy.contactEmail}
                 </a>
                 <a href="https://www.linkedin.com/in/iamdasutpal/" target="_blank" rel="noopener noreferrer" onClick={() => track("contact_intent", { method: "linkedin", from: "footer" })} className="block hover:text-accent transition-colors">
                   LinkedIn
