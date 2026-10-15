@@ -37,7 +37,7 @@ export function HeroVideo() {
         />
       )}
       {/* Scrim + vignette so the kinetic name stays legible over bright frames */}
-      <div className="absolute inset-0 bg-background/65" />
+      <div className="absolute inset-0 bg-background/50" />
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/25 to-background/70" />
     </div>
   );

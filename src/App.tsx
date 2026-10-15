@@ -28,7 +28,7 @@ const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 const App = () => {
   useLenis();
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
       <TooltipProvider>
         <Toaster />
         <Sonner />

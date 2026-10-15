@@ -18,7 +18,7 @@ function ToolCard({ tool }: { tool: LabsTool }) {
     <article className="group grid grid-cols-1 overflow-hidden border border-separator transition-colors duration-300 hover:border-accent lg:grid-cols-[1.05fr_1fr]">
       {/* Cover panel — bold headline on an engineering grid */}
       <div
-        className="flex min-h-[220px] flex-col justify-center gap-3 bg-[#0a0a0a] px-6 py-10 md:px-8"
+        className="dark flex min-h-[220px] flex-col justify-center gap-3 bg-[#0a0a0a] px-6 py-10 md:px-8"
         style={gridPanelStyle}
       >
         <p className="font-display text-3xl font-bold leading-none tracking-tight text-accent md:text-4xl lg:text-5xl">
