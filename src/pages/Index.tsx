@@ -1,17 +1,14 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { CinematicBackground } from "@/components/CinematicBackground";
 import { HeroVideo } from "@/components/HeroVideo";
-import { HeroSequence } from "@/components/HeroSequence";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { track } from "@/lib/analytics";
 
 import { siteCopy } from "@/data/site";
 
 const Index = () => {
-  const [introDone, setIntroDone] = useState(false);
   usePageMeta(
     "Utpal Das — Father, Builder, Problem Solver",
     "Utpal Das — Head of Digital Solutions @ CUBONIC, Berlin. AI strategy, local LLMs, and agentic solutions. 18+ years turning emerging tech into real products.",
@@ -20,12 +17,10 @@ const Index = () => {
 
   return (
     <Layout hideFooter noPadding>
-      {/* The hero lays out in normal flow (flex column) instead of absolute
-          overlays: on phones the name, bio and CTA stack, so text can never
-          land on top of other text. From md up the bottom strip splits into
-          the original bio-left / CTA-right composition. */}
+      {/* V4 hero: the name, positioning and both CTAs are visible immediately —
+          the moving background stays as garnish and never gates content.
+          Animations here are short fades only. */}
       <section className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-background cinematic-grain cinematic-vignette">
-        {/* Career-arc footage behind everything */}
         <HeroVideo />
 
         {/* Top strip — chapter counter left, micro-tagline right */}
@@ -38,41 +33,65 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Title sequence — types the name, reveals the tagline, then fades
-            out and hands off to the bio + CTA below. */}
-        <div className="over-video relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-10">
-          <HeroSequence onDone={() => setIntroDone(true)} />
+        {/* Name + tagline — present in the first paint */}
+        <div className="over-video relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-10 text-center">
+          <p
+            className="mb-5 font-mono text-[10px] uppercase tracking-[0.35em] text-accent md:text-xs animate-fade-in"
+            style={{ animationDelay: "0.15s" }}
+          >
+            {siteCopy.heroRole}
+          </p>
+          <h1
+            className="font-display text-7xl font-semibold leading-[0.95] tracking-tight text-foreground sm:text-8xl md:text-9xl lg:text-[10rem] animate-fade-in"
+            style={{ animationDelay: "0.05s" }}
+          >
+            Utpal Das
+          </h1>
+          <div
+            className="mt-6 flex items-center gap-3 animate-fade-in"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <span className="h-px w-8 bg-accent md:w-14" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-foreground/90 md:text-xs">
+              {siteCopy.tagline}
+            </span>
+            <span className="h-px w-8 bg-accent md:w-14" />
+          </div>
         </div>
 
-        {/* Bottom strip — bio and CTA appear only after the intro finishes,
-            then stay for the rest of the visit. Stacks on mobile, splits
-            left/right from md up. */}
-        <div
-          className={`relative z-10 flex flex-col gap-8 px-6 pb-10 transition-opacity duration-700 ease-out md:flex-row md:items-end md:justify-between md:px-12 md:pb-14 ${
-            introDone ? "opacity-100" : "pointer-events-none opacity-0"
-          }`}
-        >
+        {/* Bottom strip — bio, proof line and both CTAs, all immediately
+            visible. Stacks on mobile, splits left/right from md up. */}
+        <div className="relative z-10 flex flex-col gap-8 px-6 pb-10 md:flex-row md:items-end md:justify-between md:px-12 md:pb-14">
           <div className="over-video max-w-sm">
-            <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.3em] text-accent">
-              {siteCopy.heroRole}
-            </p>
-            <p className="text-sm leading-relaxed text-foreground/80 md:text-base">
+            <p className="text-sm leading-relaxed text-foreground/85 md:text-base">
               {siteCopy.heroBio}
+            </p>
+            <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/60">
+              18+ years · avionics → machine vision → marketplaces → agentic AI
             </p>
           </div>
 
           <div className="over-video flex flex-col items-start gap-4 md:items-end">
-            <Link
-              to="/work"
-              onClick={() => track("cta_click", { label: "see_the_work", from: "home_hero" })}
-              className="group inline-flex items-center gap-3 border border-accent/60 bg-background/40 px-5 py-3 text-xs uppercase tracking-[0.25em] text-foreground backdrop-blur-sm transition-all duration-300 hover:accent-glow hover:bg-accent/10"
-            >
-              <span>See the work</span>
-              <ArrowUpRight
-                size={14}
-                className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-              />
-            </Link>
+            <div className="flex flex-wrap items-center gap-4">
+              <Link
+                to="/work"
+                onClick={() => track("cta_click", { label: "explore_selected_work", from: "home_hero" })}
+                className="group inline-flex items-center gap-3 border border-accent/60 bg-background/40 px-5 py-3 text-xs uppercase tracking-[0.25em] text-foreground backdrop-blur-sm transition-all duration-300 hover:border-accent hover:bg-accent/10"
+              >
+                <span>Explore selected work</span>
+                <ArrowUpRight
+                  size={14}
+                  className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </Link>
+              <Link
+                to="/contact"
+                onClick={() => track("cta_click", { label: "lets_talk", from: "home_hero" })}
+                className="inline-flex items-center gap-3 border border-foreground/30 px-5 py-3 text-xs uppercase tracking-[0.25em] text-foreground backdrop-blur-sm transition-colors duration-300 hover:border-foreground"
+              >
+                <span>Let's talk</span>
+              </Link>
+            </div>
             <div className="flex items-center gap-2 text-foreground/50">
               <ArrowDown size={14} className="animate-scroll-hint" />
               <span className="font-mono text-[10px] uppercase tracking-[0.3em]">
@@ -83,7 +102,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Second panel — pull quote (title-sequence handoff) */}
+      {/* Second panel — manifesto */}
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-background px-6 py-24 cinematic-grain">
         <CinematicBackground variant="flow" intensity={0.55} />
         <div className="relative z-10 mx-auto max-w-4xl text-center">
@@ -110,22 +129,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Third panel — the dream */}
+      {/* Third panel — a note on agent accountability. The full thesis lives
+          at /notes/agent-accountability; the homepage only teases it. */}
       <section className="relative flex min-h-[60vh] items-center justify-center overflow-hidden border-t border-separator bg-background px-6 py-24 cinematic-grain cinematic-vignette">
         <CinematicBackground variant="grid" intensity={0.4} />
         <div className="relative z-10 mx-auto max-w-4xl">
           <p className="mb-6 font-mono text-xs uppercase tracking-[0.35em] text-accent">
-            03 / 03 · {siteCopy.dreamLabel}
+            03 / 03 · NOTES
           </p>
           <blockquote className="font-display text-2xl font-semibold leading-snug tracking-tight md:text-4xl lg:text-5xl">
             <span className="text-foreground/85">{siteCopy.dreamLine}</span>{" "}
             <span className="text-accent">{siteCopy.dreamAccent}</span>
           </blockquote>
-          <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            The next decade of AI isn't about smarter models. It's about accountable ones —
-            good agents, bad agents, and the systems that catch, correct, and release them.
-            That's the problem I'm obsessed with.
-          </p>
+          <div className="mt-10 flex flex-col items-start gap-6">
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              An agent with real credentials takes real actions. What's missing
+              isn't smarter models — it's the accountability plumbing: scoped
+              permissions, action logs, revocation, and a way to correct what
+              went wrong. I wrote down where I think this goes.
+            </p>
+            <Link
+              to="/notes/agent-accountability"
+              onClick={() => track("cta_click", { label: "read_the_note", from: "home_notes" })}
+              className="inline-flex items-center gap-3 border-b border-accent/60 pb-1 text-sm uppercase tracking-[0.25em] text-foreground transition-colors hover:text-accent"
+            >
+              Read the note
+              <ArrowUpRight size={14} />
+            </Link>
+          </div>
         </div>
       </section>
     </Layout>

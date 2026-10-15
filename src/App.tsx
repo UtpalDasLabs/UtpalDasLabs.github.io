@@ -20,6 +20,7 @@ const Labs = lazy(() => import("./pages/Labs"));
 const About = lazy(() => import("./pages/About"));
 const KindWords = lazy(() => import("./pages/KindWords"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Note = lazy(() => import("./pages/Note"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Login = lazy(() => import("./pages/Login"));
 const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));

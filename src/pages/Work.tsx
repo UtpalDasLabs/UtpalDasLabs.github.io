@@ -14,6 +14,16 @@ const categories: ("All" | Domain)[] = [
   "Leadership",
 ];
 
+// Editorial hierarchy: three flagship case studies up top (AutoScout24 as the
+// exemplar), Cazoo/Cluno called out below, then the full archive. When a
+// category filter is active the hierarchy collapses into one matching grid.
+const flagshipIds = [
+  "autoscout24-apps",
+  "agentic-platform",
+  "zeiss-measurement-cell",
+];
+const focusIds = ["asset-financing", "cluno-partner-platform"];
+
 const Work = () => {
   const [active, setActive] = useState<(typeof categories)[number]>("All");
   usePageMeta(
@@ -22,17 +32,25 @@ const Work = () => {
     "/work",
   );
 
-  const visible = active === "All" ? projects : projects.filter((p) => p.category === active);
-  // Every card is the same size — a uniform grid reads as a clean archive and
-  // avoids the first three dominating the page.
-  const featuredCount = 0;
+  const flagships = flagshipIds
+    .map((id) => projects.find((p) => p.id === id))
+    .filter((p): p is (typeof projects)[number] => Boolean(p));
+  const focus = focusIds
+    .map((id) => projects.find((p) => p.id === id))
+    .filter((p): p is (typeof projects)[number] => Boolean(p));
+  const hierarchyIds = new Set([...flagshipIds, ...focusIds]);
+
+  const visible =
+    active === "All"
+      ? projects.filter((p) => !hierarchyIds.has(p.id))
+      : projects.filter((p) => p.category === active);
 
   return (
     <Layout showEchelonFooter>
       {/* Header */}
       <section className="container-wide pt-16 md:pt-24 pb-4">
         <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-accent">
-          Archive · {visible.length} projects
+          Selected work · {projects.length} projects
         </p>
         <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight">
           Projects
@@ -44,8 +62,45 @@ const Work = () => {
         </p>
       </section>
 
+      {/* Flagships — three editorial case studies */}
+      {active === "All" && (
+        <section className="container-wide pt-6 pb-4">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-accent">
+            Flagships
+          </p>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+            {flagships.map((project, i) => (
+              <OverlayProjectCard
+                key={project.id}
+                project={project}
+                index={i}
+                featured={i === 0}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Also in focus — Cazoo & Cluno */}
+      {active === "All" && focus.length > 0 && (
+        <section className="container-wide pt-10 pb-4">
+          <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-accent">
+            Also in focus
+          </p>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+            {focus.map((project, i) => (
+              <OverlayProjectCard
+                key={project.id}
+                project={project}
+                index={i}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Category Filters */}
-      <section className="container-wide pt-6 pb-10">
+      <section className={`container-wide pt-10 pb-10 ${active === "All" ? "" : "pt-16"}`}>
         <div
           className="flex flex-wrap gap-2"
           role="group"
@@ -72,15 +127,18 @@ const Work = () => {
         </div>
       </section>
 
-      {/* Card grid */}
+      {/* Archive grid — everything else */}
       <section className="container-wide pb-24">
+        <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          {active === "All" ? "The archive" : active} · {visible.length}{" "}
+          {visible.length === 1 ? "project" : "projects"}
+        </p>
         <div key={active} className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
           {visible.map((project, i) => (
             <OverlayProjectCard
               key={project.id}
               project={project}
               index={i}
-              featured={i < featuredCount}
             />
           ))}
         </div>
