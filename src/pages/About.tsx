@@ -7,7 +7,8 @@ import { skillGroups, topEndorsed } from "@/data/profile";
 import { recommendations } from "@/data/recommendations";
 import { siteCopy } from "@/data/site";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import smile from "@/assets/utpal-smile.jpg.asset.json";
+// Served from public/ so it works on both Lovable and the Vercel-hosted domain.
+const smileUrl = "/utpal-smile.jpg";
 
 const taglineWords = ["Father", "Builder", "Problem Solver"];
 
@@ -55,7 +56,7 @@ const About = () => {
             <h1 className="text-display mb-4 animate-fade-in-up">About</h1>
             <figure className="mb-10 overflow-hidden border border-accent/30">
               <img
-                src={smile.url}
+                src={smileUrl}
                 alt="Utpal Das, smiling, in a navy shirt"
                 className="aspect-[3/2] w-full object-cover"
                 loading="lazy"
