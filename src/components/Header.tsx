@@ -86,32 +86,14 @@ export function Header({ revealMode = false }: HeaderProps) {
             to="/"
             className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
           >
-            {/* Triple-line UD monogram — drawn in the foreground colour so it
-                stays crisp in both light and dark themes (was a gold gradient
-                that vanished on the light background). */}
-            <svg
-              viewBox="0 0 150 116"
-              className="h-8 w-auto text-foreground"
-              role="img"
-              aria-label="UD monogram"
-            >
-              <g
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                {/* U */}
-                <path d="M14 14 V56 A28 28 0 0 0 70 56 V14" />
-                <path d="M21 14 V56 A21 21 0 0 0 63 56 V14" />
-                <path d="M28 14 V56 A14 14 0 0 0 56 56 V14" />
-                {/* D */}
-                <path d="M74 14 H84 A44 44 0 1 1 84 102 H68 L74 96 V14" />
-                <path d="M81 21 H84 A37 37 0 1 1 84 95 H81 V21" />
-                <path d="M88 28 A30 30 0 1 1 88 88 V28" />
-              </g>
-            </svg>
+            {/* Interlocking Heritage UD monogram — bronze PNG so it reads
+                identically on the ivory and near-black grounds */}
+            <img
+              src="/brand/ud-monogram.png"
+              alt=""
+              className="h-9 w-auto"
+              loading="eager"
+            />
             Utpal Das
           </Link>
 
