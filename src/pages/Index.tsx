@@ -29,7 +29,7 @@ const Index = () => {
           alt="Utpal Das"
           className="pointer-events-none absolute bottom-0 right-0 z-[5] hidden h-[88%] w-auto object-cover opacity-90 md:block animate-fade-in"
           style={{
-            maskImage: "linear-gradient(to left, black 55%, transparent), linear-gradient(to top, transparent, black 25%)",
+            maskImage: "linear-gradient(to left, black 55%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to left, black 55%, transparent 100%)",
           }}
         />
