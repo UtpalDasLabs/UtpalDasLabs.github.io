@@ -42,7 +42,7 @@ export function RevealLayer() {
       target.x = e.clientX;
       target.y = e.clientY;
       overContent = !!(e.target as Element).closest?.(KEEP_CLEAR);
-      target.r = overContent ? 0 : 160;
+      target.r = overContent ? 0 : 56;
       window.clearTimeout(idleTimer);
       idleTimer = window.setTimeout(() => {
         target.r = 0;
