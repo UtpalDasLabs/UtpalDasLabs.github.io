@@ -52,13 +52,13 @@ export function CursorRing() {
         className={`-translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-full border border-accent transition-[width,height,opacity] duration-200 ease-out ${
           active
             ? label
-              ? "h-8 w-8 opacity-100"
-              : "h-3.5 w-3.5 opacity-100"
-            : "h-3.5 w-3.5 opacity-0"
+              ? "h-6 w-6 opacity-100"
+              : "h-2 w-2 opacity-100"
+            : "h-2 w-2 opacity-0"
         }`}
       >
         {label && (
-          <span className="font-mono text-[7px] uppercase tracking-[0.15em] text-accent">
+          <span className="font-mono text-[6px] uppercase tracking-[0.08em] text-accent">
             {label}
           </span>
         )}
