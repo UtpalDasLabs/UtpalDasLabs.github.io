@@ -7,7 +7,6 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { track } from "@/lib/analytics";
 
 import { siteCopy } from "@/data/site";
-import portrait from "@/assets/utpal-portrait.jpg.asset.json";
 
 const Index = () => {
   usePageMeta(
@@ -23,16 +22,6 @@ const Index = () => {
           Animations here are short fades only. */}
       <section className="relative flex min-h-[100svh] w-full flex-col overflow-hidden bg-background cinematic-grain cinematic-vignette">
         <HeroVideo />
-        {/* Real portrait — right side on desktop, softly blended into the background */}
-        <img
-          src={portrait.url}
-          alt="Utpal Das"
-          className="pointer-events-none absolute bottom-0 right-0 z-[5] hidden h-[88%] w-auto object-cover opacity-90 md:block animate-fade-in"
-          style={{
-            maskImage: "linear-gradient(to left, black 55%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to left, black 55%, transparent 100%)",
-          }}
-        />
 
         {/* Top strip — chapter counter left, micro-tagline right */}
         <div className="pointer-events-none relative z-20 flex items-start justify-between px-6 pt-24 md:px-12 md:pt-28">
