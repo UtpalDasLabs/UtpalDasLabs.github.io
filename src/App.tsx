@@ -20,6 +20,7 @@ const Labs = lazy(() => import("./pages/Labs"));
 const About = lazy(() => import("./pages/About"));
 const KindWords = lazy(() => import("./pages/KindWords"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Note = lazy(() => import("./pages/Note"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Login = lazy(() => import("./pages/Login"));
 const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
@@ -44,6 +45,7 @@ const App = () => {
               <Route path="/labs" element={<Labs />} />
               <Route path="/about" element={<About />} />
               <Route path="/kind-words" element={<KindWords />} />
+              <Route path="/notes/agent-accountability" element={<Note />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
