@@ -73,6 +73,18 @@ export function Footer({ variant = "default" }: FooterProps) {
                 <a href="https://github.com/UtpalDasLabs" target="_blank" rel="noopener noreferrer" onClick={() => track("outbound_click", { dest: "github", from: "footer" })} className="block hover:text-accent transition-colors">
                   GitHub
                 </a>
+                {siteCopy.socials?.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track("outbound_click", { dest: s.name.toLowerCase(), from: "footer" })}
+                    className="block hover:text-accent transition-colors"
+                  >
+                    {s.name}
+                  </a>
+                ))}
               </div>
             </div>
 
@@ -147,10 +159,28 @@ export function Footer({ variant = "default" }: FooterProps) {
           </div>
 
           {/* Center */}
-          <div className="flex gap-8 text-sm text-muted-foreground">
-            <Link to="/work" className="hover-highlight">Work</Link>
-            <Link to="/about" className="hover-highlight">About</Link>
-            <Link to="/contact" className="hover-highlight">Contact</Link>
+          <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+            <div className="flex gap-8">
+              <Link to="/work" className="hover-highlight">Work</Link>
+              <Link to="/about" className="hover-highlight">About</Link>
+              <Link to="/contact" className="hover-highlight">Contact</Link>
+            </div>
+            {siteCopy.socials && siteCopy.socials.length > 0 && (
+              <div className="flex flex-wrap gap-6">
+                {siteCopy.socials.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => track("outbound_click", { dest: s.name.toLowerCase(), from: "footer_default" })}
+                    className="hover-highlight"
+                  >
+                    {s.name}
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Right */}

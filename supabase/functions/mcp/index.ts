@@ -250,7 +250,32 @@ var site_default = {
   contactEmail: "hello@utpaldas.com",
   linkedin: "https://www.linkedin.com/in/iamdasutpal/",
   github: "https://github.com/UtpalDasLabs",
-  location: "Berlin, Germany"
+  location: "Berlin, Germany",
+  socials: [
+    {
+      name: "YouTube",
+      label: "youtube.com/@daslivingindeutschland",
+      url: "https://youtube.com/@daslivingindeutschland"
+    },
+    {
+      name: "Instagram",
+      label: "instagram.com/livinindeutschland",
+      url: "https://www.instagram.com/livinindeutschland/"
+    },
+    {
+      name: "TikTok",
+      label: "tiktok.com/@livingindeutschland",
+      url: "https://www.tiktok.com/@livingindeutschland"
+    }
+  ],
+  perks: [
+    {
+      name: "Higgsfield",
+      label: "higgsfield.ai \u2014 AI image & video",
+      url: "https://higgsfield.ai?fpr=utpal-faf230",
+      description: "I use Higgsfield for AI image and video. Signing up through my link supports the channel."
+    }
+  ]
 };
 
 // src/lib/mcp/tools/get-profile.ts
