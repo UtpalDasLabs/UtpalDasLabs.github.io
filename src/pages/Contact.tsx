@@ -1,36 +1,13 @@
-import type { ReactNode } from "react";
 import { Layout } from "@/components/Layout";
-import { Mail, Linkedin, Github, Youtube, Instagram } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
+import { socialIcon } from "@/components/SocialIcons";
 import { siteCopy } from "@/data/site";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { track } from "@/lib/analytics";
 
 const contactCover = "/covers/ai-b.svg";
 
-const TikTokIcon = ({ size = 20, className }: { size?: number; className?: string }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    aria-hidden="true"
-  >
-    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-  </svg>
-);
-
 const iconClass = "text-muted-foreground group-hover:text-accent transition-colors shrink-0";
-
-const socialIcons: Record<string, ReactNode> = {
-  youtube: <Youtube size={20} className={iconClass} />,
-  instagram: <Instagram size={20} className={iconClass} />,
-  tiktok: <TikTokIcon size={20} className={iconClass} />,
-};
 
 const Contact = () => {
   usePageMeta(
@@ -95,7 +72,7 @@ const Contact = () => {
                   onClick={() => track("outbound_click", { dest: s.name.toLowerCase(), from: "contact" })}
                   className="flex items-center gap-4 text-lg hover-highlight group"
                 >
-                  {socialIcons[s.name.toLowerCase()]}
+                  {socialIcon(s.name, 20, iconClass)}
                   <span>{s.label}</span>
                 </a>
               ))}

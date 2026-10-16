@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { CinematicBackground } from "@/components/CinematicBackground";
-import { labsIntro, labsTools, type LabsTool } from "@/data/labs";
+import { socialIcon } from "@/components/SocialIcons";
+import { labsIntro, labsTeach, labsTools, type LabsTool } from "@/data/labs";
+import { siteCopy } from "@/data/site";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { track } from "@/lib/analytics";
 
@@ -153,6 +155,69 @@ const Labs = () => {
               free to use, private by design, nothing uploaded. Check back, or watch the
               GitHub org for releases.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Learn with me — the channels behind the apps */}
+      <section className="border-t border-separator">
+        <div className="container-wide grid grid-cols-1 gap-8 py-16 md:gap-12 md:py-24 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
+          <div
+            className="dark flex min-h-[200px] flex-col justify-center gap-3 bg-[#0a0a0a] px-6 py-10 md:px-8"
+            style={gridPanelStyle}
+          >
+            <p className="font-display text-3xl font-bold leading-none tracking-tight text-accent md:text-4xl lg:text-5xl">
+              {labsTeach.coverHeadline}
+            </p>
+            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-foreground/60">
+              {labsTeach.coverCaption}
+            </p>
+          </div>
+
+          <div className="flex flex-col justify-center gap-6">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-accent">
+              {labsTeach.eyebrow}
+            </p>
+            <h2 className="max-w-xl font-display text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl">
+              {labsTeach.title}
+            </h2>
+            <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
+              {labsTeach.lead}
+            </p>
+
+            {siteCopy.socials && siteCopy.socials.length > 0 && (
+              <div className="flex flex-col gap-3 pt-1">
+                {siteCopy.socials.map((s) => (
+                  <a
+                    key={s.name}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      track("outbound_click", { dest: s.name.toLowerCase(), from: "labs_teach" })
+                    }
+                    className="group flex items-center gap-4 border border-border px-5 py-4 transition-colors hover:border-accent"
+                  >
+                    {socialIcon(
+                      s.name,
+                      20,
+                      "shrink-0 text-muted-foreground transition-colors group-hover:text-accent",
+                    )}
+                    <span className="text-sm uppercase tracking-[0.2em] text-foreground">
+                      {s.name}
+                    </span>
+                    <span className="ml-auto hidden text-xs text-muted-foreground sm:block">
+                      {s.label}
+                    </span>
+                    <ArrowUpRight
+                      size={14}
+                      aria-hidden="true"
+                      className="shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+                    />
+                  </a>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
