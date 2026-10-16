@@ -1,10 +1,36 @@
+import type { ReactNode } from "react";
 import { Layout } from "@/components/Layout";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, Youtube, Instagram } from "lucide-react";
 import { siteCopy } from "@/data/site";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { track } from "@/lib/analytics";
 
 const contactCover = "/covers/ai-b.svg";
+
+const TikTokIcon = ({ size = 20, className }: { size?: number; className?: string }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
+
+const iconClass = "text-muted-foreground group-hover:text-accent transition-colors shrink-0";
+
+const socialIcons: Record<string, ReactNode> = {
+  youtube: <Youtube size={20} className={iconClass} />,
+  instagram: <Instagram size={20} className={iconClass} />,
+  tiktok: <TikTokIcon size={20} className={iconClass} />,
+};
 
 const Contact = () => {
   usePageMeta(
@@ -59,6 +85,20 @@ const Contact = () => {
                 <Github size={20} className="text-muted-foreground group-hover:text-accent transition-colors" />
                 <span>github.com/UtpalDasLabs</span>
               </a>
+
+              {siteCopy.socials?.map((s) => (
+                <a
+                  key={s.name}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => track("outbound_click", { dest: s.name.toLowerCase(), from: "contact" })}
+                  className="flex items-center gap-4 text-lg hover-highlight group"
+                >
+                  {socialIcons[s.name.toLowerCase()]}
+                  <span>{s.label}</span>
+                </a>
+              ))}
             </div>
 
             {/* Location */}
@@ -66,6 +106,30 @@ const Contact = () => {
               <p className="text-label mb-2">Based in</p>
               <p className="text-lg">{siteCopy.location}</p>
             </div>
+
+            {/* Perks */}
+            {siteCopy.perks && siteCopy.perks.length > 0 && (
+              <div className="animate-fade-in-up" style={{ animationDelay: "0.35s" }}>
+                <p className="text-label mb-3">Perks</p>
+                <div className="space-y-4">
+                  {siteCopy.perks.map((p) => (
+                    <a
+                      key={p.name}
+                      href={p.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => track("outbound_click", { dest: p.name.toLowerCase(), from: "contact_perks" })}
+                      className="block group"
+                    >
+                      <span className="text-lg hover-highlight">{p.label}</span>
+                      <span className="mt-1 block max-w-md text-sm text-muted-foreground">
+                        {p.description}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Image */}
