@@ -22,7 +22,16 @@ export interface LabsIntro {
   githubUrl: string;
 }
 
+export interface LabsTeach {
+  eyebrow: string;
+  title: string;
+  lead: string;
+  coverHeadline: string;
+  coverCaption: string;
+}
+
 export const labsIntro: LabsIntro = labsRaw.intro;
+export const labsTeach: LabsTeach = labsRaw.teach;
 export const labsTools: LabsTool[] = labsRaw.tools.map((t) => ({
   ...t,
   status: (t.status as "live" | "soon") ?? "live",
