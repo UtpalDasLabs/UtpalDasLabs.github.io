@@ -19,9 +19,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Fraunces', 'Georgia', 'serif'],
-        serif: ['Fraunces', 'Georgia', 'serif'],
+        display: ['"Instrument Serif"', 'Georgia', 'serif'],
+        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,6 +62,17 @@ export default {
           bg: "hsl(var(--hover-bg))",
         },
         separator: "hsl(var(--separator))",
+        steel: "hsl(var(--steel))",
+        emerald: {
+          DEFAULT: "hsl(var(--emerald))",
+          ink: "hsl(var(--emerald-ink))",
+        },
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          elevated: "hsl(var(--surface-elevated))",
+        },
+        "border-focus": "hsl(var(--border-focus))",
+        faint: "hsl(var(--faint))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -71,6 +83,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      transitionTimingFunction: {
+        mech: "cubic-bezier(0.22, 1, 0.36, 1)",
       },
       borderRadius: {
         lg: "var(--radius)",

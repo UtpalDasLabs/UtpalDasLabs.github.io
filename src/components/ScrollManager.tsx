@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import type Lenis from "lenis";
 import { track, trackPageView } from "@/lib/analytics";
 
 // Deterministic scroll position on every navigation.
@@ -8,10 +7,10 @@ import { track, trackPageView } from "@/lib/analytics";
 //    the reader can choose to scroll up to the hero or down for more — instead
 //    of arriving at a seemingly random position.
 //  - Every other route starts at the top.
-// Uses the Lenis instance when present so the smooth-scroller doesn't animate
-// back to the previous position; falls back to native scrolling otherwise.
+//  - A URL hash (/#projects) scrolls to that homepage section.
+// Native scrolling only — no scroll hijacking.
 export function ScrollManager() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   // SPA page-view: GA4 doesn't auto-fire on client-side navigation.
   useEffect(() => {
@@ -39,43 +38,30 @@ export function ScrollManager() {
 
   useEffect(() => {
     const isProject = /^\/work\/.+/.test(pathname);
-    const lenis = (window as Window & { __lenis?: Lenis }).__lenis;
+    const anchorId = hash ? decodeURIComponent(hash.slice(1)) : isProject ? "project-content" : "";
     let raf = 0;
     let cancelled = false;
 
     const scrollTo = (target: HTMLElement | null) => {
-      if (target) {
-        if (lenis) lenis.scrollTo(target, { immediate: true, offset: -88 });
-        else window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY - 88);
-      } else if (lenis) {
-        lenis.scrollTo(0, { immediate: true });
-      } else {
-        window.scrollTo(0, 0);
-      }
+      if (target) window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY - 72);
+      else window.scrollTo(0, 0);
     };
 
-    if (!isProject) {
+    if (!anchorId) {
       raf = requestAnimationFrame(() => scrollTo(null));
       return () => cancelAnimationFrame(raf);
     }
 
-    // Project routes are code-split, so the anchor doesn't exist while the
-    // chunk is still loading behind Suspense. Poll for a short window rather
-    // than checking a single frame and giving up (which left the reader on
-    // the hero instead of the content).
     const deadline = performance.now() + 1500;
     const waitForAnchor = () => {
       if (cancelled) return;
-      const target = document.getElementById("project-content");
+      const target = document.getElementById(anchorId);
       if (target) {
         scrollTo(target);
         return;
       }
-      if (performance.now() < deadline) {
-        raf = requestAnimationFrame(waitForAnchor);
-      } else {
-        scrollTo(null);
-      }
+      if (performance.now() < deadline) raf = requestAnimationFrame(waitForAnchor);
+      else scrollTo(null);
     };
     raf = requestAnimationFrame(waitForAnchor);
 
@@ -83,7 +69,7 @@ export function ScrollManager() {
       cancelled = true;
       cancelAnimationFrame(raf);
     };
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 }

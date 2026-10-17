@@ -3,13 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 
+// Homepage anchors — every section is pre-rendered on "/", deep pages remain.
 const navItems = [
-  { label: "Projects", path: "/work" },
-  { label: "Labs", path: "/labs" },
-  { label: "About", path: "/about" },
-  { label: "Kind Words", path: "/kind-words" },
-  { label: "Contact", path: "/contact" },
+  { label: "Projects", path: "/#projects" },
+  { label: "Thesis", path: "/#thesis" },
+  { label: "Labs", path: "/#labs" },
+  { label: "Kind Words", path: "/#kind-words" },
 ];
+const ctaItem = { label: "Start a conversation", path: "/#contact" };
 
 interface HeaderProps {
   revealMode?: boolean;
@@ -20,6 +21,7 @@ export function Header({ revealMode = false }: HeaderProps) {
   const [isVisible, setIsVisible] = useState(!revealMode);
   const [mounted, setMounted] = useState(false);
   const location = useLocation();
+  const isActive = (path: string) => location.pathname + location.hash === path;
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -73,38 +75,40 @@ export function Header({ revealMode = false }: HeaderProps) {
   return (
     <>
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/[0.82] backdrop-blur-md transition-all duration-300 ease-mech ${
         isVisible
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 -translate-y-full pointer-events-none'
       } ${isMenuOpen ? 'bg-background' : ''}`}
     >
       <div className="container-wide relative">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-16 md:h-[4.5rem]">
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2.5 font-display text-lg font-semibold tracking-tight text-foreground hover:opacity-70 transition-opacity"
+            className="flex items-center gap-2.5 font-display text-xl tracking-tight text-foreground hover:opacity-70 transition-opacity"
           >
             {/* Interlocking Heritage UD monogram — bronze PNG so it reads
                 identically on the ivory and near-black grounds */}
             <img
-              src="/brand/ud-monogram.png"
+              src="/brand/ud-monogram.webp"
               alt=""
-              className="h-9 w-auto"
+              className="h-8 w-auto"
+              width="34"
+              height="32"
               loading="eager"
             />
             Utpal Das
           </Link>
 
           {/* Desktop Navigation - Centered */}
-          <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+          <nav aria-label="Primary" className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-xs font-sans tracking-widest uppercase transition-all duration-300 hover:tracking-[0.2em] ${
-                  location.pathname === item.path
+                className={`telemetry transition-colors ${
+                  isActive(item.path)
                     ? "text-foreground"
                     : "text-foreground/80 hover:text-foreground"
                 }`}
@@ -114,8 +118,14 @@ export function Header({ revealMode = false }: HeaderProps) {
             ))}
           </nav>
 
-          {/* Right - Theme Toggle */}
-          <div className="hidden md:flex items-center">
+          {/* Right - CTA + Theme Toggle */}
+          <div className="hidden md:flex items-center gap-3">
+            <Link
+              to={ctaItem.path}
+              className="telemetry border border-accent/70 px-4 py-2 text-foreground transition-colors ease-mech hover:bg-accent hover:text-accent-foreground"
+            >
+              {ctaItem.label}
+            </Link>
             <button
               onClick={toggleTheme}
               className="p-2 text-foreground/60 hover:text-foreground transition-colors"
@@ -157,14 +167,14 @@ export function Header({ revealMode = false }: HeaderProps) {
         className="md:hidden fixed inset-0 z-40"
         style={{ backgroundColor: "hsl(var(--background))" }}
       >
-        <nav className="container-wide mt-20 border-t border-separator py-12 flex flex-col gap-8">
-          {navItems.map((item, index) => (
+        <nav aria-label="Mobile" className="container-wide mt-16 border-t border-separator py-12 flex flex-col gap-8">
+          {[...navItems, ctaItem].map((item, index) => (
             <Link
               key={item.path}
               to={item.path}
               onClick={() => setIsMenuOpen(false)}
               className={`text-4xl font-display animate-fade-in-up ${
-                location.pathname === item.path ? "text-accent" : "text-foreground"
+                isActive(item.path) ? "text-accent" : "text-foreground"
               }`}
               style={{ animationDelay: `${index * 0.08}s` }}
             >

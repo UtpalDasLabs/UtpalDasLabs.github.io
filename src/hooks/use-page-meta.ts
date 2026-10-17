@@ -7,8 +7,22 @@ function setMeta(selector: string, attr: string, value: string) {
   if (el) el.setAttribute(attr, value);
 }
 
+// During build-time pre-rendering there is no document: the page's metadata
+// is recorded here and written into the static HTML by scripts/prerender.mjs.
+export const collectedMeta: { title?: string; description?: string; path?: string } = {};
+export function resetMeta() {
+  delete collectedMeta.title;
+  delete collectedMeta.description;
+  delete collectedMeta.path;
+}
+
 // Per-route title/description/canonical so metadata is unique across routes.
 export function usePageMeta(title: string, description: string, path: string) {
+  if (typeof window === "undefined") {
+    collectedMeta.title = title;
+    collectedMeta.description = description;
+    collectedMeta.path = path;
+  }
   useEffect(() => {
     document.title = title;
     setMeta('meta[name="description"]', "content", description);

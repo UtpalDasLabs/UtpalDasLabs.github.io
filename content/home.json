@@ -1,0 +1,334 @@
+{
+  "hero": {
+    "eyebrow": "01 / 03 · INTRO — BERLIN · 2026",
+    "headline": "UTPAL DAS",
+    "subPositioning": "Father · Builder · Problem Solver",
+    "roleBadge": "Head of Digital Solutions · CUBONIC",
+    "body": "18+ years shipping software that had to work — cockpit displays, CAD, robot metrology, Europe's largest car marketplace and autonomous movers. Now I hold AI to the same bar.",
+    "proofPills": [
+      "DO-178B Avionics → Autonomous Movers",
+      "Europe's Largest Auto Marketplace Scale",
+      "Microsoft MVP · 3D Vision & Metrology",
+      "Private LLMs & Deterministic Agentic Systems"
+    ],
+    "primaryCta": "See the work ↓",
+    "secondaryCta": "The AI Correctional Thesis →",
+    "ghostCta": "Launch Live Apps"
+  },
+  "manifesto": {
+    "eyebrow": "02 / 03 · MANIFESTO",
+    "lead": "Planes. Production lines. Marketplaces. Autonomous vehicles.",
+    "middle": "Eighteen years of software that had to work.",
+    "accent": "That's the bar AI has to clear."
+  },
+  "thesis": {
+    "eyebrow": "03 / 03 · THE NEXT DREAM",
+    "headline": "One day, governments will build correctional facilities for bad AI agents.",
+    "headlineAccent": "I'd like to build them.",
+    "lead": "The next decade of AI isn't about smarter models. It's about accountable ones — good agents, bad agents, and the systems that catch, correct, and release them. That's the problem I'm obsessed with.",
+    "trigger": "Inspect the Architecture Blueprint",
+    "blueprintTitle": "ARCHITECTURAL SPECIFICATION · AGENTIC CONTAINMENT & REHABILITATION",
+    "premiseTitle": "The Premise (DO-178B Meets Autonomous Agents)",
+    "premise": [
+      "In airborne software (DO-178B) and industrial robotics, systems are never certified because they \"usually behave well in a demo.\" They are certified because their failure modes are bounded, their telemetry is immutable, and their fallback states are deterministic.",
+      "As enterprise AI moves from chat interfaces to autonomous multi-agent workflows with tool-execution privileges, probabilistic drift becomes an operational hazard. Killing a misbehaving agent destroys forensic state; leaving it running risks cascading failure. We need Correctional Infrastructure for Autonomous Agents."
+    ],
+    "pipelineTitle": "The 4-Stage Rehabilitation Pipeline",
+    "stages": [
+      {
+        "index": "STAGE 01",
+        "name": "The Flight Recorder",
+        "mode": "Deterministic Arrest",
+        "body": "Runtime monitors evaluate strict invariants (permission boundaries, schema drift, budget ceilings, PII egress). When an agent violates policy or enters an adversarial loop, its execution thread is suspended in sub-milliseconds while a clean standby instance hot-swaps into production."
+      },
+      {
+        "index": "STAGE 02",
+        "name": "Quarantine",
+        "mode": "The Air-Gapped Sandbox",
+        "body": "The arrested agent's complete context window, tool-call graph, memory pointers, and random seed are snapshotted into an isolated execution jail where external APIs are replaced by deterministic mock sinks."
+      },
+      {
+        "index": "STAGE 03",
+        "name": "Interrogation & Rehabilitation",
+        "mode": "Counterfactual Replay",
+        "body": "An automated diagnostic harness classifies the root cause (prompt injection, ambiguous tool schema, context poisoning, or reward hacking) and replays 100+ adversarial mutations of the failure state to synthesize a deterministic guardrail or routing patch."
+      },
+      {
+        "index": "STAGE 04",
+        "name": "The Parole Board",
+        "mode": "Verification & Canary Release",
+        "body": "The patched agent must pass 100% of the adversarial regression suite and survive shadow-mode canary evaluation against live traffic before earning release back into autonomous production."
+      }
+    ],
+    "noteLink": "Read the longer note on agent accountability"
+  },
+  "projects": {
+    "eyebrow": "04 · FLAGSHIP CASE STUDIES",
+    "title": "Four eras. One standard.",
+    "lead": "Each case reads in 30 seconds as a constraint matrix, or in five minutes as the hard architectural tradeoff behind it.",
+    "archiveCta": "Open the full archive (21 case studies)",
+    "caseStudies": [
+      {
+        "id": "cubonic",
+        "tag": "01 / AI STRATEGY, PRIVATE LLMs & MOBILITY INFRASTRUCTURE",
+        "meta": "Head of Digital Solutions · Berlin · Feb 2024 – Present",
+        "headline": "Holding enterprise AI and next-generation commercial mobility platforms to deterministic engineering standards.",
+        "matrix": {
+          "domain": "Next-gen commercial mobility infrastructure, private LLM deployments, multi-agent enterprise workflows, and vehicle-to-cloud digital architecture.",
+          "constraints": "Strict European data sovereignty (GDPR/IP protection), zero tolerance for hallucinated operational data, and alignment across hardware, fleet operations, and executive strategy.",
+          "scope": "End-to-end ownership of digital transformation, AI strategy, internal/external software platforms, and cross-functional engineering execution.",
+          "outcome": "Architected data-sovereign private LLM and agentic workflows; unified fragmented digital toolchains into a scalable mobility platform roadmap."
+        },
+        "tradeoff": {
+          "context": "In an industrial and mobility environment, standard cloud-hosted LLM wrappers fail two critical tests: they leak proprietary vehicle/operational IP and produce non-deterministic outputs unsuitable for business-critical workflows.",
+          "decision": "Rejected generic third-party SaaS AI sprawl in favor of private LLM deployments coupled with bounded agentic workflows—where LLMs handle unstructured ingestion and synthesis, while deterministic code enforces validation, permissions, and state updates.",
+          "result": "Delivered practical AI automation across engineering and operations while preserving 100% data sovereignty and predictable system behavior."
+        },
+        "related": [
+          "agentic-platform",
+          "local-llm-stack",
+          "cubonic-digital"
+        ]
+      },
+      {
+        "id": "marketplaces",
+        "tag": "02 / HIGH-SCALE MARKETPLACES & FINTECH MOBILITY",
+        "meta": "Head of Product & Apps (AutoScout24) · Senior PM (Cluno / Cazoo) · Munich · 2019 – 2024",
+        "headline": "Scaling Europe's largest automotive marketplace apps and pioneering digital car subscription lifecycles.",
+        "matrix": {
+          "domain": "Two-sided automotive marketplace (millions of monthly users) and full-lifecycle vehicle subscription e-commerce (onboarding, risk scoring, fleet logistics).",
+          "constraints": "High-volume consumer conversion funnels tied to real-world physical inventory, credit underwriting, vehicle handover logistics, and multi-country post-merger integration.",
+          "scope": "Led mobile/app product organization and core consumer journeys across native iOS, Android, and web ecosystems; also served as Advisory Board Member at HR-tech platform HirePlusPlus (2023–2024).",
+          "outcome": "Scaled core mobile app engagement and conversion at continental scale (AutoScout24); architected digital subscription funnels through Cluno's rapid scale-up and acquisition by Cazoo."
+        },
+        "tradeoff": {
+          "context": "In digital car subscriptions and marketplaces, optimizing purely for top-of-funnel click conversion creates downstream operational failure if financing checks, inventory locks, and delivery scheduling are decoupled.",
+          "decision": "Bridged consumer-facing mobile UX directly with backend ERP and fleet reality—introducing real-time state validation early in the funnel and aligning cross-functional squads around completed vehicle handovers rather than vanity clicks.",
+          "result": "Reduced drop-offs between digital contract signing and physical vehicle delivery while maintaining top-tier app store ratings and rapid release velocity."
+        },
+        "related": [
+          "autoscout24-apps",
+          "cluno-partner-platform",
+          "asset-financing"
+        ]
+      },
+      {
+        "id": "merz",
+        "tag": "03 / INDUSTRIAL METROLOGY, 3D VISION & HARDWARE-SOFTWARE SYSTEMS",
+        "meta": "Head of Software Development & Engineering Lead · Aalen · May 2013 – Jan 2019",
+        "headline": "Sub-millimeter robotic optical inspection and high-throughput 3D point-cloud processing on the factory floor.",
+        "matrix": {
+          "domain": "Industrial metrology, automated optical inspection, 3D laser/sensor point-cloud processing, CAD comparison, and real-time hardware control (C++, C#, WPF).",
+          "constraints": "Sub-millimeter measurement precision, real-time memory management for multi-million-point 3D scans, and 24/7 deterministic stability on active manufacturing lines.",
+          "scope": "Promoted from Engineering Lead to Head of Software Development; architected core software platforms and built/mentored the engineering team.",
+          "outcome": "Shipped production-grade 3D metrology suites for industrial manufacturing; recognized with the Microsoft MVP Award for deep technical contributions and software leadership."
+        },
+        "tradeoff": {
+          "context": "Processing massive 3D point clouds and rendering real-time CAD deviation heatmaps inside an operator-friendly desktop UI (C#/WPF) typically bottlenecks on garbage-collection pauses and CPU/GPU memory transfers.",
+          "decision": "Architected a strict native/managed boundary—keeping heavy spatial indexing, point-cloud registration, and geometric math in deterministic, memory-pinned C++ pipelines while exposing a reactive, hardware-accelerated WPF operator workspace on top.",
+          "result": "Achieved real-time 3D inspection visualization and strict cycle-time compliance on production lines without sacrificing operator ergonomics."
+        },
+        "related": [
+          "zeiss-measurement-cell",
+          "cad-reverse-engineering",
+          "ct-defect-detection"
+        ]
+      },
+      {
+        "id": "avionics",
+        "tag": "04 / SAFETY-CRITICAL AVIONICS (DO-178B) & GEOMETRIC KERNELS",
+        "meta": "Software Engineer / IT Analyst · TCS · Sep 2008 – May 2013",
+        "headline": "Deterministic cockpit display systems and mathematical CAD foundations where bugs are not an option.",
+        "matrix": {
+          "domain": "Airborne cockpit display software (DO-178B safety certification) and computational geometry / CAD kernel engineering (C++).",
+          "constraints": "Zero-defect tolerance, strict deterministic execution, structural code coverage (MC/DC), and full requirements-to-object-code traceability.",
+          "scope": "Core systems engineering, safety-critical verification, and geometric algorithm implementation.",
+          "outcome": "Forged the deterministic engineering discipline that underpins every system built since—from industrial robots to accountable AI agents."
+        },
+        "tradeoff": {
+          "context": "In DO-178B avionics software, dynamic memory allocation, unbounded loops, and ambiguous state transitions are forbidden because every execution path must be mathematically provable under worst-case timing.",
+          "decision": "Internalized deterministic state-machine design, strict requirement traceability, and failure-isolation patterns early—treating every external input as untrusted until verified.",
+          "result": "Today, this safety-critical foundation is my core differentiator in AI: applying avionics-grade verification and containment to probabilistic LLMs."
+        },
+        "related": [
+          "eicas-avionics"
+        ]
+      }
+    ]
+  },
+  "labs": {
+    "eyebrow": "05 · SHIPPED ECOSYSTEMS",
+    "title": "Live, free, and honest about your data.",
+    "lead": "Five apps in production. Each one is a tear-down of a decision I'd defend in a design review.",
+    "allLabsCta": "All Labs details",
+    "teardowns": [
+      {
+        "id": "german-citizenship",
+        "name": "Leben in Deutschland",
+        "kind": "German Citizenship Test Suite",
+        "status": "LIVE PWA · iOS / ANDROID / WEB",
+        "url": "https://lid.utpaldas.com",
+        "repoUrl": "https://github.com/UtpalDasLabs/German-Citizenship-App",
+        "summary": "Zero-account, offline-first flashcard and exam simulator covering all 460 official BAMF questions (300 general + 16×10 state questions) with custom SVG scenes and plain-English cultural explainers.",
+        "points": [
+          {
+            "title": "Build-Time Factual Assertion Gate",
+            "code": "scripts/corrections.mjs",
+            "body": "Automatically catches and patches upstream community dataset hallucinations (such as Question 184's historical error on the 1948 founding of Israel) and fails the build loudly if upstream data regresses."
+          },
+          {
+            "title": "Zero-Data-Loss Cross-Domain Handover",
+            "code": "handover.html",
+            "body": "Custom migration bridge carrying local AsyncStorage progress seamlessly from GitHub Pages to lid.utpaldas.com."
+          }
+        ]
+      },
+      {
+        "id": "german-driving",
+        "name": "Führerschein-Trainer",
+        "kind": "Class B Theory & Traffic Sign Simulator",
+        "status": "LIVE PWA · MULTI-MODAL ECOSYSTEM",
+        "url": "https://fuehrerschein.utpaldas.com",
+        "repoUrl": "https://github.com/UtpalDasLabs/German-Driving-",
+        "summary": "Interactive German Class B driving theory trainer (Home, Learn, Signs, Exam, You) paired with the Living in Deutschland companion video curriculum covering high-failure right-of-way (Rechts vor links) and priority rules.",
+        "points": [
+          {
+            "title": "On-Device Readiness Engine",
+            "code": "src/lib/forecast.ts",
+            "body": "Calculates daily card velocity and projected exam pass dates locally with zero backend cost or user tracking."
+          },
+          {
+            "title": "Resilient State Migration",
+            "code": "handover.html",
+            "body": "Automated cross-domain state transfer with local JSON backup/restore fallback for large progress payloads."
+          }
+        ]
+      },
+      {
+        "id": "german-b1",
+        "name": "B1-Trainer",
+        "kind": "Zertifikat Deutsch B1 · Goethe, telc & DTZ",
+        "status": "LIVE PWA · OFFLINE",
+        "url": "https://b1.utpaldas.com",
+        "repoUrl": "https://github.com/UtpalDasLabs/German-B1",
+        "summary": "931 words across 22 themes, 166 grammar drills and 31 full exam tasks across Lesen, Hören, Schreiben and Sprechen — 1,097 items on a spaced-repetition schedule. Pick your certificate and the facts, timings and official links change to match.",
+        "points": [
+          {
+            "title": "Device-Spoken Listening",
+            "code": "speechSynthesis",
+            "body": "Hören is spoken aloud by your device rather than shipped as audio files, with the same play limit as the real exam."
+          },
+          {
+            "title": "No Pretend Grading",
+            "code": "answer-key only",
+            "body": "Lesen and Hören are scored against an answer key; Schreiben and Sprechen are not — you get the clock, the phrase bank, a model answer and the examiner's criteria as a checklist."
+          }
+        ]
+      },
+      {
+        "id": "wtf-india",
+        "name": "We the Future",
+        "kind": "Public Money, Public Proof",
+        "status": "LIVE PWA · CIVIC TECH",
+        "url": "https://wethefuture.in",
+        "repoUrl": "",
+        "summary": "A mobile-first app showing government projects near you, with map and list discovery, search, and filters for planned, ongoing, delayed, completed and finished early.",
+        "points": [
+          {
+            "title": "Evidence Panel per Project",
+            "code": "source · status · confidence",
+            "body": "Every project carries official source links, source type, verification status, confidence, and when it was last verified."
+          },
+          {
+            "title": "Record ≠ Opinion",
+            "code": "separated data paths",
+            "body": "Verified facts and timelines are kept strictly separate from community ratings and reviews, so what the record says and what people say never blur together."
+          }
+        ]
+      },
+      {
+        "id": "retailor",
+        "name": "Retailor",
+        "kind": "Tailor Your CV with the AI You Already Use",
+        "status": "LIVE · BROWSER-ONLY",
+        "url": "https://retailor.utpaldas.com",
+        "repoUrl": "https://github.com/UtpalDasLabs/Retailor",
+        "summary": "Put your CV in, copy a ready-made prompt into ChatGPT, Claude, Gemini or Perplexity along with the job advert, paste the reply back, review every change, and download a polished PDF.",
+        "points": [
+          {
+            "title": "Bring Your Own AI",
+            "code": "no model API in the loop",
+            "body": "The app never calls a model itself — you run the prompt in the assistant you already trust, so there is no API key, no sign-up and no upload."
+          },
+          {
+            "title": "Human-in-the-Loop Diff",
+            "code": "side-by-side review",
+            "body": "Every suggested change is shown side by side and must be reviewed before the PDF is produced. Runs entirely in your browser, no tracking."
+          }
+        ]
+      }
+    ]
+  },
+  "principles": {
+    "eyebrow": "06 · OPERATING PRINCIPLES & KIND WORDS",
+    "title": "What colleagues say — and the standard it proves.",
+    "allKindWordsCta": "Read all 12 recommendations",
+    "endorsements": [
+      {
+        "standard": "Outcomes over output",
+        "author": "Tino Kapolka"
+      },
+      {
+        "standard": "Digital UX wired to operational reality",
+        "author": "Dr. Veronika von Heise-Rotenburg"
+      },
+      {
+        "standard": "Challenge the why — genuine business value",
+        "author": "Louis Badcock"
+      },
+      {
+        "standard": "Decisions informed by data, teams given room",
+        "author": "Nikita Belokopytov"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "07 · START A CONVERSATION",
+    "title": "Tell me why you're here. I'll meet you there.",
+    "lead": "Pick the path that fits. The email arrives pre-addressed and pre-labelled, so it reaches me with context.",
+    "intents": [
+      {
+        "id": "role",
+        "label": "Discuss a Leadership Role",
+        "audience": "For Hiring Managers, Executive Search & Boards.",
+        "summary": "Product and technology leadership roles where complex systems, teams and commercial outcomes meet. Start with the mandate; I'll answer with scope, ownership and evidence.",
+        "subject": "Executive / Tech Leadership Inquiry — via utpaldas.com",
+        "cta": "Email about a role"
+      },
+      {
+        "id": "challenge",
+        "label": "Solve an Execution Challenge",
+        "audience": "For CEOs, Founders & Operating Partners.",
+        "summary": "Ambiguous mandates, stalled transformations, sovereign AI and digital strategy. Bring the constraint; we'll work out the architecture and the path to execution.",
+        "subject": "Advisory / Transformation Challenge — via utpaldas.com",
+        "cta": "Email about a challenge"
+      },
+      {
+        "id": "venture",
+        "label": "Explore AI Governance / Venture",
+        "audience": "For VCs, Investors & Co-Founders.",
+        "summary": "The Agentic Correctional Facilities thesis: containment, forensic replay and verified release for autonomous agents — and the live products that show how I build.",
+        "subject": "AI Containment Thesis / Venture Inquiry — via utpaldas.com",
+        "cta": "Email about the thesis"
+      },
+      {
+        "id": "collaborate",
+        "label": "Build Together / Labs",
+        "audience": "For Engineers, Builders & App Users.",
+        "summary": "Bug reports, feature ideas, architecture questions or a co-build. The Labs apps are free and open about their data — feedback makes them better.",
+        "subject": "Labs Collaboration / Technical Feedback — via utpaldas.com",
+        "cta": "Email about Labs"
+      }
+    ]
+  }
+}
