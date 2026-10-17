@@ -1,98 +1,162 @@
+/* Self-hosted (no request to Google: GDPR + performance). Playfair Display, Inter, JetBrains Mono — SIL OFL 1.1 */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay-italic-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay-normal-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(/fonts/Inter-normal-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(/fonts/Inter-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(/fonts/JetBrainsMono-normal-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(/fonts/JetBrainsMono-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* Light theme — V4 bronze editorial: ivory ground, warm near-black ink */
-    --background: 38 33% 95%;
-    --foreground: 30 8% 8%;
-
-    --card: 38 40% 98%;
-    --card-foreground: 30 8% 8%;
-
-    --popover: 38 40% 98%;
-    --popover-foreground: 30 8% 8%;
-
-    --primary: 36 40% 52%;
-    --primary-foreground: 38 33% 95%;
-
-    --secondary: 38 20% 88%;
-    --secondary-foreground: 30 8% 15%;
-
-    --muted: 38 22% 90%;
-    --muted-foreground: 30 5% 40%;
-
-    --accent: 36 40% 52%;
-    --accent-foreground: 38 33% 95%;
-
-    --destructive: 0 72% 45%;
+    /* Default: bright ivory paper, charcoal ink, bronze accent (UD brand moodboard)
+       Ivory #F7F4EF · Charcoal #0B0B0B · Bronze #B08D57 (decorative) / #87652F (text-safe) · Taupe #8A8A8A */
+    --background: 37 35% 95%;
+    --foreground: 0 0% 4%;
+    --card: 40 50% 98%;
+    --card-foreground: 0 0% 4%;
+    --popover: 40 50% 98%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 37 50% 31%;
+    --primary-foreground: 37 35% 97%;
+    --secondary: 37 27% 91%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 37 27% 91%;
+    --muted-foreground: 35 7% 32%;
+    --accent: 37 50% 31%;
+    --accent-foreground: 37 35% 97%;
+    --steel: 208 30% 38%;
+    --emerald: 146 50% 30%;
+    --emerald-ink: 146 55% 24%;
+    --destructive: 0 72% 42%;
     --destructive-foreground: 0 0% 100%;
-
-    --border: 35 15% 80%;
-    --input: 35 15% 80%;
-    --ring: 36 40% 52%;
-
+    --border: 38 22% 86%;
+    --input: 38 22% 86%;
+    --ring: 37 50% 31%;
     --radius: 0rem;
+    --hover-bg: 37 27% 92%;
+    --separator: 38 22% 86%;
+    --surface: 40 50% 98%;
+    --surface-elevated: 37 27% 91%;
+    --border-focus: 36 18% 73%;
+    --faint: 37 6% 41%;
 
-    /* Custom tokens */
-    --hover-bg: 38 25% 91%;
-    --separator: 35 15% 82%;
+    --sidebar-background: 37 35% 95%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 37 48% 36%;
+    --sidebar-primary-foreground: 37 35% 97%;
+    --sidebar-accent: 37 27% 91%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 38 22% 86%;
+    --sidebar-ring: 37 48% 36%;
 
-    /* Sidebar */
-    --sidebar-background: 38 33% 95%;
-    --sidebar-foreground: 30 8% 8%;
-    --sidebar-primary: 36 40% 52%;
-    --sidebar-primary-foreground: 38 33% 95%;
-    --sidebar-accent: 38 20% 88%;
-    --sidebar-accent-foreground: 30 8% 15%;
-    --sidebar-border: 35 15% 82%;
-    --sidebar-ring: 36 40% 52%;
+    --ease-mech: cubic-bezier(0.22, 1, 0.36, 1);
+    --font-display: "Playfair Display", Georgia, serif;
+    --bronze: 36 35% 52%;
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
   }
 
   .dark {
-    /* Dark theme — near-black warm ground, ivory ink, bronze stays */
-    --background: 30 10% 4%;
-    --foreground: 38 25% 92%;
-
-    --card: 30 8% 7%;
-    --card-foreground: 38 25% 92%;
-
-    --popover: 30 8% 7%;
-    --popover-foreground: 38 25% 92%;
-
-    --primary: 36 45% 56%;
-    --primary-foreground: 30 10% 8%;
-
-    --secondary: 30 6% 12%;
-    --secondary-foreground: 38 25% 90%;
-
-    --muted: 30 6% 14%;
-    --muted-foreground: 38 10% 62%;
-
-    --accent: 36 45% 56%;
-    --accent-foreground: 30 10% 8%;
-
+    /* Optional dark variant: charcoal canvas, ivory ink, bronze accent */
+    --background: 0 0% 4%;
+    --foreground: 37 35% 95%;
+    --card: 30 5% 7.5%;
+    --card-foreground: 37 35% 95%;
+    --popover: 30 5% 7.5%;
+    --popover-foreground: 37 35% 95%;
+    --primary: 36 35% 52%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 30 8% 10%;
+    --secondary-foreground: 37 35% 95%;
+    --muted: 30 8% 10%;
+    --muted-foreground: 36 8% 63%;
+    --accent: 36 35% 52%;
+    --accent-foreground: 0 0% 4%;
+    --steel: 208 25% 52%;
+    --emerald: 146 50% 36%;
+    --emerald-ink: 146 45% 52%;
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
+    --border: 36 7% 14%;
+    --input: 36 7% 14%;
+    --ring: 36 35% 52%;
+    --hover-bg: 30 8% 10%;
+    --separator: 36 7% 14%;
+    --surface: 30 5% 7.5%;
+    --surface-elevated: 30 8% 10%;
+    --border-focus: 38 7% 22%;
+    --faint: 0 0% 54%;
 
-    --border: 30 8% 18%;
-    --input: 30 8% 18%;
-    --ring: 36 45% 56%;
-
-    /* Custom tokens */
-    --hover-bg: 30 8% 8%;
-    --separator: 30 8% 16%;
-
-    /* Sidebar */
-    --sidebar-background: 30 10% 4%;
-    --sidebar-foreground: 38 25% 92%;
-    --sidebar-primary: 36 45% 56%;
-    --sidebar-primary-foreground: 30 10% 8%;
-    --sidebar-accent: 30 6% 12%;
-    --sidebar-accent-foreground: 38 25% 90%;
-    --sidebar-border: 30 8% 16%;
-    --sidebar-ring: 36 45% 56%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 37 35% 95%;
+    --sidebar-primary: 36 35% 52%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 30 8% 10%;
+    --sidebar-accent-foreground: 37 35% 95%;
+    --sidebar-border: 36 7% 14%;
+    --sidebar-ring: 36 35% 52%;
   }
 
   * {
@@ -101,15 +165,32 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  html {
+    font-synthesis-weight: none;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--accent));
+    outline-offset: 3px;
   }
 }
 
@@ -121,17 +202,17 @@
 
   .text-display {
     @apply text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight;
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: var(--font-display);
   }
 
   .text-headline {
     @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
-    font-family: 'Fraunces', Georgia, serif;
+    font-family: var(--font-display);
   }
 
   .text-label {
     @apply text-xs md:text-sm uppercase tracking-widest text-muted-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sans);
   }
 
   .hover-highlight {
@@ -263,7 +344,6 @@
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
   background-size: 160px 160px;
-  animation: grain-shift 1.4s steps(6) infinite;
 }
 
 @keyframes grain-shift {
@@ -375,3 +455,44 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ========================================================
+   Evidence Engine — editorial grid, telemetry labels, drawers
+   ======================================================== */
+.telemetry {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) { .telemetry { font-size: 12px; } }
+
+.hairline-grid {
+  background-image:
+    linear-gradient(to right, hsl(var(--border) / 0.55) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border) / 0.55) 1px, transparent 1px);
+  background-size: 96px 96px;
+  background-position: -1px -1px;
+}
+
+/* Collapsible drawer: content stays in the DOM (SEO), height animates via grid rows */
+.drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 280ms var(--ease-mech), opacity 280ms var(--ease-mech);
+  opacity: 0;
+}
+.drawer[data-open="true"] { grid-template-rows: 1fr; opacity: 1; }
+.drawer > .drawer-inner { overflow: hidden; min-height: 0; }
+/* Without JS (or before hydration) drawers are open so nothing is hidden */
+html:not(.js) .drawer { grid-template-rows: 1fr; opacity: 1; }
+
+.mech { transition-timing-function: var(--ease-mech); transition-duration: 240ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer, .mech { transition: none !important; }
+}
+
+.consent-set [data-consent-banner] { display: none; }
+/* Playfair reads best at medium weight at display sizes (moodboard) */
+.font-display.font-bold, .font-display.font-semibold, .font-display.font-extrabold { font-weight: 500; }

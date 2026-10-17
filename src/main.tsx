@@ -1,4 +1,4 @@
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import App from "./App.tsx";
 import { initAnalytics } from "./lib/analytics";
 import "./index.css";
@@ -9,4 +9,8 @@ import "./index.css";
 // arrive before config.
 initAnalytics();
 
-createRoot(document.getElementById("root")!).render(<App />);
+const root = document.getElementById("root")!;
+// Pre-rendered pages arrive with full HTML: hydrate it. Unknown/dev routes
+// arrive empty: render from scratch.
+if (root.hasChildNodes()) hydrateRoot(root, <App />);
+else createRoot(root).render(<App />);

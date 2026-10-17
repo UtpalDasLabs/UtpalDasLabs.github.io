@@ -2,24 +2,11 @@ import { useEffect } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import { projects, type Domain } from "@/data/projects";
+import { projects } from "@/data/projects";
 import { recommendations } from "@/data/recommendations";
 import { CoverMedia } from "@/components/CoverMedia";
-import { CinematicBackground } from "@/components/CinematicBackground";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { track } from "@/lib/analytics";
-
-// Same domain-to-variant pairing the Work page used
-const bgFor = (cat: Domain): "mesh" | "flow" | "grid" => {
-  switch (cat) {
-    case "AI Systems":
-      return "mesh";
-    case "Mobility & Marketplaces":
-      return "flow";
-    default:
-      return "grid";
-  }
-};
 
 const Project = () => {
   const { id } = useParams();
@@ -69,7 +56,7 @@ const Project = () => {
             className="absolute inset-0 w-full h-full object-cover"
           />
         ) : (
-          <CinematicBackground variant={bgFor(project.category)} intensity={0.7} />
+          <div aria-hidden="true" className="hairline-grid pointer-events-none absolute inset-0 opacity-40" />
         )}
         <div className="absolute inset-0 bg-background/50" />
 

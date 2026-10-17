@@ -22,7 +22,7 @@ const Contact = () => {
           {/* Content */}
           <div className="space-y-12">
             <div>
-              <h1 className="text-display mb-6 animate-fade-in-up">
+              <h1 className="mb-6 animate-fade-in-up font-display text-5xl font-medium leading-[1.02] tracking-[-0.02em] md:text-6xl lg:text-7xl">
                 Let's build<br />something.
               </h1>
               <p className="text-xl text-muted-foreground animate-fade-in-up" style={{ animationDelay: "0.1s" }}>

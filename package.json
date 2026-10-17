@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run check:content && tsc -b && vite build",
+    "build": "npm run check:content && tsc -b && vite build && npm run build:ssr && node scripts/prerender.mjs",
     "build:vite-only": "vite build",
     "build:dev": "vite build --mode development",
     "typecheck": "tsc -b",
     "check:content": "node scripts/check-content.mjs",
     "check:links": "node scripts/check-links.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr --emptyOutDir"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -53,7 +54,6 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
-    "lenis": "^1.3.25",
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",

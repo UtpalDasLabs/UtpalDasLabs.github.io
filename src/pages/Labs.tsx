@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { ArrowUpRight, Github } from "lucide-react";
 import { Layout } from "@/components/Layout";
-import { CinematicBackground } from "@/components/CinematicBackground";
 import { socialIcon } from "@/components/SocialIcons";
 import { labsIntro, labsTeach, labsTools, type LabsTool } from "@/data/labs";
 import { siteCopy } from "@/data/site";
@@ -20,7 +19,7 @@ function ToolCard({ tool }: { tool: LabsTool }) {
     <article className="group grid grid-cols-1 overflow-hidden border border-separator transition-colors duration-300 hover:border-accent lg:grid-cols-[1.05fr_1fr]">
       {/* Cover panel — bold headline on an engineering grid */}
       <div
-        className="dark flex min-h-[220px] flex-col justify-center gap-3 bg-[#0a0a0a] px-6 py-10 md:px-8"
+        className="dark flex min-h-[220px] flex-col justify-center gap-3 bg-surface px-6 py-10 md:px-8"
         style={gridPanelStyle}
       >
         <p className="font-display text-3xl font-bold leading-none tracking-tight text-accent md:text-4xl lg:text-5xl">
@@ -113,7 +112,7 @@ const Labs = () => {
     <Layout showEchelonFooter>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-separator cinematic-grain">
-        <CinematicBackground variant="mesh" intensity={0.4} />
+        <div aria-hidden="true" className="hairline-grid pointer-events-none absolute inset-0 opacity-40" />
         <div className="container-wide relative z-10 py-16 md:py-24">
           <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-accent">
             {labsIntro.eyebrow}
@@ -163,7 +162,7 @@ const Labs = () => {
       <section className="border-t border-separator">
         <div className="container-wide grid grid-cols-1 gap-8 py-16 md:gap-12 md:py-24 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
           <div
-            className="dark flex min-h-[200px] flex-col justify-center gap-3 bg-[#0a0a0a] px-6 py-10 md:px-8"
+            className="dark flex min-h-[200px] flex-col justify-center gap-3 bg-surface px-6 py-10 md:px-8"
             style={gridPanelStyle}
           >
             <p className="font-display text-3xl font-bold leading-none tracking-tight text-accent md:text-4xl lg:text-5xl">

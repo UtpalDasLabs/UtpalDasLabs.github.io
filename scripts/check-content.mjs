@@ -138,6 +138,35 @@ if (recs) {
   }
 }
 
+// --- home.json (homepage "Evidence Engine") ---
+const home = read("home.json");
+if (home) {
+  const req = (v, at) => { if (!isNonEmptyString(v)) err(`home.json: missing/empty ${at}`); };
+  req(home.hero?.headline, "hero.headline");
+  req(home.thesis?.headline, "thesis.headline");
+  if (!Array.isArray(home.thesis?.stages) || home.thesis.stages.length === 0) err("home.json: thesis.stages must be a non-empty array");
+  const projectIds = new Set((projects?.projects ?? []).map((p) => p.id));
+  for (const [i, c] of (home.projects?.caseStudies ?? []).entries()) {
+    const at = `projects.caseStudies[${i}]${c?.id ? ` (${c.id})` : ""}`;
+    for (const f of ["id", "tag", "meta", "headline"]) req(c?.[f], `${at}.${f}`);
+    for (const f of ["domain", "constraints", "scope", "outcome"]) req(c?.matrix?.[f], `${at}.matrix.${f}`);
+    for (const f of ["context", "decision", "result"]) req(c?.tradeoff?.[f], `${at}.tradeoff.${f}`);
+    for (const r of c?.related ?? []) if (!projectIds.has(r)) err(`home.json: ${at}.related "${r}" matches no project id`);
+  }
+  for (const [i, t] of (home.labs?.teardowns ?? []).entries()) {
+    const at = `labs.teardowns[${i}]${t?.id ? ` (${t.id})` : ""}`;
+    for (const f of ["id", "name", "status", "url", "summary"]) req(t?.[f], `${at}.${f}`);
+    if (t?.url && !/^https:\/\//.test(t.url)) err(`home.json: ${at}.url must start with https://`);
+  }
+  for (const [i, it] of (home.contact?.intents ?? []).entries()) {
+    for (const f of ["id", "label", "subject", "cta"]) req(it?.[f], `contact.intents[${i}].${f}`);
+  }
+  const recAuthors = new Set(((recs0 => Array.isArray(recs0) ? recs0 : recs0?.recommendations ?? [])(read("recommendations.json"))).map((r) => r?.author));
+  for (const e of home.principles?.endorsements ?? []) {
+    if (!recAuthors.has(e?.author)) err(`home.json: endorsement author "${e?.author}" matches no recommendation`);
+  }
+}
+
 if (errors.length) {
   console.error(`\n✗ content check failed (${errors.length}):`);
   for (const e of errors) console.error(`  - ${e}`);

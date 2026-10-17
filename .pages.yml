@@ -38,6 +38,149 @@ content:
       - { name: github, label: GitHub URL, type: string }
       - { name: location, label: Location, type: string }
 
+  - name: home
+    label: Homepage (Evidence Engine)
+    type: file
+    path: content/home.json
+    fields:
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: headline, label: Headline, type: string }
+          - { name: subPositioning, label: Sub-positioning, type: string }
+          - { name: roleBadge, label: Role badge, type: string }
+          - { name: body, label: Body, type: text }
+          - { name: proofPills, label: Proof pills, type: string, list: true }
+          - { name: primaryCta, label: Primary button, type: string }
+          - { name: secondaryCta, label: Secondary button, type: string }
+          - { name: ghostCta, label: Labs link (count is added automatically), type: string }
+      - name: manifesto
+        label: Manifesto
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: lead, label: Line 1, type: string }
+          - { name: middle, label: Line 2 (muted), type: string }
+          - { name: accent, label: Line 3 (amber), type: string }
+      - name: thesis
+        label: The next dream + blueprint
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: headline, label: Headline, type: text }
+          - { name: headlineAccent, label: Headline accent, type: string }
+          - { name: lead, label: Lead, type: text }
+          - { name: trigger, label: Drawer button, type: string }
+          - { name: blueprintTitle, label: Blueprint title, type: string }
+          - { name: premiseTitle, label: Premise title, type: string }
+          - { name: premise, label: Premise paragraphs, type: text, list: true }
+          - { name: pipelineTitle, label: Pipeline title, type: string }
+          - name: stages
+            label: Stages
+            type: object
+            list: true
+            fields:
+              - { name: index, label: Index, type: string }
+              - { name: name, label: Name, type: string }
+              - { name: mode, label: Mode, type: string }
+              - { name: body, label: Body, type: text }
+          - { name: noteLink, label: Link to the note, type: string }
+      - name: projects
+        label: Flagship case studies
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Lead, type: text }
+          - { name: archiveCta, label: Archive link, type: string }
+          - name: caseStudies
+            label: Case studies
+            type: object
+            list: true
+            fields:
+              - { name: id, label: ID, type: string }
+              - { name: tag, label: Tag, type: string }
+              - { name: meta, label: Meta line, type: string }
+              - { name: headline, label: Headline, type: text }
+              - name: matrix
+                label: Constraint matrix
+                type: object
+                fields:
+                  - { name: domain, label: System domain, type: text }
+                  - { name: constraints, label: Hard constraints, type: text }
+                  - { name: scope, label: Ownership & scope, type: text }
+                  - { name: outcome, label: Verified outcome, type: text }
+              - name: tradeoff
+                label: Hard architectural tradeoff
+                type: object
+                fields:
+                  - { name: context, label: Context, type: text }
+                  - { name: decision, label: Decision, type: text }
+                  - { name: result, label: Result, type: text }
+              - { name: related, label: Related project IDs (deep-dive links), type: string, list: true }
+      - name: labs
+        label: Shipped ecosystems (Labs)
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Lead, type: text }
+          - { name: allLabsCta, label: Labs page link, type: string }
+          - name: teardowns
+            label: Apps
+            type: object
+            list: true
+            fields:
+              - { name: id, label: ID, type: string }
+              - { name: name, label: Name, type: string }
+              - { name: kind, label: Kind, type: string }
+              - { name: status, label: Status badge, type: string }
+              - { name: url, label: Live URL, type: string }
+              - { name: repoUrl, label: Source URL (optional), type: string, required: false }
+              - { name: summary, label: Summary, type: text }
+              - name: points
+                label: Tear-down points
+                type: object
+                list: true
+                fields:
+                  - { name: title, label: Title, type: string }
+                  - { name: code, label: Code reference, type: string }
+                  - { name: body, label: Body, type: text }
+      - name: principles
+        label: Principles & kind words
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: allKindWordsCta, label: Kind Words link, type: string }
+          - name: endorsements
+            label: Endorsements (author must match Kind Words exactly)
+            type: object
+            list: true
+            fields:
+              - { name: standard, label: Standard it proves, type: string }
+              - { name: author, label: Author, type: string }
+      - name: contact
+        label: Contact selector
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: lead, label: Lead, type: text }
+          - name: intents
+            label: Paths
+            type: object
+            list: true
+            fields:
+              - { name: id, label: ID, type: string }
+              - { name: label, label: Label, type: string }
+              - { name: audience, label: Audience, type: string }
+              - { name: summary, label: Summary, type: text }
+              - { name: subject, label: Email subject, type: string }
+              - { name: cta, label: Button, type: string }
+
   - name: projects
     label: Projects
     type: file
@@ -148,7 +291,7 @@ content:
           - { name: context, label: Context (how you worked together), type: string }
           - { name: company, label: Company (for filter), type: string }
           - { name: quote, label: Quote, type: text }
-          - { name: featured, label: Featured?, type: boolean }
+          - { name: featured, label: "Featured?", type: boolean }
 
   - name: profile
     label: Profile (Experience & Skills)

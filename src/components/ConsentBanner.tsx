@@ -10,13 +10,20 @@ import {
 // Consent banner for GA4 (EU/GDPR). Renders only when analytics is configured
 // and the visitor hasn't chosen yet, or when they reopen it from the footer.
 // Nothing is fetched from Google until "Accept".
+//
+// The banner is part of the pre-rendered HTML so it paints immediately; an
+// inline script in index.html adds `consent-set` to <html> for visitors who
+// already chose, which hides it before first paint (no flash, no layout shift).
 export function ConsentBanner() {
-  const [visible, setVisible] = useState(false);
-  const [current, setCurrent] = useState(getConsent);
+  const [visible, setVisible] = useState(analyticsEnabled);
+  const [current, setCurrent] = useState<ReturnType<typeof getConsent>>(null);
 
   useEffect(() => {
-    if (analyticsEnabled && getConsent() === null) setVisible(true);
+    const choice = getConsent();
+    setCurrent(choice);
+    if (choice !== null) setVisible(false);
     return onConsentReopen(() => {
+      document.documentElement.classList.remove("consent-set");
       setCurrent(getConsent());
       setVisible(true);
     });
@@ -36,6 +43,7 @@ export function ConsentBanner() {
   return (
     <div
       role="dialog"
+      data-consent-banner=""
       aria-live="polite"
       aria-label="Analytics consent"
       className="fixed inset-x-0 bottom-0 z-[300] border-t border-separator bg-background/95 backdrop-blur-sm"

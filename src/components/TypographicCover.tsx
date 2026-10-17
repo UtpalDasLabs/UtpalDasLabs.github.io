@@ -16,7 +16,7 @@ export function TypographicCover({
       // Top-anchored (below the card's index row), not centered: the project
       // card overlays its title/description block across the middle and
       // bottom on small screens, and a centered headline collides with it.
-      className={`dark flex flex-col items-start justify-start gap-3 bg-[#0a0a0a] px-6 pt-12 md:pt-14 ${className ?? ""}`}
+      className={`dark flex flex-col items-start justify-start gap-3 bg-surface px-6 pt-12 md:pt-14 ${className ?? ""}`}
       style={{
         backgroundImage:
           "linear-gradient(hsl(var(--accent) / 0.14) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent) / 0.14) 1px, transparent 1px)",
