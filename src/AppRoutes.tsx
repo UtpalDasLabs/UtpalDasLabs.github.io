@@ -25,7 +25,7 @@ const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 
 export function AppRoutes() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
       <TooltipProvider>
         <Toaster />
         <Sonner />

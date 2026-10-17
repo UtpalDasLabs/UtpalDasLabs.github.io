@@ -3,93 +3,31 @@ import { home, teardowns } from "@/data/home";
 import { track } from "@/lib/analytics";
 import { Pill, StatusDot } from "./primitives";
 
-const ARC = [
-  { year: "2008", label: "AVIONICS · DO-178B", note: "cockpit displays, CAD kernels" },
-  { year: "2013", label: "METROLOGY · 3D VISION", note: "robot cells, point clouds" },
-  { year: "2019", label: "MARKETPLACES · FINTECH", note: "subscriptions, apps at scale" },
-  { year: "2024", label: "MOBILITY · PRIVATE LLMs", note: "autonomous movers, agents" },
-];
-
-/** Career arc rendered as a monospace flight-log schematic (no imagery). */
-function ArcSchematic() {
-  return (
-    <figure
-      aria-label="Career arc from avionics to accountable AI"
-      className="relative border border-border bg-surface/70 p-5 md:p-6"
-    >
-      <figcaption className="telemetry mb-5 flex items-center justify-between text-muted-foreground">
-        <span>FLIGHT LOG · 18+ YRS</span>
-        <span className="text-faint">SYS / ARC-01</span>
-      </figcaption>
-      <ol className="relative space-y-5 border-l border-border pl-6">
-        {ARC.map((s, i) => (
-          <li key={s.year} className="relative">
-            <span
-              aria-hidden="true"
-              className={`absolute -left-[1.72rem] top-1 h-2.5 w-2.5 border ${
-                i === ARC.length - 1 ? "border-accent bg-accent" : "border-border-focus bg-background"
-              }`}
-            />
-            <p className="telemetry text-foreground">
-              <span className="text-accent">{s.year}</span>
-              <span className="mx-2 text-faint">→</span>
-              {s.label}
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">{s.note}</p>
-          </li>
-        ))}
-        <li className="relative">
-          <span
-            aria-hidden="true"
-            className="absolute -left-[1.72rem] top-1 h-2.5 w-2.5 border border-dashed border-accent"
-          />
-          <p className="telemetry text-accent">NEXT → ACCOUNTABLE AGENTS</p>
-          <p className="mt-1 text-sm text-muted-foreground">the same bar, applied to AI</p>
-        </li>
-      </ol>
-    </figure>
-  );
-}
-
 export function Hero() {
   const h = home.hero;
   const [eyebrowLeft, eyebrowRight] = h.eyebrow.split(" — ");
   return (
-    <section
-      id="intro"
-      aria-labelledby="hero-title"
-      className="relative overflow-hidden border-b border-border pt-24 md:pt-28"
-    >
-      <div aria-hidden="true" className="hairline-grid pointer-events-none absolute inset-0 opacity-60" />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background"
-      />
-
+    <section id="intro" aria-labelledby="hero-title" className="relative border-b border-border pt-24 md:pt-28">
       <div className="container-wide relative">
         <div className="telemetry flex items-center justify-between border-b border-border pb-4 text-muted-foreground">
           <span>{eyebrowLeft}</span>
           <span>{eyebrowRight}</span>
         </div>
 
-        <div className="grid gap-12 py-12 md:py-16 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-8">
-            <p className="telemetry mb-6 inline-flex items-center gap-2 border border-accent/50 px-3 py-1.5 text-accent">
+        <div className="grid gap-12 py-12 md:py-16 lg:grid-cols-12 lg:gap-14">
+          <div className="lg:col-span-7 lg:pt-6">
+            <p className="telemetry mb-7 inline-flex items-center gap-2 border border-bronze/60 px-3 py-1.5 text-accent">
               <StatusDot tone="amber" />
               {h.roleBadge}
             </p>
             <h1
               id="hero-title"
-              className="font-display text-[clamp(4rem,13vw,10.5rem)] leading-[0.9] tracking-[-0.03em] text-foreground"
+              className="font-display text-[clamp(3.4rem,10vw,8.25rem)] font-medium leading-[0.92] tracking-[-0.02em] text-foreground"
             >
               {h.headline}
             </h1>
-            <p className="mt-5 font-display text-2xl italic text-foreground/80 md:text-3xl">
-              {h.subPositioning}
-            </p>
-            <p className="mt-8 max-w-2xl text-base leading-[1.65] text-muted-foreground md:text-lg">
-              {h.body}
-            </p>
+            <p className="mt-5 font-display text-2xl italic text-accent md:text-3xl">{h.subPositioning}</p>
+            <p className="mt-8 max-w-xl text-base leading-[1.7] text-muted-foreground md:text-lg">{h.body}</p>
 
             <ul className="mt-8 flex flex-wrap gap-2" aria-label="Proof points">
               {h.proofPills.map((p) => (
@@ -125,10 +63,42 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="lg:col-span-4 lg:pt-16">
-            <ArcSchematic />
+          <div className="lg:col-span-5">
+            <figure className="relative">
+              <div aria-hidden="true" className="absolute -left-3 -top-3 h-full w-full border border-bronze/50" />
+              <img
+                src={h.portrait}
+                srcSet="/images/utpal-portrait-480.webp 480w, /images/utpal-portrait-800.webp 800w"
+                sizes="(min-width: 1024px) 34vw, 90vw"
+                alt={h.portraitAlt}
+                width={800}
+                height={1000}
+                className="relative aspect-[4/5] w-full object-cover"
+              />
+              <figcaption className="telemetry mt-3 flex justify-between text-muted-foreground">
+                <span>Utpal Das</span>
+                <span>Berlin</span>
+              </figcaption>
+            </figure>
           </div>
         </div>
+      </div>
+
+      <div className="border-t border-border bg-surface">
+        <dl className="container-wide grid grid-cols-2 md:grid-cols-4">
+          {h.stats.map((s, i) => (
+            <div
+              key={s.label}
+              className={`py-7 pr-4 md:py-9 ${i > 0 ? "md:border-l md:border-border md:pl-8" : ""} ${
+                i % 2 === 1 ? "border-l border-border pl-5 md:pl-8" : ""
+              } ${i > 1 ? "border-t border-border md:border-t-0" : ""}`}
+            >
+              <dt className="sr-only">{s.label}</dt>
+              <dd className="font-display text-4xl text-foreground md:text-5xl">{s.value}</dd>
+              <dd className="telemetry mt-2 text-muted-foreground">{s.label}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

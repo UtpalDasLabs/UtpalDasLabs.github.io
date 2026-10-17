@@ -23,12 +23,12 @@ export function Footer(_props: FooterProps) {
 
         <nav aria-label="Footer" className="md:col-span-3">
           <p className="telemetry mb-3 text-faint">Navigate</p>
-          <Link to="/#projects" className={linkCls}>Projects</Link>
+          <Link to="/#projects" className={linkCls}>Work</Link>
           <Link to="/#thesis" className={linkCls}>AI Thesis</Link>
           <Link to="/#labs" className={linkCls}>Labs</Link>
-          <Link to="/#kind-words" className={linkCls}>Kind Words</Link>
+          <Link to="/#about" className={linkCls}>About &amp; Kind Words</Link>
           <Link to="/work" className={linkCls}>Full archive</Link>
-          <Link to="/about" className={linkCls}>About</Link>
+          <Link to="/about" className={linkCls}>Full bio</Link>
         </nav>
 
         <div className="md:col-span-3">

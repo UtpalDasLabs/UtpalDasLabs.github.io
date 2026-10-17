@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { home } from "@/data/home";
 import { track } from "@/lib/analytics";
 import { Drawer, Eyebrow } from "./primitives";
+import { Figure } from "./Figure";
 
 export function Manifesto() {
   const m = home.manifesto;
@@ -17,6 +18,17 @@ export function Manifesto() {
           <span className="text-muted-foreground">{m.middle}</span>{" "}
           <span className="text-accent">{m.accent}</span>
         </blockquote>
+        <ol
+          aria-label="Career arc"
+          className="grid grid-cols-2 gap-px border border-border bg-border sm:grid-cols-5 md:col-span-12"
+        >
+          {m.arc.map((a, i) => (
+            <li key={a.year} className={`bg-background p-4 ${i === m.arc.length - 1 ? "col-span-2 sm:col-span-1" : ""}`}>
+              <p className={`telemetry ${i === m.arc.length - 1 ? "text-accent" : "text-foreground"}`}>{a.year}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{a.label}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
@@ -63,16 +75,16 @@ export function Thesis() {
   const panelId = "blueprint-panel";
 
   return (
-    <section id="thesis" aria-labelledby="thesis-title" className="border-b border-border">
+    <section id="thesis" aria-labelledby="thesis-title" className="dark border-b border-border bg-background text-foreground">
       <div className="container-wide py-20 md:py-28">
         <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-3">
             <Eyebrow>{t.eyebrow}</Eyebrow>
           </div>
-          <div className="md:col-span-9">
+          <div className="md:col-span-9 lg:col-span-5">
             <h2
               id="thesis-title"
-              className="font-display text-4xl leading-[1.1] tracking-[-0.02em] text-foreground md:text-6xl"
+              className="font-display text-4xl leading-[1.1] tracking-[-0.02em] text-foreground md:text-5xl"
             >
               {t.headline} <span className="text-accent">{t.headlineAccent}</span>
             </h2>
@@ -96,6 +108,9 @@ export function Thesis() {
               </span>{" "}
               ]
             </button>
+          </div>
+          <div className="md:col-span-9 md:col-start-4 lg:col-span-4 lg:col-start-auto">
+            <Figure src={t.image} alt={t.imageAlt} ratio="aspect-[4/5] lg:aspect-[3/4]" sizes="(min-width: 1024px) 30vw, 100vw" />
           </div>
         </div>
 

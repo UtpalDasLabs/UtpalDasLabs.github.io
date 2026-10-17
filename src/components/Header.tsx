@@ -5,12 +5,12 @@ import { useTheme } from "next-themes";
 
 // Homepage anchors — every section is pre-rendered on "/", deep pages remain.
 const navItems = [
-  { label: "Projects", path: "/#projects" },
+  { label: "Work", path: "/#projects" },
   { label: "Thesis", path: "/#thesis" },
   { label: "Labs", path: "/#labs" },
-  { label: "Kind Words", path: "/#kind-words" },
+  { label: "About", path: "/#about" },
 ];
-const ctaItem = { label: "Start a conversation", path: "/#contact" };
+const ctaItem = { label: "Let's talk", path: "/#contact" };
 
 interface HeaderProps {
   revealMode?: boolean;

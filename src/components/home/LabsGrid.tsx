@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { home, teardowns, type Teardown } from "@/data/home";
 import { track } from "@/lib/analytics";
 import { Eyebrow, StatusDot } from "./primitives";
+import { Figure } from "./Figure";
 
 function host(url: string) {
   return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
@@ -79,11 +80,14 @@ export function LabsGrid() {
           <div className="md:col-span-3">
             <Eyebrow>{l.eyebrow}</Eyebrow>
           </div>
-          <div className="md:col-span-9">
-            <h2 id="labs-title" className="font-display text-4xl text-foreground md:text-6xl">
+          <div className="md:col-span-9 lg:col-span-5">
+            <h2 id="labs-title" className="font-display text-4xl text-foreground md:text-5xl">
               {l.title}
             </h2>
             <p className="mt-5 max-w-2xl leading-[1.65] text-muted-foreground">{l.lead}</p>
+          </div>
+          <div className="md:col-span-9 md:col-start-4 lg:col-span-4 lg:col-start-auto">
+            <Figure src={l.image} alt={l.imageAlt} sizes="(min-width: 1024px) 30vw, 100vw" />
           </div>
         </div>
         <div className="grid gap-px border border-border bg-border md:grid-cols-2 lg:grid-cols-6">

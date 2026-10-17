@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
-  <rect width="600" height="800" fill="#090A0D"/>
+  <rect width="600" height="800" fill="#0B0B0B"/>
   <g fill="#171A21">
     <rect x="80" y="560" width="70" height="160"/>
     <rect x="180" y="480" width="70" height="240"/>
     <rect x="280" y="380" width="70" height="340"/>
     <rect x="380" y="300" width="70" height="420"/>
   </g>
-  <rect x="480" y="180" width="70" height="540" fill="#D97736"/>
+  <rect x="480" y="180" width="70" height="540" fill="#B08D57"/>
   <g fill="none" stroke="#555" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round">
     <path d="M115 540 C160 440 240 420 315 360 C390 300 440 240 515 160"/>
   </g>

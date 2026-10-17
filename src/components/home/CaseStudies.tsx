@@ -4,6 +4,7 @@ import { caseStudies, home, type CaseStudy } from "@/data/home";
 import { projects } from "@/data/projects";
 import { track } from "@/lib/analytics";
 import { Drawer, Eyebrow } from "./primitives";
+import { Figure } from "./Figure";
 
 const MATRIX_ROWS: { key: keyof CaseStudy["matrix"]; label: string }[] = [
   { key: "domain", label: "System Domain" },
@@ -32,6 +33,7 @@ function CaseCard({ c }: { c: CaseStudy }) {
       aria-labelledby={`case-title-${c.id}`}
       className="flex flex-col bg-surface p-6 md:p-8"
     >
+      <Figure src={c.image} alt={c.imageAlt} className="-mx-6 -mt-6 mb-7 md:-mx-8 md:-mt-8" />
       <p className="telemetry text-accent">{c.tag}</p>
       <p className="telemetry mt-2 text-muted-foreground">{c.meta}</p>
       <h3
@@ -116,7 +118,7 @@ export function CaseStudies() {
             <Eyebrow>{p.eyebrow}</Eyebrow>
           </div>
           <div className="md:col-span-9">
-            <h2 id="projects-title" className="font-display text-4xl text-foreground md:text-6xl">
+            <h2 id="projects-title" className="font-display text-4xl text-foreground md:text-5xl">
               {p.title}
             </h2>
             <p className="mt-5 max-w-2xl leading-[1.65] text-muted-foreground">{p.lead}</p>

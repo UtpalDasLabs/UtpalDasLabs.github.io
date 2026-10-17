@@ -36,7 +36,7 @@ export function ContactSelector() {
             <Eyebrow>{c.eyebrow}</Eyebrow>
           </div>
           <div className="md:col-span-9">
-            <h2 id="contact-title" className="font-display text-4xl text-foreground md:text-6xl">
+            <h2 id="contact-title" className="font-display text-4xl text-foreground md:text-5xl">
               {c.title}
             </h2>
             <p className="mt-5 max-w-2xl leading-[1.65] text-muted-foreground">{c.lead}</p>

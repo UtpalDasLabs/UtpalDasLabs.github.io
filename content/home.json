@@ -13,13 +13,55 @@
     ],
     "primaryCta": "See the work ↓",
     "secondaryCta": "The AI Correctional Thesis →",
-    "ghostCta": "Launch Live Apps"
+    "ghostCta": "Launch Live Apps",
+    "portrait": "/images/utpal-portrait-800.webp",
+    "portraitAlt": "Portrait of Utpal Das",
+    "stats": [
+      {
+        "value": "18+",
+        "label": "Years shipping software"
+      },
+      {
+        "value": "5",
+        "label": "Industries · aerospace → mobility"
+      },
+      {
+        "value": "21",
+        "label": "Documented case studies"
+      },
+      {
+        "value": "5",
+        "label": "Live apps in production"
+      }
+    ]
   },
   "manifesto": {
     "eyebrow": "02 / 03 · MANIFESTO",
     "lead": "Planes. Production lines. Marketplaces. Autonomous vehicles.",
     "middle": "Eighteen years of software that had to work.",
-    "accent": "That's the bar AI has to clear."
+    "accent": "That's the bar AI has to clear.",
+    "arc": [
+      {
+        "year": "2008",
+        "label": "Avionics · DO-178B"
+      },
+      {
+        "year": "2013",
+        "label": "Metrology · 3D vision"
+      },
+      {
+        "year": "2019",
+        "label": "Marketplaces · fintech"
+      },
+      {
+        "year": "2024",
+        "label": "Mobility · private LLMs"
+      },
+      {
+        "year": "Next",
+        "label": "Accountable agents"
+      }
+    ]
   },
   "thesis": {
     "eyebrow": "03 / 03 · THE NEXT DREAM",
@@ -60,7 +102,9 @@
         "body": "The patched agent must pass 100% of the adversarial regression suite and survive shadow-mode canary evaluation against live traffic before earning release back into autonomous production."
       }
     ],
-    "noteLink": "Read the longer note on agent accountability"
+    "noteLink": "Read the longer note on agent accountability",
+    "image": "/images/thesis-1200.webp",
+    "imageAlt": "A single server rack isolated inside a glass enclosure in a quiet data hall"
   },
   "projects": {
     "eyebrow": "04 · FLAGSHIP CASE STUDIES",
@@ -88,7 +132,9 @@
           "agentic-platform",
           "local-llm-stack",
           "cubonic-digital"
-        ]
+        ],
+        "image": "/images/mobility-1200.webp",
+        "imageAlt": "Compact autonomous electric shuttle on a Berlin street at sunrise"
       },
       {
         "id": "marketplaces",
@@ -110,7 +156,9 @@
           "autoscout24-apps",
           "cluno-partner-platform",
           "asset-financing"
-        ]
+        ],
+        "image": "/images/marketplace-1200.webp",
+        "imageAlt": "A car key being handed over in a bright showroom"
       },
       {
         "id": "merz",
@@ -132,7 +180,9 @@
           "zeiss-measurement-cell",
           "cad-reverse-engineering",
           "ct-defect-detection"
-        ]
+        ],
+        "image": "/images/metrology-1200.webp",
+        "imageAlt": "Robot arm with an optical sensor inspecting a car body in a factory hall"
       },
       {
         "id": "avionics",
@@ -152,7 +202,9 @@
         },
         "related": [
           "eicas-avionics"
-        ]
+        ],
+        "image": "/images/avionics-1200.webp",
+        "imageAlt": "Engine indication display in a turboprop cockpit at dawn"
       }
     ]
   },
@@ -267,10 +319,12 @@
           }
         ]
       }
-    ]
+    ],
+    "image": "/images/labs-1200.webp",
+    "imageAlt": "Desk by a window with a notebook of state-machine sketches, a phone and a laptop"
   },
   "principles": {
-    "eyebrow": "06 · OPERATING PRINCIPLES & KIND WORDS",
+    "eyebrow": "06 · ABOUT · PRINCIPLES & KIND WORDS",
     "title": "What colleagues say — and the standard it proves.",
     "allKindWordsCta": "Read all 12 recommendations",
     "endorsements": [
@@ -330,5 +384,6 @@
         "cta": "Email about Labs"
       }
     ]
-  }
+  },
+  "imageCaption": "Illustrative · AI-generated"
 }

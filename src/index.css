@@ -1,98 +1,162 @@
+/* Self-hosted (no request to Google: GDPR + performance). Playfair Display, Inter, JetBrains Mono — SIL OFL 1.1 */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay-italic-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay-normal-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(/fonts/Inter-normal-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(/fonts/Inter-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(/fonts/JetBrainsMono-normal-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url(/fonts/JetBrainsMono-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* "Evidence Engine" — light variant: warm bone paper, obsidian ink */
-    --background: 45 22% 93%;
-    --foreground: 225 18% 6%;
-    --card: 45 25% 96%;
-    --card-foreground: 225 18% 6%;
-    --popover: 45 25% 96%;
-    --popover-foreground: 225 18% 6%;
-    --primary: 24 70% 40%;
-    --primary-foreground: 45 22% 96%;
-    --secondary: 45 14% 87%;
-    --secondary-foreground: 225 18% 10%;
-    --muted: 45 14% 88%;
-    --muted-foreground: 225 9% 34%;
-    --accent: 24 70% 40%;
-    --accent-foreground: 45 22% 96%;
+    /* Default: bright ivory paper, charcoal ink, bronze accent (UD brand moodboard)
+       Ivory #F7F4EF · Charcoal #0B0B0B · Bronze #B08D57 (decorative) / #87652F (text-safe) · Taupe #8A8A8A */
+    --background: 37 35% 95%;
+    --foreground: 0 0% 4%;
+    --card: 40 50% 98%;
+    --card-foreground: 0 0% 4%;
+    --popover: 40 50% 98%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 37 50% 31%;
+    --primary-foreground: 37 35% 97%;
+    --secondary: 37 27% 91%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 37 27% 91%;
+    --muted-foreground: 35 7% 32%;
+    --accent: 37 50% 31%;
+    --accent-foreground: 37 35% 97%;
     --steel: 208 30% 38%;
-    --emerald: 146 50% 28%;
+    --emerald: 146 50% 30%;
     --emerald-ink: 146 55% 24%;
     --destructive: 0 72% 42%;
     --destructive-foreground: 0 0% 100%;
-    --border: 40 10% 78%;
-    --input: 40 10% 78%;
-    --ring: 24 70% 40%;
+    --border: 38 22% 86%;
+    --input: 38 22% 86%;
+    --ring: 37 50% 31%;
     --radius: 0rem;
-    --hover-bg: 45 14% 89%;
-    --separator: 40 10% 80%;
-    --surface: 45 25% 96%;
-    --surface-elevated: 45 18% 90%;
-    --border-focus: 40 8% 60%;
-    --faint: 225 8% 40%;
+    --hover-bg: 37 27% 92%;
+    --separator: 38 22% 86%;
+    --surface: 40 50% 98%;
+    --surface-elevated: 37 27% 91%;
+    --border-focus: 36 18% 73%;
+    --faint: 37 6% 41%;
 
-    --sidebar-background: 45 22% 93%;
-    --sidebar-foreground: 225 18% 6%;
-    --sidebar-primary: 24 70% 40%;
-    --sidebar-primary-foreground: 45 22% 96%;
-    --sidebar-accent: 45 14% 87%;
-    --sidebar-accent-foreground: 225 18% 10%;
-    --sidebar-border: 40 10% 80%;
-    --sidebar-ring: 24 70% 40%;
+    --sidebar-background: 37 35% 95%;
+    --sidebar-foreground: 0 0% 4%;
+    --sidebar-primary: 37 48% 36%;
+    --sidebar-primary-foreground: 37 35% 97%;
+    --sidebar-accent: 37 27% 91%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 38 22% 86%;
+    --sidebar-ring: 37 48% 36%;
 
     --ease-mech: cubic-bezier(0.22, 1, 0.36, 1);
-    --font-display: "Instrument Serif", Georgia, serif;
+    --font-display: "Playfair Display", Georgia, serif;
+    --bronze: 36 35% 52%;
     --font-sans: "Inter", system-ui, sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
   }
 
   .dark {
-    /* Dark-first default — PRD §4.2 tokens (expressed as HSL triplets)
-       --bg-canvas #090A0D · --bg-surface #111318 · --bg-surface-elevated #171A21
-       --text-primary #F2F0EA · --text-secondary #A6ABB8 · --text-muted #646A7A
-       --accent-amber #D97736 · --accent-steel #5B7C99 · --accent-emerald #2E8B57
-       --border-subtle #1D202A · --border-focus #383E4E */
-    --background: 225 18% 4%;
-    --foreground: 45 22% 93%;
-    --card: 223 17% 8%;
-    --card-foreground: 45 22% 93%;
-    --popover: 223 17% 8%;
-    --popover-foreground: 45 22% 93%;
-    --primary: 24 69% 53%;
-    --primary-foreground: 225 18% 4%;
-    --secondary: 222 18% 11%;
-    --secondary-foreground: 45 22% 93%;
-    --muted: 222 18% 11%;
-    --muted-foreground: 224 11% 69%;
-    --accent: 24 69% 53%;
-    --accent-foreground: 225 18% 4%;
-    --steel: 208 25% 48%;
+    /* Optional dark variant: charcoal canvas, ivory ink, bronze accent */
+    --background: 0 0% 4%;
+    --foreground: 37 35% 95%;
+    --card: 30 5% 7.5%;
+    --card-foreground: 37 35% 95%;
+    --popover: 30 5% 7.5%;
+    --popover-foreground: 37 35% 95%;
+    --primary: 36 35% 52%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 30 8% 10%;
+    --secondary-foreground: 37 35% 95%;
+    --muted: 30 8% 10%;
+    --muted-foreground: 36 8% 63%;
+    --accent: 36 35% 52%;
+    --accent-foreground: 0 0% 4%;
+    --steel: 208 25% 52%;
     --emerald: 146 50% 36%;
     --emerald-ink: 146 45% 52%;
     --destructive: 0 72% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 226 18% 14%;
-    --input: 226 18% 14%;
-    --ring: 24 69% 53%;
-    --hover-bg: 222 18% 11%;
-    --separator: 226 18% 14%;
-    --surface: 223 17% 8%;
-    --surface-elevated: 222 18% 11%;
-    --border-focus: 224 16% 26%;
-    --faint: 225 9% 54%;
+    --border: 36 7% 14%;
+    --input: 36 7% 14%;
+    --ring: 36 35% 52%;
+    --hover-bg: 30 8% 10%;
+    --separator: 36 7% 14%;
+    --surface: 30 5% 7.5%;
+    --surface-elevated: 30 8% 10%;
+    --border-focus: 38 7% 22%;
+    --faint: 0 0% 54%;
 
-    --sidebar-background: 225 18% 4%;
-    --sidebar-foreground: 45 22% 93%;
-    --sidebar-primary: 24 69% 53%;
-    --sidebar-primary-foreground: 225 18% 4%;
-    --sidebar-accent: 222 18% 11%;
-    --sidebar-accent-foreground: 45 22% 93%;
-    --sidebar-border: 226 18% 14%;
-    --sidebar-ring: 24 69% 53%;
+    --sidebar-background: 0 0% 4%;
+    --sidebar-foreground: 37 35% 95%;
+    --sidebar-primary: 36 35% 52%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 30 8% 10%;
+    --sidebar-accent-foreground: 37 35% 95%;
+    --sidebar-border: 36 7% 14%;
+    --sidebar-ring: 36 35% 52%;
   }
 
   * {
@@ -108,7 +172,6 @@
   }
 
   html {
-    /* Instrument Serif ships one weight: never fake a bold */
     font-synthesis-weight: none;
   }
 
@@ -120,8 +183,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-weight: 500;
+    letter-spacing: -0.015em;
     line-height: 1.1;
   }
 
@@ -429,3 +492,7 @@ html:not(.js) .drawer { grid-template-rows: 1fr; opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .drawer, .mech { transition: none !important; }
 }
+
+.consent-set [data-consent-banner] { display: none; }
+/* Playfair reads best at medium weight at display sizes (moodboard) */
+.font-display.font-bold, .font-display.font-semibold, .font-display.font-extrabold { font-weight: 500; }

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
-  <rect width="600" height="800" fill="#090A0D"/>
+  <rect width="600" height="800" fill="#0B0B0B"/>
   <g fill="none" stroke="#555" stroke-width="1.5">
     <path d="M300 200L470 300V520L300 620L130 520V300Z"/>
     <path d="M300 200V420M130 300L300 420L470 300M300 620V420"/>
@@ -8,7 +8,7 @@
     <path d="M130 340L300 460L470 340M130 380L300 500L470 380M130 420L300 540L470 420M130 460L300 580L470 460"/>
     <path d="M170 277L170 497M210 300L210 520M250 323L250 543M350 323L350 543M390 300L390 520M430 277L430 497"/>
   </g>
-  <g stroke="#D97736" stroke-width="2" fill="none">
+  <g stroke="#B08D57" stroke-width="2" fill="none">
     <path d="M300 200L470 300"/>
     <circle cx="300" cy="420" r="8"/>
   </g>

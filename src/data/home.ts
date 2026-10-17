@@ -11,6 +11,8 @@ export interface CaseStudy {
   matrix: { domain: string; constraints: string; scope: string; outcome: string };
   tradeoff: { context: string; decision: string; result: string };
   related: string[];
+  image: string;
+  imageAlt: string;
 }
 
 export interface Teardown {

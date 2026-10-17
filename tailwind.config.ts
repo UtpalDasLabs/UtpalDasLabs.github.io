@@ -19,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"Instrument Serif"', 'Georgia', 'serif'],
-        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
+        display: ['"Playfair Display"', 'Georgia', 'serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
@@ -63,6 +63,7 @@ export default {
         },
         separator: "hsl(var(--separator))",
         steel: "hsl(var(--steel))",
+        bronze: "hsl(var(--bronze))",
         emerald: {
           DEFAULT: "hsl(var(--emerald))",
           ink: "hsl(var(--emerald-ink))",
